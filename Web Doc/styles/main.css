@@ -1,0 +1,23 @@
+body {
+    padding-top: 20px;
+}
+
+p {
+    font-size: 16px;
+}
+
+.headerDoc {
+    color: #005580;
+}
+
+code {
+    font-size: 14px;
+}
+
+@media (max-width: 767px) {
+    #toc {
+        width: 80%;
+        margin: 0 auto 20px auto;
+        position: relative;
+    }
+}
