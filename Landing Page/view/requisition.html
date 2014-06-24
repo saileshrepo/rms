@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.min.js"></script>
+</head>
+<body>
+    <!-- Employee Requisition Form-->
+	<section class="col-lg-6 connectedSortable"> 
+                            
+                            <div class="box box-primary" id="loading-example">
+                                <div class="box-header">
+                                    <!-- tools box -->
+                                    <div class="pull-right box-tools">
+                                        <button class="btn btn-danger btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
+                                        <button class="btn btn-danger btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                                        <button class="btn btn-danger btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+                                    </div><!-- /. tools -->
+                                    <i class="fa fa-pencil"></i>
+                                        <h3 class="box-title">Requisition Form</h3>
+                                 </div><!-- /.box-header -->
+                                 <div class="box-body">
+                                        <div id="erf" class="nav-tabs-custom">
+                                        <!-- Tabs within a box -->
+                                            <ul class="nav nav-tabs pull-left">
+                                                <li class="active"><a href="#part1" data-toggle="tab">Part 1</a></li>
+                                                <li><a href="#part2" data-toggle="tab">Part 2</a></li>
+                                    
+                                            </ul>
+                                        </div>
+                                        <br>
+                                        <div class="tab-content no-padding">
+                                                <div class="chart tab-pane active" id="part1" style="position: relative;">
+									           <!-- part1 start -->
+                                                    <form role="form">
+                                                        <br>
+                                                        <div class="form-group">
+                                                            <label class="pull left">Department</label>
+                                                            <input type="text" class="form-control" placeholder="Your department" required/ >
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Job Title</label>
+                                                            <select class="form-control">
+                                                                <option>ASP.NET Developer</option>
+                                                                <option>Web Designer</option>
+                                                                <option>Database Administrator</option>
+                                                                <option>Analyst</option>
+                                                                <option>Developer</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>No of positions opened</label>
+                                                            <input type="text" class="form-control" placeholder="vacancies" required/ >
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Date of closing vacancy</label>
+                                                            <div class="input-group">
+                                                                <div class="input-group-addon">
+                                                                    <i class="fa fa-calendar"></i>
+                                                                </div>
+                                                                <input type="date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+                                                            </div>
+										                  </div>
+										              <div class="form-group"> 
+										                  <label>Type of Position</label>
+								                            <div class="radio">
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>New
+                                                            </div>
+											
+                                                            <div class="radio">
+                                                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Replacement
+                                                            </div>
+                                                    </div>
+										          <div class="form-group">
+                                                    <label>Name of person to be replaced</label>
+                                                    <input type="text" class="form-control" placeholder="name" required/ >
+                                                  </div>
+										          <div class="form-group">
+                                                        <label>Select Module (for multiple press shift and click)</label>
+                                                        <select multiple="" class="form-control">
+                                                            <option>MATRIX</option>
+                                                            <option>Calendar Task</option>
+                                                            <option>Incident management</option>
+                                                        </select>
+                                                  </div>
+										          <div class="form-group">
+                                                    <label>Reporting Manager</label>
+                                                    <input type="text" class="form-control" placeholder="name" required/ >
+                                                  </div>
+										          <div class="form-group">
+                                                    <label>Experience</label>
+                                                    <input type="text" class="form-control" placeholder="range of years" required/ >
+                                                   </div>
+                                            </div>
+                                                    <!-- /-part 1 ends-->
+                                                    <!--part 2 starts-->
+                                            <div class="chart tab-pane" id="part2" style="position: relative;">
+                                                <div class="form-group"><br>
+                                                    <label>Job Description</label>
+                                                    <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                                </div>
+										        <div class="form-group">
+                                                    <label>Roles & Responsibilities</label>
+                                                    <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                                </div>
+										        <div class="form-group">
+                                                    <label>Short Term Projects</label>
+                                                    <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                                </div>
+										        <div class="form-group">
+                                                    <label>Long Term Projects</label>
+                                                    <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                                </div>
+										        <div class="form-group">
+                                                    <label>Select Skillset (for multiple press shift and click)</label>
+                                                    <select multiple="" class="form-control">
+                                                        <option>Dot Net</option>
+                                                        <option>HTML5</option>
+                                                        <option>CSS3</option>
+                                                    </select>
+                                                </div>
+										        <div class="form-group">
+                                                    <label>Justify why internal reorganization is not possible</label>
+                                                    <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                                </div>
+									           <div class="box-footer">
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+										            <button type="button" class="btn btn-warning">Save as Draft</button>
+										            <button type="button" class="btn btn-danger">Cancel</button>
+                                               </div>	
+									       </div>
+                                                    <!--part 2 ends-->
+                                        </div>
+                                        </form>
+                                        </div><!-- /.box-body -->
+								        </div><!-- /erf-->	
+            </section>
+        
+   <!-- jQuery 2.0.2 -->
+      <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <!-- jQuery UI 1.10.3 -->
+        <script src="js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+        <!-- Bootstrap -->
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- AdminLTE App -->
+        <script src="js/AdminLTE/app.js" type="text/javascript"></script>
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="js/AdminLTE/dashboard.js" type="text/javascript"></script>     
+      </body>
+</html>      
+    

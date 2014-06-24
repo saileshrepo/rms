@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <meta charset="UTF-8">
+        <title>ProRecruit | The Best out THERE!!!</title>
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+      
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+     
+        <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+      
+        <link href="../css/prorecruit.css" rel="stylesheet" type="text/css" />
+       <script src="../js/jquery.min.js"></script>
+	   
+	       <script type="text/JavaScript">
+	$(document).ready(function(){
+		$("#a_newuser").click(function(e){ 
+		e.preventDefault();
+		$("#cont_form").load("addnew.html");
+		});
+		$("#erf").click(function(e){
+			e.preventDefault();
+		$("#cont_form").load("requisition.html");
+		});
+        $("#editprofile").click(function(e){ 
+		e.preventDefault();
+		$("#cont_form").load("editprofile.html");
+		});
+        $("#editorg").click(function(e){ 
+		e.preventDefault();
+		$("#cont_form").load("org_details.html");
+		});
+        $("#addjob").click(function(e){ 
+		e.preventDefault();
+		$("#cont_form").load("addjob.html");
+		});
+		$(".companydetails").click(function(e){ 
+		e.preventDefault();
+		$("#cont_form").load("admincompanydetails.html");
+		});
+		$(".employeedetail").click(function(e){ 
+		e.preventDefault();
+		$("#cont_form").load("employeedetails.html");
+		});
+			$("#approved").click(function(e){ 
+		e.preventDefault();
+		$("#cont_form").load("approved.html");
+		});
+	});
+     
+</script>
+		
+
+       
+    </head>
+    <body class="skin-black">
+	
+        <!-- header logo: style can be found in header.less -->
+        <header class="header">
+            <a href="index.html" class="logo">
+                <!-- Add the class icon to your logo image or logo icon to add the margining -->
+                ProRecruit
+            </a>
+			
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-user"></i>
+                                <span>Admin<i class="caret"></i></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header bg-light-blue">
+                                    <img src="img/admin.png" class="img-circle" alt="User Image" />
+                                    <p>
+                                        Admin
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Edit Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        
+        
+    
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel"><br>
+                        <div class="pull-left image">
+                            <img src="img/admin.png" class="img-circle" alt="User Image" />
+                        </div>
+                        <div class="pull-left info">
+                            <br><p>Hello, Admin</p>
+                        </div>
+                    </div><br>
+                    
+                    
+                    
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li class="active">
+                            <a href="#">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" id="editprofile">
+                                <i class="fa fa-gear"></i> <span>Edit Profile</span>
+                            </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-pencil"></i><span>Employee Requisition</span>
+                                 <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#" id="erf"><i class="fa fa-angle-double-right"></i>New Form</a></li>
+                                <li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i>Drafts</a></li>
+                               
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#demographics" class="companydetails">
+                                <i class="glyphicon glyphicon-stats"></i> <span>Company Demographics</span>
+                            </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="#" class="employeedetail">
+                                <i class="glyphicon glyphicon-stats"></i> <span>Employee Tally</span>
+                            </a>
+                       </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-briefcase"></i><span>Vacancies</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#vacancies"><i class="fa fa-angle-double-right"></i> All</a></li>
+                                <li><a href="#pending"><i class="fa fa-angle-double-right"></i> Pending</a></li>
+                                <li><a href="" id="approved"><i class="fa fa-angle-double-right"></i> Approved</a></li>
+                                <li><a href="#closed"><i class="fa fa-angle-double-right"></i> Closed</a></li>
+                               
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#scheduler">
+                                <i class="fa fa-calendar"></i> <span>Scheduler</span>
+                            </a>
+                       </li>
+                         <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-group"></i><span>Users</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a id="a_newuser" href="#" ><i class="fa fa-angle-double-right"></i> Add New User</a></li>
+                                <li><a href="#allusers"><i class="fa fa-angle-double-right"></i> Existing Users</a></li>
+                               
+                            </ul>
+                        </li>
+                         <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-briefcase"></i><span>Jobs</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#addjob" id="addjob"><i class="fa fa-angle-double-right"></i> Add New Jobs</a></li>
+                                <li><a href="#alljobs"><i class="fa fa-angle-double-right"></i> Existing Jobs</a></li>
+                               
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" id="editorg">
+                                <i class="ion ion-person-add"></i> <span>Edit Organization Details</span>
+                            </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="#" id="ces">
+                                <i class="ion ion-ios7-compose"></i> <span>Evaluation Sheet</span>
+                            </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="#ces">
+                                <i class="ion ion-android-folder"></i><span>Candidate Database</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            
+                            <ul class="treeview-menu">
+                                <li><a href="#candidatedb"><i class="fa fa-angle-double-right"></i> Search Candidate</a></li>
+                                <li><a href="#importcv"><i class="fa fa-angle-double-right"></i> Import CVs</a></li>
+                                <li><a href="#talentpool"><i class="fa fa-angle-double-right"></i>Talent Pool</a></li>
+                               
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+              <!-- /.sidebar -->
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            
+			
+			<aside class="right-side">
+                <section class="content-header">
+                    <h1>
+                        Dashboard
+                        
+                    </h1>
+					<ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">Dashboard</li>
+                    </ol>
+                    
+                </section>
+                <!-- Main content -->
+                <section class="content">
+
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>
+                                        75%<sup><small class="badge bg-red">increase</small>
+                                    </h3>
+                                    <p>
+                                       Demographics
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+                                <a href="" class="small-box-footer companydetails">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                <div class="inner">
+                                    <h3>
+                                        53<sup><small class="badge bg-red">new</small>
+                                    </h3>
+                                    <p>
+                                        Employees
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+                                <a  href="" class=" employeedetail small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-blue">
+                                <div class="inner">
+                                    <h3>
+                                        4<sup><small class="badge bg-red">approved</small>
+                                    </h3>
+                                    <p>
+                                        Vacancies
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-briefcase"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-orange">
+                                <div class="inner">
+                                    <h3>
+                                        6<sup><small class="badge bg-red">interviews</small>
+                                    </h3>
+                                    <p>
+                                        Scheduler
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-ios7-calendar"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                    </div><!-- /.row -->
+		
+           <div class="row">
+					 <div id="cont_form"></div>
+                      <div id="cont_form2"></div>
+            </div>
+        
+</div>
+       
+        <script src="../js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+		
+        <script src="../js/prorecruit/app.js" type="text/javascript"></script>
+        <script src="js/prorecruit/dashboard.js" type="text/javascript"></script>  
+<script src="js/prorecruit/demo.js" type="text/javascript"></script>  		
+ 
+    </body>
+</html>
