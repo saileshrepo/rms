@@ -613,9 +613,9 @@ $(window).load(function() {
 
             /* Add margins to submenu elements to give it a tree look */
             menu.find("li > a").each(function() {
+                var pad = parseInt($(this).css("margin-left")) + 10;
 
-
-                $(this).css({"margin-left": 15 + "px"});
+                $(this).css({"margin-left": pad + "px"});
             });
 
         });

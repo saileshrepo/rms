@@ -1,7 +1,17 @@
 <!DOCTYPE html>
     <html>
     <head>
-    <script src="jquery.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+        <script>
+      
+		$("#promote").click(function(e){ 
+		e.preventDefault();
+		$("#cont_form2").load("promote.html");
+		});
+            
+		
+           
+        </script>
     </head>
     <body>
     <!-- Approved Vacancies-->
@@ -22,19 +32,23 @@
                                     <table class="table table-hover">
                                     <tr>
                                     <td><i class="fa fa-check"></i> Vacancy for the post of Web Developer from PD Department</td>
-                                    <td><button class="btn btn-primary btn-sm" data-toggle="tooltip" title="Show details"><i class="fa fa-plus"></i></button>
+                                        <td><button class="btn btn-warning btn-sm" id="promote">Promote</button></td>
+                                    <td><button class="btn btn-primary btn-sm" id="proceed">Proceed</button></td>
                                     </tr>
                                     <tr>
                                     <td><i class="fa fa-check"></i> Vacancy for the post of Analyst from QA Department</td>
-                                    <td><button class="btn btn-primary btn-sm" data-toggle="tooltip" title="Show details"><i class="fa fa-plus"></i></button>
+                                        <td><button class="btn btn-warning btn-sm" id="promote">Promote</button></td>
+                                    <td><button class="btn btn-primary btn-sm">Proceed</button></td>
                                     </tr>
                                     <tr>
                                     <td><i class="fa fa-check"></i> Vacancy for the post of Senior HR from HR Department</td>
-                                    <td><button class="btn btn-primary btn-sm" data-toggle="tooltip" title="Show details"><i class="fa fa-plus"></i></button>
+                                        <td><button class="btn btn-warning btn-sm" id="promote">Promote</button></td>
+                                    <td><button class="btn btn-primary btn-sm">Proceed</button></td>
                                     </tr>
                                     <tr>
                                     <td><i class="fa fa-check"></i> Vacancy for the post of Project Manager from PD Department</td>
-                                    <td><button class="btn btn-primary btn-sm" data-toggle="tooltip" title="Show details"><i class="fa fa-plus"></i></button>
+                                    <td><button class="btn btn-warning btn-sm" id="promote">Promote</button></td>
+                                    <td><button class="btn btn-primary btn-sm">Proceed</button></td>
                                     </tr>
                                     </table>
                                         
@@ -43,13 +57,13 @@
             <!-- jQuery 2.0.2 -->
           <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
             <!-- jQuery UI 1.10.3 -->
-            <script src="js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+            <script src="../js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
             <!-- Bootstrap -->
-            <script src="js/bootstrap.min.js" type="text/javascript"></script>
-            <!-- AdminLTE App -->
-            <script src="js/AdminLTE/app.js" type="text/javascript"></script>
-            <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-            <script src="js/AdminLTE/dashboard.js" type="text/javascript"></script>     
+            <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+            <!--  App -->
+            <script src="../js/prorecruit/app.js" type="text/javascript"></script>
+            <!-- -->
+            <script src="../js/prorecruit/dashboard.js" type="text/javascript"></script>     
           </body>
     </html>      
 

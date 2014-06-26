@@ -15,11 +15,10 @@
                $(function(e){var i=0;
                     $("#a_newuser").click(function(e){ 
                         e.preventDefault();
-                      
+                        var i=0;
                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                        var p =$('#first'+i+'').load("addnew.html");
+                        $('#first'+i+'').load("addnew.html");
                         i++;
-                       
                     });
                    $("#erf").click(function(e){
                         e.preventDefault();
@@ -67,42 +66,7 @@
                          $("#content_blocks").prepend('<div id="first'+i+'"></div>');
                          $('#first'+i+'').load("drafts.html");
                         i++;
-                    }); $("#ongoing").click(function(e){ 
-                        e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("ongoing.html");
-                        i++;
-                        
                     });
-                             $("#refer1, #refer2, #refer3, #refer4").click(function(e){ 
-                                    e.preventDefault();
-                                  $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                                    $('#first'+i+'').load("refer.html");
-                                    i++;
-		                         
-		});
-                             $("#cdb").click(function(e){ 
-                        e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("mydb.html");
-                        i++;
-                        
-                    });
-                 
-                        $(".all_vacancies").click(function(e){ 
-                        e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("approved.html");
-                        i++;
-                             $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("ongoing.html");
-                        i++;
-                             $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("closed.html");
-                        i++;
-                        
-                    });
-                            
                });
 	/*$(document).ready(function(){
 		$("#a_newuser").click(function(e){ 
@@ -205,7 +169,7 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel"><br>
                         <div class="pull-left image">
-                            <img src="../img/admin.png" class="img-circle" alt="User Image" />
+                            <img src="img/admin.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
                             <br><p>Hello, Admin</p>
@@ -253,7 +217,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="" class="all_vacancies"><i class="fa fa-angle-double-right"></i> All</a></li>
+                                <li><a href="#vacancies"><i class="fa fa-angle-double-right"></i> All</a></li>
                                 <li><a href="" id="approved"><i class="fa fa-angle-double-right"></i> Approved</a></li>
                                 <li><a href="" id="ongoing"><i class="fa fa-angle-double-right"></i> Ongoing</a></li>
                                 <li><a id="closed" href=""><i class="fa fa-angle-double-right"></i> Closed</a></li>
@@ -304,7 +268,7 @@
                             </a>
                             
                             <ul class="treeview-menu">
-                                <li><a href="" id="cdb"><i class="fa fa-angle-double-right"></i> Search Candidate</a></li>
+                                <li><a href="#candidatedb"><i class="fa fa-angle-double-right"></i> Search Candidate</a></li>
                                 <li><a href="#importcv"><i class="fa fa-angle-double-right"></i> Import CVs</a></li>
                                 <li><a href="#talentpool"><i class="fa fa-angle-double-right"></i>Talent Pool</a></li>
                                
@@ -388,7 +352,7 @@
                                 <div class="icon">
                                     <i class="ion ion-briefcase"></i>
                                 </div>
-                                <a href="#" class="all_vacancies small-box-footer">
+                                <a href="#" class="small-box-footer">
                                     More info <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>
