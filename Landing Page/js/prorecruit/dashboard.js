@@ -1,7 +1,7 @@
 $(document).ready(function(){
     "use strict";
 
-    //Make the dashboard widgets sortable Using jquery UI
+    /*//Make the dashboard widgets sortable Using jquery UI
     $(".connectedSortable").sortable({
         placeholder: "sort-highlight",
         connectWith: ".connectedSortable",
@@ -17,7 +17,7 @@ $(document).ready(function(){
         forcePlaceholderSize: true,
         zIndex: 999999
     }).disableSelection();
-
+*/
    
     //Date for the calendar events (dummy data)
     var date = new Date();

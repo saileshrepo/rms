@@ -2,6 +2,12 @@
 <html>
 <head>
 <script src="../js/jquery.min.js"></script>
+    <script src="../viewModel/new_admincompanydetails.js"></script>
+    <script src="../js/knockout.js"></script>
+    <script>
+       $(document).ready(function(){
+   ko.applyBindings(admincompanydetails);
+   });</script>
  </head>
 <script>
 	$(document).ready(function(e){
@@ -33,13 +39,13 @@
                                  <div class="box-body">
                                         
 									<div id="edit_companydetails" class=" form-group">
-									<h3>Title</h3><input type="text" ng-model="title" class="form-control"	/>
-									<h4>Description</h4><textarea class="form-control" ng-model="desc" class="textarea" rows="5" ></textarea>
+									<h3>Title</h3><input type="text" data-bind="value:title" class="form-control"	/>
+									<h4>Description</h4><textarea class="form-control"  data-bind="value:desc" class="textarea" rows="5" ></textarea>
 									<br><br><button class="btn btn-warning btn-sm">Save</button>
 									<button class="btn btn-danger btn-sm">Discard</button>
 									</div>
 									<div id="show_companydetails" class="form-group">
-									<h4>{{title}}</h4><br><p>{{desc}}</p>
+									<h2><span data-bind="text:title"></span></h2><br><br><p data-bind="text:desc"></p>
 									</div>
                                       
                                         

@@ -74,6 +74,12 @@
                         i++;
                         
                     });
+                             $("#existing_users").click(function(e){ 
+                        e.preventDefault();
+                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
+                         $('#first'+i+'').load("users.html");
+                        i++;
+                    });
                              $("#refer1, #refer2, #refer3, #refer4").click(function(e){ 
                                     e.preventDefault();
                                   $("#content_blocks").prepend('<div id="first'+i+'"></div>');
@@ -272,7 +278,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a id="a_newuser" href="" ><i class="fa fa-angle-double-right"></i> Add New User</a></li>
-                                <li><a href="#allusers"><i class="fa fa-angle-double-right"></i> Existing Users</a></li>
+                                <li><a href="" id="existing_users"><i class="fa fa-angle-double-right"></i> Existing Users</a></li>
                                
                             </ul>
                         </li>

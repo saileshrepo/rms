@@ -2,20 +2,22 @@
     <html>
     <head>
     <script src="../js/jquery.min.js"></script>
-        <script>
+  <script>
+      $("#proceed1, #proceed2, #proceed3, #proceed4").click(function(e){ e.preventDefault();
+                                                            $("#first0").append("<div id='xyz'></div>");
+                                                                $("#xyz").load("Round_schedule.html");
+                                                               });
+      $("#promote1, #promote2, #promote3, #promote4").click(function(e){ e.preventDefault();
+                                                            $("#first0").append("<div id='abc'></div>");
+                                                                $("#abc").load("promote.html");
+                                                               });
       
-		$("#promote").click(function(e){ 
-		e.preventDefault();
-		$("#cont_form2").load("promote.html");
-		});
-            
-		
            
         </script>
     </head>
     <body>
     <!-- Approved Vacancies-->
-            <section class="col-lg-6 connectedSortable">
+            <section class="col-lg-6">
                 <div class="box box-success" id="loading-example">
                     <div class="box-header">
                         <!-- tools box -->
@@ -32,29 +34,29 @@
                                     <table class="table table-hover">
                                     <tr>
                                     <td><i class="fa fa-check"></i> Vacancy for the post of Web Developer from PD Department</td>
-                                        <td><button class="btn btn-warning btn-sm" id="promote">Promote</button></td>
-                                    <td><button class="btn btn-primary btn-sm" id="proceed">Proceed</button></td>
+                                        <td><button class="btn btn-warning btn-sm" id="promote1">Promote</button></td>
+                                    <td><button class="btn btn-primary btn-sm" id="proceed1">Proceed</button></td>
                                     </tr>
                                     <tr>
                                     <td><i class="fa fa-check"></i> Vacancy for the post of Analyst from QA Department</td>
-                                        <td><button class="btn btn-warning btn-sm" id="promote">Promote</button></td>
-                                    <td><button class="btn btn-primary btn-sm">Proceed</button></td>
+                                        <td><button class="btn btn-warning btn-sm" id="promote2">Promote</button></td>
+                                    <td><button class="btn btn-primary btn-sm" id="proceed2">Proceed</button></td>
                                     </tr>
                                     <tr>
                                     <td><i class="fa fa-check"></i> Vacancy for the post of Senior HR from HR Department</td>
-                                        <td><button class="btn btn-warning btn-sm" id="promote">Promote</button></td>
-                                    <td><button class="btn btn-primary btn-sm">Proceed</button></td>
+                                        <td><button class="btn btn-warning btn-sm" id="promote3">Promote</button></td>
+                                    <td><button class="btn btn-primary btn-sm" id="proceed3">Proceed</button></td>
                                     </tr>
                                     <tr>
                                     <td><i class="fa fa-check"></i> Vacancy for the post of Project Manager from PD Department</td>
-                                    <td><button class="btn btn-warning btn-sm" id="promote">Promote</button></td>
-                                    <td><button class="btn btn-primary btn-sm">Proceed</button></td>
+                                    <td><button class="btn btn-warning btn-sm" id="promote4">Promote</button></td>
+                                    <td><button class="btn btn-primary btn-sm" id="proceed4">Proceed</button></td>
                                     </tr>
                                     </table>
                                         
                                         
         <!-- Add New User ends-->
-            <!-- jQuery 2.0.2 -->
+        <!-- jQuery 2.0.2 -->
           <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
             <!-- jQuery UI 1.10.3 -->
             <script src="../js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
