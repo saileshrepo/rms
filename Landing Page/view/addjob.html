@@ -3,6 +3,19 @@
         <head>
 		<link href="../css/prorecruit.css" rel="stylesheet" type="text/css" />
     <script src="../js/jquery.min.js"></script>
+            <script src="../js/jquery-ui-1.10.3.min.js"></script>
+            <script src="../js/tagit/tagit.js"></script>
+            <link href="../css/tag/tagit-blue.css" rel="stylesheet"/>
+            
+            <script>
+                $(document).ready(function(e){
+            $("#skills_select").tagit({
+                triggerKeys:['enter', 'comma', 'tab'],
+                editable:true,
+                sortable:true
+            });
+                });
+            </script>
            </head>
         <body>
 					<!-- Add Job form -->
@@ -38,17 +51,10 @@
                                             <input type="text" class="form-control" placeholder="Enter Job Designation">
                                         </div>
 										<div class="form-group">
-                                            <label>Skills Required</label>
-                                            <select multiple class="form-control">
-                                                <option>Dot Net</option>
-                                                <option>HTML</option>
-                                                <option>Javascript</option>
-                                                <option>Jquery</option>
-                                                <option>SnagIt</option>
-												<option>Java</option>
-                                            </select>
-											<a>Add Skills >>> </a>
-                                        </div>
+                                            <label>Skills Required</label></div>
+                                           <ul id="skills_select" class="list-group"></ul>
+<!--											<a>Add Skills >>> </a>-->
+                                        
 										<!-- textarea -->
                                         <div class="form-group">
                                             <label>Job Description</label>

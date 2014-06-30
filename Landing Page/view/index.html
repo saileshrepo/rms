@@ -108,7 +108,22 @@
                         i++;
                         
                     });
-                            
+                                     $("#existingjobs").click(function(e){ 
+                        e.preventDefault();
+                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
+                         $('#first'+i+'').load("existingjobs.html");
+                        i++;
+                        
+                    });
+                             
+                     
+                                     $("#existingusers").click(function(e){ 
+                        e.preventDefault();
+                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
+                         $('#first'+i+'').load("existingusers.html");
+                        i++;
+                        
+                    });       
                });
 	/*$(document).ready(function(){
 		$("#a_newuser").click(function(e){ 
@@ -287,7 +302,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a id="a_newuser" href="" ><i class="fa fa-angle-double-right"></i> Add New User</a></li>
-                                <li><a href="" id="existing_users"><i class="fa fa-angle-double-right"></i> Existing Users</a></li>
+                                <li><a href="" id="existingusers"><i class="fa fa-angle-double-right"></i> Existing Users</a></li>
                                
                             </ul>
                         </li>
@@ -297,8 +312,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="#addjob" id="addjob"><i class="fa fa-angle-double-right"></i> Add New Jobs</a></li>
-                                <li><a href="#alljobs"><i class="fa fa-angle-double-right"></i> Existing Jobs</a></li>
+                                <li><a href="" id="addjob"><i class="fa fa-angle-double-right"></i> Add New Jobs</a></li>
+                                <li><a href="" id="existingjobs"><i class="fa fa-angle-double-right"></i> Existing Jobs</a></li>
                                
                             </ul>
                         </li>
