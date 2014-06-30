@@ -4,21 +4,56 @@ var left_side_width = 220; //Sidebar width in pixels
 $(function() {
     "use strict";
 
+    $(".check_admin").click(function(e){
+      $(this).siblings(".dropdown-menu").show(500);
+        $(this).hide(500);
+        $(this).siblings(".check_admin1").show(500);
+      });
+    $(".check_admin1").click(function(e){
+      $(this).siblings(".dropdown-menu").hide(500);
+         $(this).hide(500);
+        $(this).siblings(".check_admin").show(500);
+      });
     //Enable sidebar toggle
     $("[data-toggle='offcanvas']").click(function(e) {
         e.preventDefault();
-
-        //If window is small enough, enable sidebar push menu
-        if ($(window).width() <= 992) {
-            $('.row-offcanvas').toggleClass('active');
-            $('.left-side').removeClass("collapse-left");
-            $(".right-side").removeClass("strech");
-            $('.row-offcanvas').toggleClass("relative");
-        } else {
-            //Else, enable content streching
-            $('.left-side').toggleClass("collapse-left");
-            $(".right-side").toggleClass("strech");
-        }
+        $(".left-side").hide(500);
+        $(this).hide(500);
+        $(this).siblings("[data-toggle='oncanvas']").show(500);
+      
+        $(".item_no_menu").removeClass("right-side",500);
+      //  $(".item_no_menu").toggleClass("right-side");
+//        //If window is small enough, enable sidebar push menu
+//        if ($(window).width() <= 992) {
+//            $('.row-offcanvas').toggleClass('active');
+//            $('.left-side').removeClass("collapse-left");
+//            $(".right-side").removeClass("strech");
+//            $('.row-offcanvas').toggleClass("relative");
+//        } else {
+//            //Else, enable content streching
+//            $('.left-side').toggleClass("collapse-left");
+//            $(".right-side").toggleClass("strech");
+//        }
+    });
+    $("[data-toggle='oncanvas']").click(function(e) {
+        e.preventDefault();
+        $(".left-side, .sidebar-offcanvas").show(500);
+       $(this).hide(500);
+        $(this).siblings("[data-toggle='offcanvas']").show(500);
+      
+        $(".item_no_menu").addClass("right-side",500);
+      //  $(".item_no_menu").toggleClass("right-side");
+//        //If window is small enough, enable sidebar push menu
+//        if ($(window).width() <= 992) {
+//            $('.row-offcanvas').toggleClass('active');
+//            $('.left-side').removeClass("collapse-left");
+//            $(".right-side").removeClass("strech");
+//            $('.row-offcanvas').toggleClass("relative");
+//        } else {
+//            //Else, enable content streching
+//            $('.left-side').toggleClass("collapse-left");
+//            $(".right-side").toggleClass("strech");
+//        }
     });
 
     //Add hover support for touch devices
@@ -36,18 +71,38 @@ $(function() {
      */
     $("[data-widget='collapse']").click(function() {
         //Find the box parent        
-        var box = $(this).parents(".box").first();
+
+        var box = $(this).parent().parent().parent();
+        $(this).hide();
+        $(this).siblings("[data-widget='expand']").show();
         //Find the body and the footer
         var bf = box.find(".box-body, .box-footer");
-        if (!box.hasClass("collapsed-box")) {
-            box.addClass("collapsed-box");
-            bf.slideUp();
-        } else {
-            box.removeClass("collapsed-box");
-            bf.slideDown();
-        }
+        bf.hide(500);
+        
+       // if (!box.hasClass("collapsed-box")) {
+//            box.addClass("collapsed-box");
+//            bf.slideUp();
+//        } else {
+//            box.removeClass("collapsed-box");
+//            bf.slideDown();
+//        }
     });
-
+    $("[data-widget='expand']").click(function() {
+        //Find the box parent        
+        var box = $(this).parent().parent().parent();
+          $(this).hide();
+        $(this).siblings("[data-widget='collapse']").show();
+        //Find the body and the footer
+        var bf = box.find(".box-body, .box-footer");
+        bf.show(500);
+       // if (!box.hasClass("collapsed-box")) {
+//            box.addClass("collapsed-box");
+//            bf.slideUp();
+//        } else {
+//            box.removeClass("collapsed-box");
+//            bf.slideDown();
+//        }
+    });
     /*
      * ADD SLIMSCROLL TO THE TOP NAV DROPDOWNS
      * ---------------------------------------
@@ -475,75 +530,78 @@ function change_skin(cls) {
  * USAGE:
  *  $("#box-widget").boxRefresh( options );
  * */
-(function($) {
-    "use strict";
-
-    $.fn.boxRefresh = function(options) {
-
-        // Render options
-        var settings = $.extend({
-            //Refressh button selector
-            trigger: ".refresh-btn",
-            //File source to be loaded (e.g: ajax/src.php)
-            source: "",
-            //Callbacks
-            onLoadStart: function(box) {
-            }, //Right after the button has been clicked
-            onLoadDone: function(box) {
-            } //When the source has been loaded
-
-        }, options);
-
-        //The overlay
-        var overlay = $('<div class="overlay"></div><div class="loading-img"></div>');
-
-        return this.each(function() {
-            //if a source is specified
-            if (settings.source === "") {
-                if (console) {
-                    console.log("Please specify a source first - boxRefresh()");
-                }
-                return;
-            }
-            //the box
-            var box = $(this);
-            //the button
-            var rBtn = box.find(settings.trigger).first();
-
-            //On trigger click
-            rBtn.click(function(e) {
-                e.preventDefault();
-                //Add loading overlay
-                start(box);
-
-                //Perform ajax call
-                box.find(".box-body").load(settings.source, function() {
-                    done(box);
-                });
-
-
-            });
-
-        });
-
-        function start(box) {
-            //Add overlay and loading img
-            box.append(overlay);
-
-            settings.onLoadStart.call(box);
-        }
-
-        function done(box) {
-            //Remove overlay and loading img
-            box.find(overlay).remove();
-
-            settings.onLoadDone.call(box);
-        }
-
-    };
-
-})(jQuery);
-
+//(function($) {
+//    "use strict";
+//
+//    $.fn.boxRefresh = function(options) {
+//
+//        // Render options
+//        var settings = $.extend({
+//            //Refressh button selector
+//            trigger: ".refresh-btn",
+//            //File source to be loaded (e.g: ajax/src.php)
+//            source: "",
+//            //Callbacks
+//            onLoadStart: function(box) {
+//            }, //Right after the button has been clicked
+//            onLoadDone: function(box) {
+//            } //When the source has been loaded
+//
+//        }, options);
+//
+//        //The overlay
+//        var overlay = $('<div class="overlay"></div><div class="loading-img"></div>');
+//
+//        return this.each(function() {
+//            //if a source is specified
+//            if (settings.source === "") {
+//                if (console) {
+//                    console.log("Please specify a source first - boxRefresh()");
+//                }
+//                return;
+//            }
+//            //the box
+//            var box = $(this);
+//            //the button
+//            var rBtn = box.find(settings.trigger).first();
+//
+//            //On trigger click
+//            rBtn.click(function(e) {
+//                e.preventDefault();
+//                //Add loading overlay
+//                start(box);
+//
+//                //Perform ajax call
+//                box.find(".box-body").load(settings.source, function() {
+//                    done(box);
+//                });
+//
+//
+//            });
+//
+//        });
+//
+//        function start(box) {
+//            //Add overlay and loading img
+//            box.append(overlay);
+//
+//            settings.onLoadStart.call(box);
+//        }
+//
+//        function done(box) {
+//            //Remove overlay and loading img
+//            box.find(overlay).remove();
+//
+//            settings.onLoadDone.call(box);
+//        }
+//
+//    };
+//
+//})(jQuery);
+$(".refresh-btn").click(function(e){
+    console.log("HappyHappy");
+    
+});
 /*
  * SIDEBAR MENU
  * ------------

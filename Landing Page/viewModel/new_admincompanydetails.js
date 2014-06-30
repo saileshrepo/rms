@@ -1,4 +1,4 @@
 var admincompanydetails= function(){
-    this.title= ko.observable();
-    this.desc= ko.observable();
+    this.title= ko.observable("Title");
+    this.desc= ko.observable("Description");
 };
