@@ -4,23 +4,13 @@
     <script src="../js/jquery.min.js"></script>
        <script>
             $(document).ready(function(e){
-                $("#show_details1, #show_details2, #show_details3, #show_details4").hide();
-                $("#view_details1").click(function(e){
+                $(".show_details").hide();
+                $(".view_details").click(function(e){
                 e.preventDefault();
-                $("#show_details1").toggle();
+                $(this).parent().parent().next().find(".show_details").toggle();
+                    $(this).find("i").toggleClass("fa-minus").toggleClass("fa-plus");
                 });
-                $("#view_details2").click(function(e){
-                e.preventDefault();
-                    $("#show_details2").toggle();
-                });
-                $("#view_details3").click(function(e){
-                e.preventDefault();
-                    $("#show_details3").toggle();
-                });
-                $("#view_details4").click(function(e){
-                e.preventDefault();
-                    $("#show_details4").toggle();
-                });
+                
             });
             </script>
     <script>
@@ -35,6 +25,10 @@
               $(".vacancy_details").click(function(e){ e.preventDefault();
                                                             $("#first0").append("<div id='xyz'></div>");
                                                                 $("#xyz").load("vacancy_details.html");
+                                                               });
+        $("#schedule2").click(function(e){ e.preventDefault();
+                                                            $("#first0").append("<div id='xyz'></div>");
+                                                                $("#xyz").load("round_schedule.html");
                                                                });
            
         </script>
@@ -63,10 +57,11 @@
                                     <table class="table table-hover">
                                     <tr>
                                     <td><i class="fa fa-check"></i> Vacancy for the post of Web Developer from PD Department</td>
-                                    <td><button class="btn btn-primary btn-sm" id="view_details1"><i id="icon1" class="fa fa-plus"></i></button></td>
+                                    <td><button class="btn btn-primary btn-sm view_details"><i id="icon1" class="fa fa-plus"></i></button></td>
                                     </tr>
                                         
-                                        <tr><td class="well" id="show_details1" style="text-align:center;" colspan="2"><table class="table table-hover">
+                                     
+                                            <tr class="sib-detail"><td class="well show_details" style="text-align:center;" colspan="2"><table class="table table-hover">
                                             <tr><td colspan="3" style="text-align:center;">Want to refer a candidate???<a href="" id="refer1"> Click here</a> to fill the Referral form</td></tr>
                                             <tr><td colspan="3" style="text-align:center;"><a href="" id="promote1">Promote</a> this job</td></tr>
                                                     <tr><td><strong>HR Screening</strong></td>
@@ -80,16 +75,16 @@
                                                          <td><button class="btn btn-primary btn-sm vacancy_details">View Details</button></td></tr>
                                             <tr><td><strong>Final HR Round</strong></td>
                                                         <td>Not Yet Started</td>
-                                                        <td>&nbsp;</td>
+                                                        <td><button class="btn btn-primary btn-sm vacancy_details">Schedule</button></td>
                                                         </tr>
                                             </table>  
                                             </td>
                                         </tr>
                                     <tr>
                                     <td><i class="fa fa-check"></i> Vacancy for the post of Analyst from QA Department</td>
-                                       <td><button class="btn btn-primary btn-sm" id="view_details2"><i class="fa fa-plus"></i></button></td>
+                                       <td><button class="btn btn-primary btn-sm view_details"><i class="fa fa-plus"></i></button></td>
                                     </tr>
-                                         <tr><td class="well" id="show_details2" style="text-align:center;" colspan="2"><table class="table table-hover">
+                                         <tr class="sib-detail"><td class="well show_details" style="text-align:center;" colspan="2"><table class="table table-hover">
                                             <tr><td colspan="3" style="text-align:center;">Want to refer a candidate???<a href="" id="refer2"> Click here</a> to fill the Referral form</td></tr>
                                             <tr><td colspan="3" style="text-align:center;"><a href="" id="promote2">Promote</a> this job</td></tr>
                                                     <tr><td><strong>HR Screening</strong></td>
@@ -99,8 +94,8 @@
                                                         <td>Started:15th of June</td>
                                                          <td><button class="btn btn-primary btn-sm vacancy_details">View Details</button></td></tr>
                                             <tr><td><strong>Technical Round2</strong></td>
-                                                        <td>Started:25th of June</td>
-                                                         <td><button class="btn btn-primary btn-sm vacancy_details">View Details</button></td></tr>
+                                                        <td>Not Yet Started</td>
+                                                        <td><button class="btn btn-primary btn-sm vacancy_details" id="schedule2">Schedule</button></td></tr>
                                             <tr><td><strong>Final HR Round</strong></td>
                                                         <td>Not Yet Started</td>
                                                         <td>&nbsp;</td>
@@ -110,9 +105,9 @@
                                         </tr>
                                     <tr>
                                     <td><i class="fa fa-check"></i> Vacancy for the post of Senior HR from HR Department</td>
-                                      <td><button class="btn btn-primary btn-sm" id="view_details3"><i class="fa fa-plus"></i></button></td>
+                                      <td><button class="btn btn-primary btn-sm view_details"><i class="fa fa-plus"></i></button></td>
                                     </tr>
-                                         <tr><td class="well" id="show_details3" style="text-align:center;" colspan="2"><table class="table table-hover">
+                                         <tr><td class="well show_details" style="text-align:center;" colspan="2"><table class="table table-hover">
                                             <tr><td colspan="3" style="text-align:center;">Want to refer a candidate???<a href="" id="refer3"> Click here</a> to fill the Referral form</td></tr>
                                             <tr><td colspan="3" style="text-align:center;"><a href="" id="promote3">Promote</a> this job</td></tr>
                                                     <tr><td><strong>HR Screening</strong></td>
@@ -133,9 +128,9 @@
                                         </tr>
                                     <tr>
                                     <td><i class="fa fa-check"></i> Vacancy for the post of Project Manager from PD Department</td>
-                                    <td><button class="btn btn-primary btn-sm" id="view_details4"><i class="fa fa-plus"></i></button></td>
+                                    <td><button class="btn btn-primary btn-sm view_details"><i class="fa fa-plus"></i></button></td>
                                     </tr>
-                                         <tr><td class="well" id="show_details4" style="text-align:center;" colspan="2"><table class="table table-hover">
+                                         <tr><td class="well show_details" style="text-align:center;" colspan="2"><table class="table table-hover">
                                             <tr><td colspan="3" style="text-align:center;">Want to refer a candidate???<a href="http://google.com" id="refer4"> Click here</a> to fill the Referral form</td></tr>
                                             <tr><td colspan="3" style="text-align:center;"><a href="" id="promote4">Promote</a> this job</td></tr>
                                                     <tr><td><strong>HR Screening</strong></td>

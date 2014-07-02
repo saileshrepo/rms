@@ -7,15 +7,7 @@
             <script src="../js/tagit/tagit.js"></script>
             <link href="../css/tag/tagit-blue.css" rel="stylesheet"/>
             
-            <script>
-                $(document).ready(function(e){
-            $("#skills_select").tagit({
-                triggerKeys:['enter', 'comma', 'tab'],
-                editable:true,
-                sortable:true
-            });
-                });
-            </script>
+     
            </head>
         <body>
 					<!-- Add Job form -->
@@ -53,7 +45,7 @@
 										<div class="form-group">
                                             <label>Skills Required</label>
                                            <ul id="skills_select" class="list-group"></ul></div>
-<!--											<a>Add Skills >>> </a>-->
+
                                         
 										<!-- textarea -->
                                         <div class="form-group">
@@ -87,6 +79,15 @@
             <!-- AdminLTE App -->
             <script src="../js/prorecruit/app.js" type="text/javascript"></script>
 			 <script src="../js/prorecruit/demo.js" type="text/javascript"></script>
+                   <script>
+                $(document).ready(function(e){
+            $("#skills_select").tagit({
+                triggerKeys:['enter', 'comma', 'tab'],
+                editable:true,
+                sortable:true
+            });
+                });
+            </script>
             <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
             <script src="../js/prorecruit/dashboard.js" type="text/javascript"></script>     
           </body>

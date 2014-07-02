@@ -2,6 +2,9 @@
 <html>
 <head>
 <script src="../js/jquery.min.js"></script>
+     <script src="../js/jquery-ui-1.10.3.min.js"></script>
+            <script src="../js/tagit/tagit.js"></script>
+            <link href="../css/tag/tagit-blue.css" rel="stylesheet"/>
 </head>
 <body>
     <!-- Employee Requisition Form-->
@@ -116,12 +119,8 @@
                                                     <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
                                                 </div>
 										        <div class="form-group">
-                                                    <label>Select Skillset (for multiple press shift and click)</label>
-                                                    <select multiple="" class="form-control">
-                                                        <option>Dot Net</option>
-                                                        <option>HTML5</option>
-                                                        <option>CSS3</option>
-                                                    </select>
+                                                    <label>Skills Required</label>
+                                                        <ul id="skills_select" class="list-group"></ul>
                                                 </div>
 										        <div class="form-group">
                                                     <label>Justify why internal reorganization is not possible</label>
@@ -140,6 +139,16 @@
 								        </div><!-- /erf-->	
             </section>
         
+    <script>
+                $(document).ready(function(e){
+            $("#skills_select").tagit({
+                triggerKeys:['enter', 'comma', 'tab'],
+                editable:true,
+                sortable:true
+            });
+                });
+            </script>
+    
    <!-- jQuery 2.0.2 -->
       <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <!-- jQuery UI 1.10.3 -->

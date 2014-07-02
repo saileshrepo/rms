@@ -6,13 +6,13 @@ $(function() {
 
     $(".check_admin").click(function(e){
       $(this).siblings(".dropdown-menu").show(500);
-        $(this).hide(500);
-        $(this).siblings(".check_admin1").show(500);
+        $(this).hide();
+        $(this).siblings(".check_admin1").show();
       });
     $(".check_admin1").click(function(e){
       $(this).siblings(".dropdown-menu").hide(500);
-         $(this).hide(500);
-        $(this).siblings(".check_admin").show(500);
+         $(this).hide();
+        $(this).siblings(".check_admin").show();
       });
     //Enable sidebar toggle
     $("[data-toggle='offcanvas']").click(function(e) {
@@ -174,8 +174,8 @@ $(function() {
      * iCheck plugin in.
      * You can find the documentation at http://fronteed.com/iCheck/
      */
-    $("input[type='checkbox'], input[type='radio']").iCheck({
-        checkboxClass: 'icheckbox_minimal',
+    $(" input[type='radio']").iCheck({
+        //checkboxClass: 'icheckbox_minimal',
         radioClass: 'iradio_minimal'
     });
 

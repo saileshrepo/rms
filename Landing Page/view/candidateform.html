@@ -1,0 +1,258 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+             <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+            <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		
+    <script src="../js/jquery.min.js"></script>
+            <script src="../js/jquery-ui-1.10.3.min.js"></script>
+            <script src="../js/tagit/tagit.js"></script>
+            <link href="../css/tag/tagit-blue.css" rel="stylesheet"/>
+            
+     
+           </head>
+        <body>
+	
+ <div class="container">
+     
+    
+                            
+                            
+                                <div class="box-header">
+                                  
+                                    
+                                        <h3 class="box-title"><i class="fa fa-pencil"></i>&nbsp;Candidate Form</h3>
+                                 </div><!-- /.box-header -->
+                                <div class="box-body">
+                                       <div id="candidateform" class="nav-tabs-custom">
+                                <!-- Tabs within a box -->
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#personal" data-toggle="tab">Personal</a></li>
+                                    <li><a href="#edu" data-toggle="tab">Qualifications</a></li>
+                                    <li><a href="#company_details" data-toggle="tab">Skills and Previous Works</a></li>
+                                    <li><a href="#agreement" data-toggle="tab">Agreement</a></li>
+                                    
+                                </ul></div><br>
+								 <div class="tab-content no-padding">
+                                  
+                                    <div class="  tab-pane active" id="personal" style="position: relative;">
+                                
+                                  
+                                        <div class="form-group col-lg-4">
+                                            <label for="position">Position Applied</label>
+                                            <select id="position"><option value="web">Web Developer</option>
+                                            <option value="se">Software Engineer</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group pull-right col-lg-2 col-lg-offset-6">
+                                            <label for="f_name">Referral Code</label>
+                                            <input type="text" id="ref_code"/>
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label for="f_name">First Name</label>
+                                            <input type="text" class="form-control save1" id="f_name"  placeholder="First Name">
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                            <label for="l_name">Last Name</label>
+                                            <input type="text" class="form-control save1" id="l_name"  placeholder="Last Name">
+                                        </div>
+                                        <div class="form-group col-lg-12">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" id="email" class="save" placeholder="you@yourdomian.com">
+                                        </div><div class="form-group col-lg-6">
+                                            <label for="exp">Experience</label>
+                                            <input type="text" class="form-control" id="exp" placeholder="">
+                                        </div><div class="form-group col-lg-6">
+                                            <label for="coontact_no">Contact Number</label>
+                                            <input type="text" class="form-control" id="contact_no" placeholder="">
+                                        </div><div class="form-group col-lg-12">
+                                            <label for="gender">Gender</label>&nbsp;&nbsp;
+                                            <input type="radio" id="gender" name="sex" value="Male" >Male</input>&nbsp;&nbsp;
+                                            <input type="radio" id="gender" value="Female" name="sex">Female</input>
+                                        </div><div class="form-group col-lg-12">
+                                            <label for="place">Present Location</label>
+                                            <input type="text" class="form-control" id="place" placeholder="">
+                                        </div><div class="form-group col-lg-6">
+                                            <label for="salary">Current Salary</label>
+                                            <input type="text" class="form-control" id="salary" placeholder="">
+                                        </div><div class="form-group col-lg-6">
+                                            <label for="ctc">Expected Salary(CTC)</label>
+                                            <input type="text" class="form-control" id="ctc" placeholder="">
+                                        </div><div class="form-group col-lg-6">
+                                            <label for="notice_period">Notice Period</label>
+                                            <input type="text" class="form-control" id="notice_period" placeholder="">
+                                        </div>
+                                        <div class="form-group col-lg-12">
+                                            <label for="language">Language Known</label>
+                                            <ul id="lang" class="list-group"></ul>
+
+                                        </div>
+                                </div>
+                            
+                                        
+<!-- EDU-->
+                          <div class="  tab-pane " id="edu" style="position: relative;">
+                                        <table class=" form-group table table-hover table-condensed table-responsive col-lg-12">
+                                            <tr>
+                                                <th>Qualification</th>
+                                                <th>10th</th>
+                                                <th>12th</th>
+                                                <th>Graduate</th>
+                                                <th>Post. Graduate</th>
+                                            </tr>
+                                            <tr>
+                                                <th>Board</th>
+                                                <td><input type="text" class="form-control"/></td>
+                                                <td><input type="text" class="form-control"/></td>
+                                                <td><input type="text" class="form-control"/></td>
+                                                <td><input type="text" class="form-control"/></td>
+                                             </tr>
+                                             <tr>
+                                                <th>Percentage</th>
+                                                <td><input type="text" class="form-control"/></td>
+                                                <td><input type="text" class="form-control"/></td>
+                                                <td><input type="text" class="form-control"/></td>
+                                                <td><input type="text" class="form-control"/></td>
+                                             </tr>
+                                        </table>
+                                        <hr><hr>
+                                        <div class="form-group col-lg-12">
+                                            <label for="cert">Certifications</label>
+                                            <textarea rows="3" class="form-control" id="cart" placeholder="" ></textarea>
+                                        </div>
+                                        <div class="form-group col-lg-12">
+                                            <label for="achiev">Achievements</label>
+                                            <textarea rows="3" class="form-control" id="achiev" placeholder=""></textarea>
+                                        </div>
+                            </div>
+
+<!--/EDU-->
+<!--Company Details -->
+                                       <div class="  tab-pane" id="company_details" style="position: relative;">
+                                           <table class="table table-hover table-responsive">
+                                            <tr>
+                                                <th>Skills Known</th>
+                                                <th>Rate Yourself(1-5)</th>
+                                                <th>Years of Experience</th>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" class="form-control"></td>
+                                                <td><input type="text" class="form-control"></td>
+                                                <td><input type="text" class="form-control"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="text" class="form-control"></td>
+                                                <td><input type="text" class="form-control"></td>
+                                                <td><input type="text" class="form-control"></td>
+                                            </tr>
+                                               <tr>
+                                                <td><input type="text" class="form-control"></td>
+                                                <td><input type="text" class="form-control"></td>
+                                                <td><input type="text" class="form-control"></td>
+                                            </tr>
+                                               <tr>
+                                                <td><input type="text" class="form-control"></td>
+                                                <td><input type="text" class="form-control"></td>
+                                                <td><input type="text" class="form-control"></td>
+                                            </tr>
+                                               <tr>
+                                                <td><input type="text" class="form-control"></td>
+                                                <td><input type="text" class="form-control"></td>
+                                                <td><input type="text" class="form-control"></td>
+                                            </tr>
+                                               <tr>
+                                                <td><input type="text" class="form-control"></td>
+                                                <td><input type="text" class="form-control"></td>
+                                                <td><input type="text" class="form-control"></td>
+                                            </tr>
+                                             </table>
+                                        
+                                            <hr> 
+                                        <table class="table table-hover col-lg-12">
+                                        <tr>
+                                            <th>Companies</th>
+                                            <th>Role Played</th>
+                                            <th>Reason for Leaving</th>
+                                            <th>From Date to Date</th>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" class="form-control"></td>
+                                            <td><input type="text" class="form-control"></td>
+                                            <td><input type="text" class="form-control"></td>
+                                            <td><input type="date" class="form-control"><input type="date" class="form-control"></td>
+                                        </tr>
+                                            <tr>
+                                            <td><input type="text" class="form-control"></td>
+                                            <td><input type="text" class="form-control"></td>
+                                            <td><input type="text" class="form-control"></td>
+                                            <td><input type="date" class="form-control"><input type="date" class="form-control"></td>
+                                        </tr>
+                                        </table>
+                                           <hr>
+                                        </div>
+<!--company Details-->
+
+                                  
+                                    <div class="  tab-pane" id="agreement" style="position: relative;">
+                                           
+                                        <div class="form-group col-lg-12">
+                                            <label for="resume">Upload Resume</label><br>
+                                            <input type="file" id="resume">
+                                            <p class="help-block">Upload PDF File (Max Size: 3MB)</p>
+                                        </div>
+                                        
+                                         <div class="form-group checkbox col-lg-12">
+                                           <h4>Declaration</h4>
+                                            <label >
+                                                I hereby declare that the above written particular are true to the best of my knowledge and belief.
+                                            </label>
+                                        </div>
+                                        <div class="form-group col-lg-12">
+                                           
+                                            <label >
+                                                 <input type="checkbox"  value=""/> By filling up the form, I agree to the terms and conditions of ProcessMAP Pvt. Infotech Ltd.
+                                            </label>
+                                        </div>
+                                          <div class="box-footer">
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+										          
+										            <button type="button" class="btn btn-danger">Cancel</button>
+                                               </div>	
+                                    </div></div></div>
+                                    
+ </div>
+                            
+<!--/Candidate Form-->
+   <!-- jQuery 2.0.2 -->
+      <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <!-- jQuery UI 1.10.3 -->
+<script src="../js/jquery-ui-1.10.3.min.js"></script>
+<script>
+    console.log("Enter");
+$("[type='submit']").click(function(e){
+    console.log("clicked");
+    e.preventDefault();
+    var that=$('.save');
+    sessionStorage.setItem(that.attr('id'),that.val());
+});</script>
+
+    
+        <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+
+
+ <script>
+                $(document).ready(function(e){
+            $("#lang").tagit({
+                triggerKeys:['enter', 'comma', 'tab'],
+                editable:true,
+                sortable:true
+            });
+                });
+            </script>
+
+
+            <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+            <script src="../js/prorecruit/dashboard.js" type="text/javascript"></script> 
+ 
+          </body>
+    </html>      
