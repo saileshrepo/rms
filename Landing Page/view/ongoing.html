@@ -15,22 +15,25 @@
             </script>
     <script>
       $("#refer1, #refer2, #refer3, #refer4").click(function(e){ e.preventDefault();
-                                                            $("#first0").append("<div id='xyz'></div>");
+                                                            $("#first0").after("<div id='xyz'></div>");
                                                                 $("#xyz").load("refer.html");
                                                                });
       $("#promote1, #promote2, #promote3, #promote4").click(function(e){ e.preventDefault();
-                                                            $("#first0").append("<div id='abc'></div>");
+                                                            $("#first0").after("<div id='abc'></div>");
                                                                 $("#abc").load("promote.html");
                                                                });
               $(".vacancy_details").click(function(e){ e.preventDefault();
-                                                            $("#first0").append("<div id='xyz'></div>");
+                                                            $("#first0").after("<div id='xyz'></div>");
                                                                 $("#xyz").load("vacancy_details.html");
                                                                });
-        $("#schedule2").click(function(e){ e.preventDefault();
-                                                            $("#first0").append("<div id='xyz'></div>");
+        $(".schedule").click(function(e){ e.preventDefault();
+                                                            $("#first0").after("<div id='xyz'></div>");
                                                                 $("#xyz").load("round_schedule.html");
                                                                });
-           
+         $(".closeit").click(function(e){ e.preventDefault();
+                                                            $("#first0").append("<div id='xyz'></div>");
+                                                                $("#xyz").load("close_position.html");
+                                                               });  
         </script>
     </head>
     <body>
@@ -56,7 +59,7 @@
                       <div class="box-body table-responsive no-padding">
                                     <table class="table table-hover">
                                     <tr>
-                                    <td><i class="fa fa-check"></i> Vacancy for the post of Web Developer from PD Department</td>
+                                    <td><i class="fa fa-adjust"></i> Vacancy for the post of Web Developer from PD Department</td>
                                     <td><button class="btn btn-primary btn-sm view_details"><i id="icon1" class="fa fa-plus"></i></button></td>
                                     </tr>
                                         
@@ -66,7 +69,7 @@
                                             <tr><td colspan="3" style="text-align:center;"><a href="" id="promote1">Promote</a> this job</td></tr>
                                                     <tr><td><strong>HR Screening</strong></td>
                                                         <td>Started:5th of June</td>
-                                                         <td><button class="btn btn-primary btn-sm vacancy_details">View Details</button></td></tr>
+                                                         <td ><button class="btn btn-primary btn-sm vacancy_details">View Details</button></td></tr>
                                                     <tr><td><strong>Technical Round1</strong></td>
                                                         <td>Started:15th of June</td>
                                                          <td><button class="btn btn-primary btn-sm vacancy_details">View Details</button></td></tr>
@@ -75,13 +78,13 @@
                                                          <td><button class="btn btn-primary btn-sm vacancy_details">View Details</button></td></tr>
                                             <tr><td><strong>Final HR Round</strong></td>
                                                         <td>Not Yet Started</td>
-                                                        <td><button class="btn btn-primary btn-sm vacancy_details">Schedule</button></td>
+                                                        <td><button class="btn btn-primary btn-sm schedule">Schedule</button></td>
                                                         </tr>
                                             </table>  
                                             </td>
                                         </tr>
                                     <tr>
-                                    <td><i class="fa fa-check"></i> Vacancy for the post of Analyst from QA Department</td>
+                                    <td><i class="fa fa-adjust"></i> Vacancy for the post of Analyst from QA Department</td>
                                        <td><button class="btn btn-primary btn-sm view_details"><i class="fa fa-plus"></i></button></td>
                                     </tr>
                                          <tr class="sib-detail"><td class="well show_details" style="text-align:center;" colspan="2"><table class="table table-hover">
@@ -89,22 +92,23 @@
                                             <tr><td colspan="3" style="text-align:center;"><a href="" id="promote2">Promote</a> this job</td></tr>
                                                     <tr><td><strong>HR Screening</strong></td>
                                                         <td>Started:5th of June</td>
-                                                         <td><button class="btn btn-primary btn-sm vacancy_details">View Details</button></td></tr>
+                                                         <td style="text-align:center;"><button class="btn btn-primary btn-sm vacancy_details">View Details</button></td></tr>
                                                     <tr><td><strong>Technical Round1</strong></td>
                                                         <td>Started:15th of June</td>
-                                                         <td><button class="btn btn-primary btn-sm vacancy_details">View Details</button></td></tr>
+                                                         <td  style="text-align:center;"><button class="btn btn-primary btn-sm vacancy_details">View Details</button></td></tr>
                                             <tr><td><strong>Technical Round2</strong></td>
-                                                        <td>Not Yet Started</td>
-                                                        <td><button class="btn btn-primary btn-sm vacancy_details" id="schedule2">Schedule</button></td></tr>
+                                                        <td>Started: 1st July</td>
+                                                        <td  style="text-align:center;"><button class="btn btn-primary btn-sm vacancy_details">View Details</button></td></tr>
                                             <tr><td><strong>Final HR Round</strong></td>
-                                                        <td>Not Yet Started</td>
-                                                        <td>&nbsp;</td>
+                                                        <td>Started: 5th of July</td>
+                                                        <td style="text-align:center;"><button class="btn btn-primary btn-sm vacancy_details" >View Details</button>
+                                                <button class="btn btn-warning btn-sm closeit">Close Vacancy</button></td>
                                                         </tr>
                                             </table>  
                                             </td>
                                         </tr>
                                     <tr>
-                                    <td><i class="fa fa-check"></i> Vacancy for the post of Senior HR from HR Department</td>
+                                    <td><i class="fa fa-adjust"></i> Vacancy for the post of Senior HR from HR Department</td>
                                       <td><button class="btn btn-primary btn-sm view_details"><i class="fa fa-plus"></i></button></td>
                                     </tr>
                                          <tr><td class="well show_details" style="text-align:center;" colspan="2"><table class="table table-hover">
@@ -121,13 +125,13 @@
                                                          <td><button class="btn btn-primary btn-sm vacancy_details">View Details</button></td></tr>
                                             <tr><td><strong>Final HR Round</strong></td>
                                                         <td>Not Yet Started</td>
-                                                        <td>&nbsp;</td>
+                                                        <td><button class="btn btn-primary btn-sm schedule">Schedule</button></td>
                                                         </tr>
                                             </table>  
                                             </td>
                                         </tr>
                                     <tr>
-                                    <td><i class="fa fa-check"></i> Vacancy for the post of Project Manager from PD Department</td>
+                                    <td><i class="fa fa-adjust"></i> Vacancy for the post of Project Manager from PD Department</td>
                                     <td><button class="btn btn-primary btn-sm view_details"><i class="fa fa-plus"></i></button></td>
                                     </tr>
                                          <tr><td class="well show_details" style="text-align:center;" colspan="2"><table class="table table-hover">
@@ -144,7 +148,7 @@
                                                          <td><button class="btn btn-primary btn-sm vacancy_details">View Details</button></td></tr>
                                             <tr><td><strong>Final HR Round</strong></td>
                                                         <td>Not Yet Started</td>
-                                                        <td>&nbsp;</td>
+                                                        <td><button class="btn btn-primary btn-sm schedule">Schedule</button></td>
                                                         </tr>
                                             </table>  
                                             </td>

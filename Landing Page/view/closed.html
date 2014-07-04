@@ -4,23 +4,17 @@
     <script src="../js/jquery.min.js"></script>
       <script>
             $(document).ready(function(e){
-                $("#closed_details1, #closed_details2, #closed_details3, #closed_details4").hide();
-                $("#closed1").click(function(e){
+                $(".closed_details").hide();
+             $(".closed").click(function(e){
                 e.preventDefault();
-                $("#closed_details1").toggle();
+                $(this).parent().parent().next().find(".closed_details").toggle();
+                    $(this).find("i").toggleClass("fa-minus").toggleClass("fa-plus");
                 });
-               $("#closed2").click(function(e){
-                e.preventDefault();
-                    $("#closed_details2").toggle();
-                });
-                $("#closed3").click(function(e){
-                e.preventDefault();
-                    $("#closed_details3").toggle();
-                });
-                $("#closed4").click(function(e){
-                e.preventDefault();
-                    $("#closed_details4").toggle();
-                });
+                $(".candidate").click(function(e){ e.preventDefault();
+                                                            $("#first0").append("<div id='xyz'></div>");
+                                                                $("#xyz").load("cpage.html");
+                                                               });
+                
             });
             </script>
     </head>
@@ -46,58 +40,58 @@
                        <div class="box-body table-responsive no-padding">
                                     <table class="table table-hover">
                                     <tr>
-                                    <td><i class="fa fa-check"></i> Vacancy for the post of Web Developer from PD Department</td>
-                                    <td><button class="btn btn-primary btn-sm" id="closed1"><i id="icon1" class="fa fa-plus"></i></button></td>
+                                    <td><i class="fa  fa-check-circle"></i> Vacancy for the post of Web Developer from PD Department</td>
+                                    <td><button class="btn btn-primary btn-sm closed"><i class="fa fa-plus"></i></button></td>
                                     </tr>
                                         
-                                       <tr><td class="well" id="closed_details1" style="text-align:center;" colspan="2"><table class="table table-hover">
+                                       <tr><td class="well closed_details" style="text-align:center;" colspan="2"><table class="table table-hover">
                                             <tr><td style="text-align:center;">Closed on: 20.10.2014</td></tr>
                                             
-                                                    <tr><td style="text-align:center;"><strong><a href="" id="candidate1">S Sinha</a></strong></td></tr>
-                                                    <tr><td style="text-align:center;"><strong><a href="" id="candidate2">P Srivastava</a></strong></td></tr>
-                                                    <tr><td style="text-align:center;"><strong><a href="" id="candidate3">R Gupta</a></strong></td></tr>
+                                                    <tr><td style="text-align:center;"><strong><a href="" class="candidate">S Sinha</a></strong></td></tr>
+                                                    <tr><td style="text-align:center;"><strong><a href="" class="candidate">P Srivastava</a></strong></td></tr>
+                                                    <tr><td style="text-align:center;"><strong><a href="" class="candidate">R Gupta</a></strong></td></tr>
+                                                    </table>  
+                                            </td>
+                                        </tr>
+                                       <tr>
+                                    <td><i class="fa  fa-check-circle"></i> Vacancy for the post of Web Developer from PD Department</td>
+                                    <td><button class="btn btn-primary btn-sm closed"><i class="fa fa-plus"></i></button></td>
+                                    </tr>
+                                        
+                                       <tr><td class="well closed_details" style="text-align:center;" colspan="2"><table class="table table-hover">
+                                            <tr><td style="text-align:center;">Closed on: 20.10.2014</td></tr>
+                                            
+                                                    <tr><td style="text-align:center;"><strong><a href="" class="candidate">S Sinha</a></strong></td></tr>
+                                                    <tr><td style="text-align:center;"><strong><a href="" class="candidate">P Srivastava</a></strong></td></tr>
+                                                    <tr><td style="text-align:center;"><strong><a href="" class="candidate">R Gupta</a></strong></td></tr>
                                                     </table>  
                                             </td>
                                         </tr>
                                     <tr>
-                                    <td><i class="fa fa-check"></i> Vacancy for the post of Analyst from QA Department</td>
-                                       <td><button class="btn btn-primary btn-sm" id="closed2"><i id="icon1" class="fa fa-plus"></i></button></td>
+                                    <td><i class="fa  fa-check-circle"></i> Vacancy for the post of Senior HR from HR Department</td>
+                                      <td><button class="btn btn-primary btn-sm closed"><i class="fa fa-plus"></i></button></td>
                                     </tr>
                                         
-                                       <tr><td class="well" id="closed_details2" style="text-align:center;" colspan="2"><table class="table table-hover">
+                                       <tr><td class="well closed_details" style="text-align:center;" colspan="2"><table class="table table-hover">
                                             <tr><td style="text-align:center;">Closed on: 20.10.2014</td></tr>
                                             
-                                                    <tr><td style="text-align:center;"><strong><a href="" id="candidate1">S Sinha</a></strong></td></tr>
-                                                    <tr><td style="text-align:center;"><strong><a href="" id="candidate2">P Srivastava</a></strong></td></tr>
-                                                    <tr><td style="text-align:center;"><strong><a href="" id="candidate3">R Gupta</a></strong></td></tr>
+                                                    <tr><td style="text-align:center;"><strong><a href="" class="candidate">S Sinha</a></strong></td></tr>
+                                                    <tr><td style="text-align:center;"><strong><a href="" class="candidate">P Srivastava</a></strong></td></tr>
+                                                    <tr><td style="text-align:center;"><strong><a href="" class="candidate">R Gupta</a></strong></td></tr>
                                                     </table>  
                                             </td>
                                         </tr>
                                     <tr>
-                                    <td><i class="fa fa-check"></i> Vacancy for the post of Senior HR from HR Department</td>
-                                      <td><button class="btn btn-primary btn-sm" id="closed3"><i id="icon1" class="fa fa-plus"></i></button></td>
+                                    <td><i class="fa  fa-check-circle"></i> Vacancy for the post of Web Developer from PD Department</td>
+                                    <td><button class="btn btn-primary btn-sm closed"><i class="fa fa-plus"></i></button></td>
                                     </tr>
                                         
-                                       <tr><td class="well" id="closed_details3" style="text-align:center;" colspan="2"><table class="table table-hover">
+                                       <tr><td class="well closed_details" style="text-align:center;" colspan="2"><table class="table table-hover">
                                             <tr><td style="text-align:center;">Closed on: 20.10.2014</td></tr>
                                             
-                                                    <tr><td style="text-align:center;"><strong><a href="" id="candidate1">S Sinha</a></strong></td></tr>
-                                                    <tr><td style="text-align:center;"><strong><a href="" id="candidate2">P Srivastava</a></strong></td></tr>
-                                                    <tr><td style="text-align:center;"><strong><a href="" id="candidate3">R Gupta</a></strong></td></tr>
-                                                    </table>  
-                                            </td>
-                                        </tr>
-                                    <tr>
-                                    <td><i class="fa fa-check"></i> Vacancy for the post of Project Manager from PD Department</td>
-                                  <td><button class="btn btn-primary btn-sm" id="closed4"><i id="icon1" class="fa fa-plus"></i></button></td>
-                                    </tr>
-                                        
-                                       <tr><td class="well" id="closed_details4" style="text-align:center;" colspan="2"><table class="table table-hover">
-                                            <tr><td style="text-align:center;">Closed on: 20.10.2014</td></tr>
-                                            
-                                                    <tr><td style="text-align:center;"><strong><a href="" id="candidate1">S Sinha</a></strong></td></tr>
-                                                    <tr><td style="text-align:center;"><strong><a href="" id="candidate2">P Srivastava</a></strong></td></tr>
-                                                    <tr><td style="text-align:center;"><strong><a href="" id="candidate3">R Gupta</a></strong></td></tr>
+                                                    <tr><td style="text-align:center;"><strong><a href="" class="candidate">S Sinha</a></strong></td></tr>
+                                                    <tr><td style="text-align:center;"><strong><a href="" class="candidate">P Srivastava</a></strong></td></tr>
+                                                    <tr><td style="text-align:center;"><strong><a href="" class="candidate">R Gupta</a></strong></td></tr>
                                                     </table>  
                                             </td>
                                         </tr>

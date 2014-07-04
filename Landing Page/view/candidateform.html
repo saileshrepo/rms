@@ -8,6 +8,8 @@
             <script src="../js/jquery-ui-1.10.3.min.js"></script>
             <script src="../js/tagit/tagit.js"></script>
             <link href="../css/tag/tagit-blue.css" rel="stylesheet"/>
+       
+          
             
      
            </head>
@@ -129,66 +131,57 @@
 <!--/EDU-->
 <!--Company Details -->
                                        <div class="  tab-pane" id="company_details" style="position: relative;">
-                                           <table class="table table-hover table-responsive">
-                                            <tr>
+                                           <div id="ko-skills">
+                                            <table class="table table-hover table-responsive">
+                                            <thead><tr>
                                                 <th>Skills Known</th>
                                                 <th>Rate Yourself(1-5)</th>
                                                 <th>Years of Experience</th>
                                             </tr>
+                                                </thead>
+                                            <tbody data-bind="foreach:skills">
                                             <tr>
-                                                <td><input type="text" class="form-control"></td>
-                                                <td><input type="text" class="form-control"></td>
-                                                <td><input type="text" class="form-control"></td>
+                                                <td><input type="text" class="form-control" data-bind="value:name"></td>
+                                                <td>
+                                                    <div class="form-control rate-skill" data-bind="value:rate"></div>                                
+                                                </td>
+                                                <td><input type="text" class="form-control" data-bind="value:exp"></td>
+                                                <td><a href="#" data-bind="click:$root.removeSkill"><button class="btn btn-info"><i class="fa fa-minus-square-o"></i></button></a></td>
                                             </tr>
-                                            <tr>
-                                                <td><input type="text" class="form-control"></td>
-                                                <td><input type="text" class="form-control"></td>
-                                                <td><input type="text" class="form-control"></td>
-                                            </tr>
-                                               <tr>
-                                                <td><input type="text" class="form-control"></td>
-                                                <td><input type="text" class="form-control"></td>
-                                                <td><input type="text" class="form-control"></td>
-                                            </tr>
-                                               <tr>
-                                                <td><input type="text" class="form-control"></td>
-                                                <td><input type="text" class="form-control"></td>
-                                                <td><input type="text" class="form-control"></td>
-                                            </tr>
-                                               <tr>
-                                                <td><input type="text" class="form-control"></td>
-                                                <td><input type="text" class="form-control"></td>
-                                                <td><input type="text" class="form-control"></td>
-                                            </tr>
-                                               <tr>
-                                                <td><input type="text" class="form-control"></td>
-                                                <td><input type="text" class="form-control"></td>
-                                                <td><input type="text" class="form-control"></td>
-                                            </tr>
+                                            </tbody>
+                                                
                                              </table>
-                                        
-                                            <hr> 
-                                        <table class="table table-hover col-lg-12">
-                                        <tr>
+                                        <a href="#" data-bind=" click:addSkill" ><i class="fa fa-plus fa-lg"></i>Add Skills</a>   
+                                        </div>
+                                           
+                                            <hr>
+                                           <div id="ko-company">
+                                        <table class="table table-hover col-lg-12 table-responsive ">
+                                        <thead>
+                                            <tr>
                                             <th>Companies</th>
                                             <th>Role Played</th>
                                             <th>Reason for Leaving</th>
                                             <th>From Date to Date</th>
                                         </tr>
+                                        </thead>
+                                        <tbody data-bind="foreach:company">
                                         <tr>
-                                            <td><input type="text" class="form-control"></td>
-                                            <td><input type="text" class="form-control"></td>
-                                            <td><input type="text" class="form-control"></td>
-                                            <td><input type="date" class="form-control"><input type="date" class="form-control"></td>
+                                            <td><input type="text" class="form-control" data-bind="value:name"></td>
+                                            <td><input type="text" class="form-control" data-bind="value:role"></td>
+                                            <td><input type="text" class="form-control" data-bind="value:reason"></td>
+                                            <td><input type="text" class="form-control" data-bind="value:fromdate">
+                                                <input type="date" class="form-control" data-bind="value:todate">
+                                            </td>
+                                            <td><a href="#" data-bind="click:$root.removeCompanyDetail">
+                                                    <button class="btn btn-info"><i class="fa fa-minus-square-o"></i></button>
+                                                </a>
+                                            </td>
                                         </tr>
-                                            <tr>
-                                            <td><input type="text" class="form-control"></td>
-                                            <td><input type="text" class="form-control"></td>
-                                            <td><input type="text" class="form-control"></td>
-                                            <td><input type="date" class="form-control"><input type="date" class="form-control"></td>
-                                        </tr>
+                                        </tbody>
                                         </table>
-                                           <hr>
+                                           <a href="#" data-bind="click:addCompanyDetail" ><i class="fa fa-plus fa-lg"></i>Add Company</a>
+                                           </div><hr>
                                         </div>
 <!--company Details-->
 
@@ -248,7 +241,43 @@ $("[type='submit']").click(function(e){
                 sortable:true
             });
                 });
+            </script><script src="../js/knockout.js"></script>
+            <script src="../viewModel/vm_candidateform.js"></script>
+         
+            <script>
+                $(document).ready(function() {
+           
+                    ko.applyBindings(viewModel1, $("#ko-skills")[0] );
+                    ko.applyBindings(viewModel2, $("#ko-company")[0] );
+                   
+      
+                    }); 
+        
             </script>
+<script>
+        $(document).ready(function(e){
+                $('div.rate-skill').css("cursor","pointer");
+                var i;
+                for(i=1;i<6;i++){
+                    $('div.rate-skill').append('<img alt='+i+' src="../img/star-off.png" class="rating"></img>');
+                }
+                $('div.rate-skill').append('<input type="hidden" value=""/>');     
+
+        });
+              $(document).ready(function(){
+                    $('div img.rating').click(function(e){
+                        console.log("Hi");
+                        var that=$(this);
+                        var a=that.attr("alt");
+                        that.attr("src","../img/star-on.png");
+                        that.prevAll().attr("src","../img/star-on.png");
+                        that.nextAll().attr("src","../img/star-off.png");
+
+                        $(this).siblings("input").attr("value",a);
+                });
+
+    });
+        </script>
 
 
             <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
