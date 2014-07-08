@@ -10,7 +10,7 @@
     <!-- Employee Requisition Form-->
 	<section class="col-lg-6 "> 
                             
-                              <div class="box box-primary" style="padding-top:5px">
+                              <div class="box box-primary request" style="padding-top:5px">
                                 <div class="box-header">
                                     <!-- tools box -->
                                     <div class="pull-right ">
@@ -26,7 +26,7 @@
                                     <i class="fa fa-pencil"></i>
                                         <h3 class="box-title">Requisition Form</h3>
                                  </div><!-- /.box-header -->
-                                 <div class="box-body">
+                                 <div class="box-body req">
                                         <div id="erf" class="nav-tabs-custom">
                                         <!-- Tabs within a box -->
                                             <ul class="nav nav-tabs pull-left">
@@ -69,14 +69,11 @@
                                                             </div>
 										                  </div>
 										              <div class="form-group"> 
-										                  <label>Type of Position</label>
-								                            <div class="radio">
-                                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>New
-                                                            </div>
-											
-                                                            <div class="radio">
-                                                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Replacement
-                                                            </div>
+										                  <label>Type of Position</label><br>
+								                            
+                                                                <input type="radio" name="typeofposition"  value="option1" checked>New<br>
+                                                                <input type="radio" name="typeofposition" value="option2">Replacement<br>
+                                                            
                                                     </div>
 										          <div class="form-group">
                                                     <label>Name of person to be replaced</label>
@@ -97,7 +94,7 @@
 										          <div class="form-group">
                                                     <label>Experience</label>
                                                     <input type="text" class="form-control" placeholder="range of years" required/ >
-                                                   </div>
+                                              </div> 
                                             </div>
                                                     <!-- /-part 1 ends-->
                                                     <!--part 2 starts-->
@@ -127,9 +124,9 @@
                                                     <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
                                                 </div>
 									           <div class="box-footer">
-                                                    <button type="submit" class="btn btn-primary">Submit</button>
-										            <button type="button" class="btn btn-warning">Save as Draft</button>
-										            <button type="button" class="btn btn-danger">Cancel</button>
+                                                    <button type="submit" class="btn btn-primary submitit">Submit</button>
+										            <button type="button" class="btn btn-warning saveit">Save as Draft</button>
+										            <button type="button" class="btn btn-danger cancelit">Cancel</button>
                                                </div>	
 									       </div>
                                                     <!--part 2 ends-->
@@ -146,6 +143,16 @@
                 editable:true,
                 sortable:true
             });
+                    $(".submitit").click(function(e) { e.preventDefault();
+                                                      $(".req").html("<div class='alert alert-warning alert-dismissable'><button type='button' class='close closeit' data-dismiss='alert' aria-hidden='true'>×</button><a class='pull-right newform' style='cursor:pointer'>Fill New</a><b>Your requisition has been forwarded for approval</b></div><script>$('.closeit').click(function(e){ e.preventDefault(); $('.request').remove();}); $('.newform').click(function(e){ e.preventDefault();$(this).parents('section').parent().last().load('requisition.html');});");
+                // $(".req").trigger("focus");                                     
+                });
+                    $(".saveit").click(function(e) { e.preventDefault();
+                                                $(".req").html("<div class='alert alert-warning alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><a class='pull-right newform' style='cursor:pointer'>Fill New</a><a class='pull-right draft' style='cursor:pointer'>View Drafts&nbsp;</a><b>Your draft has been saved</b></div><script>$('.closeit').click(function(e){ e.preventDefault(); $('.request').remove();}); $('.newform').click(function(e){ e.preventDefault();$(this).parents('section').parent().last().load('requisition.html');}); $('.draft').click(function(e){ e.preventDefault(); $(this).parents('section').parent().last().load('drafts.html');});");
+                });
+                                        $(".cancelit").click(function(e) { e.preventDefault();
+                                        $(".req").html("<div class='alert alert-warning alert-dismissable'><button type='button' class='close closeit' data-dismiss='alert' aria-hidden='true'>×</button><a class='pull-right newform' style='cursor:pointer'>Fill New</a><b>You chose to cancel</b></div><script>$('.closeit').click(function(e){ e.preventDefault(); $('.request').remove();}); $('.newform').click(function(e){ e.preventDefault();$(this).parents('section').parent().last().load('requisition.html');});");
+                });
                 });
             </script>
     

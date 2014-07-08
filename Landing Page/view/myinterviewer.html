@@ -4,11 +4,21 @@
     <script src="../js/jquery.min.js"></script>
          <!--cancel-->
         <script>
-             $(document).ready(function(e){$(".show12").hide();
-        $(".clk_show").click(function(e){
+             $(document).ready(function(e){$
+             (".show12").hide();
+            $(".clk_show").click(function(e){
             e.preventDefault();
           $(this).parent().find(".show12").toggle();
-          });
+                $(this).siblings(".confirm").hide();
+                $(this).hide();
+                     
+            });
+            $(".ces").click(function(e){ 
+                e.preventDefault();
+                $("#content_blocks").prepend('<div id="first'+i+'"></div>');
+                        var p =$('#first'+i+'').load("evaluationSheet.html");
+                        i++;
+            });
           });
         </script>
         
@@ -18,14 +28,27 @@
         $(".confirm").click(function(e){
             e.preventDefault();
           $(this).parent().find(".show11").toggle();
+            $(this).siblings(".clk_show").hide();
+            $(this).hide();
           });
+                                           
+        $(".close").click(function(e){ $(".clk_show").show(); });
           });
         </script>
+        <script>
+            $(document).ready(function(e){
+             $(".sendmail").click(function(e){
+            e.preventDefault();
+          $(this).parent().html("<div class='alert alert-warning alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button><b>Your mail has been send to the HR</b></div><script>$('.close').click(function(e){ e.preventDefault(); $('.show12').hide();});");
+          });
+                     });
+           
+                 </script>
     </head>
         <body>
             <!-- Interviewer Scheduler-->
-            <section class="col-lg-6 connectedSortable">
-                <div class="box box-success" id="loading-example">
+            <section class="col-lg-6">
+                <div class="box box-success">
                     <div class="box-header">
                         <!-- tools box -->
                         <div class="pull-right box-tools">
@@ -41,7 +64,7 @@
 
                     <!-- row -->
                     <div class="row">                        
-                        <div class="col-xs-12 col-lg-6">
+                        <div class="col-xs-12" >
                             <!-- The time line -->
                             <ul class="timeline">
                                 <!-- timeline time label -->
@@ -56,7 +79,7 @@
                                     <i class="fa fa-user bg-aqua"></i>
                                     <div class="timeline-item">
                                         <h3 class="timeline-header"><strong>System Analyst</strong></h3>
-                                        <div class="timeline-body">
+                                        <div>
                                             <ul>
                                                 <li>S. Panda at 11:00 am, Location: Bhubaneshwar<br>
                                                     <div>
@@ -73,8 +96,8 @@
                                                                     <input type="radio" name="action" value="Cancel">Cancel
                                                                 </form><br>
                                                                 <strong>Specify your Reason</strong><br>
-                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea>
-                                                                <a class="btn btn-info btn-xs">Mail to HR</a>
+                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea><br>
+                                                                <a class="btn btn-info btn-xs sendmail">Mail to HR</a>
                                                         </div>
                                                     </div>
                                                 </li><br>
@@ -93,8 +116,8 @@
                                                                     <input type="radio" name="action" value="Cancel">Cancel
                                                                 </form><br>
                                                                 <strong>Specify your Reason</strong><br>
-                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea>
-                                                                <a class="btn btn-info btn-xs">Mail to HR</a>
+                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea><br>
+                                                                <a class="btn btn-info btn-xs sendmail">Mail to HR</a>
                                                         </div>
                                                     </div>
                                                 </li><br>
@@ -113,8 +136,8 @@
                                                                     <input type="radio" name="action" value="Cancel">Cancel
                                                                 </form><br>
                                                                 <strong>Specify your Reason</strong><br>
-                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea>
-                                                                <a class="btn btn-info btn-xs">Mail to HR</a>
+                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea><br>
+                                                                <a class="btn btn-info btn-xs sendmail">Mail to HR</a>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -143,8 +166,8 @@
                                                                     <input type="radio" name="action" value="Cancel">Cancel
                                                                 </form><br>
                                                                 <strong>Specify your Reason</strong><br>
-                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea>
-                                                                <a class="btn btn-info btn-xs">Mail to HR</a>
+                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea><br>
+                                                                <a class="btn btn-info btn-xs sendmail">Mail to HR</a>
                                                         </div>
                                                     </div>
                                                 </li><br>
@@ -163,8 +186,8 @@
                                                                     <input type="radio" name="action" value="Cancel">Cancel
                                                                 </form><br>
                                                                 <strong>Specify your Reason</strong><br>
-                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea>
-                                                                <a class="btn btn-info btn-xs">Mail to HR</a>
+                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea><br>
+                                                                <a class="btn btn-info btn-xs sendmail">Mail to HR</a>
                                                         </div>
                                                     </div>
                                                 </li><br>
@@ -183,8 +206,8 @@
                                                                     <input type="radio" name="action" value="Cancel">Cancel
                                                                 </form><br>
                                                                 <strong>Specify your Reason</strong><br>
-                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea>
-                                                                <a class="btn btn-info btn-xs">Mail to HR</a>
+                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea><br>
+                                                                <a class="btn btn-info btn-xs sendmail">Mail to HR</a>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -223,8 +246,8 @@
                                                                     <input type="radio" name="action" value="Cancel">Cancel
                                                                 </form><br>
                                                                 <strong>Specify your Reason</strong><br>
-                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea>
-                                                                <a class="btn btn-info btn-xs">Mail to HR</a>
+                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea><br>
+                                                                <a class="btn btn-info btn-xs sendmail">Mail to HR</a>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -243,8 +266,8 @@
                                                                     <input type="radio" name="action" value="Cancel">Cancel
                                                                 </form><br>
                                                                 <strong>Specify your Reason</strong><br>
-                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea>
-                                                                <a class="btn btn-info btn-xs">Mail to HR</a>
+                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea><br>
+                                                                <a class="btn btn-info btn-xs sendmail">Mail to HR</a>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -273,8 +296,8 @@
                                                                     <input type="radio" name="action" value="Cancel">Cancel
                                                                 </form><br>
                                                                 <strong>Specify your Reason</strong><br>
-                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea>
-                                                                <a class="btn btn-info btn-xs">Mail to HR</a>
+                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea><br>
+                                                                <a class="btn btn-info btn-xs sendmail">Mail to HR</a>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -293,8 +316,8 @@
                                                                     <input type="radio" name="action" value="Cancel">Cancel
                                                                 </form><br>
                                                                 <strong>Specify your Reason</strong><br>
-                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea>
-                                                                <a class="btn btn-info btn-xs">Mail to HR</a>
+                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea><br>
+                                                                <a class="btn btn-info btn-xs sendmail">Mail to HR</a>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -332,8 +355,8 @@
                                                                     <input type="radio" name="action" value="Cancel">Cancel
                                                                 </form><br>
                                                                 <strong>Specify your Reason</strong><br>
-                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea>
-                                                                <a class="btn btn-info btn-xs">Mail to HR</a>
+                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea><br>
+                                                                <a class="btn btn-info btn-xs sendmail">Mail to HR</a>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -362,8 +385,8 @@
                                                                     <input type="radio" name="action" value="Cancel">Cancel
                                                                 </form><br>
                                                                 <strong>Specify your Reason</strong><br>
-                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea>
-                                                                <a class="btn btn-info btn-xs">Mail to HR</a>
+                                                                <textarea rows="3" cols="50" placeholder="Enter Your Message ..."></textarea><br>
+                                                                <a class="btn btn-info btn-xs sendmail">Mail to HR</a>
                                                         </div>
                                                     </div>
                                                 </li>

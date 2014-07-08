@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script src="../js/knockout.js"></script>
+    <script src="../js/knockout-mapping.js"></script>
+   
+    <script src="vm.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+     
+        
+        
+      $(document).ready(function(){
+   ko.applyBindings(viewModel);
+      });
+            </script>
+</head>
+    
+    
+    
+<body>    
+            Hi, <label data-bind="text:name">World</label><br>
+            <label>Name:</label><input type="text" data-bind="value:name, valueUpdate:'input'"/><br>
+            <label>Gender:</label><input type="radio" name="gender" value="0" data-bind="checked:gender">Male<br>
+            <input type="radio" name="gender" value="1" data-bind="checked:gender"/>Female<br><br>
+            <label>TextArea</label><textarea data-bind="value:desc"></textarea><br>
+            <button type="submit" data-bind="click: submit" >Submit1</button>
+                  
+       <script>
+        
+    </script>
+
+    
+<!--
+    
+    <input type="text" data-bind="value:name"/><br>
+    <input type="text" data-bind="value:contact"/>
+    <p data-bind="text:name"></p>
+     <p data-bind="text:contact"></p>
+-->
+</body>
+</html>

@@ -17,201 +17,169 @@
             
 	       <script type="text/JavaScript">
             
-               $(function(e){var i=0;
+                     $(function(e){
                     $("#a_newuser").click(function(e){ 
                         e.preventDefault();
                       
-                        $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                        $('#first'+i+'').load("adduser.html");
-                        i++;
+                       var att= $("#content_blocks").find("#adduser").html();
+                        if(att==null)
+                            {
+                            $("#content_blocks").prepend('<div id="adduser"></div>');
+                            $('#adduser').load("adduser.html");
+                            }
+                        else
+                            {
+                            window.location.hash = '#adduser';
+                            }
+                    
                        
                        
                     });
                    $("#erf").click(function(e){
                         e.preventDefault();
-                        $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                        $('#first'+i+'').load("requisition.html");
-                       i++;
+                        $("#content_blocks").prepend('<div id="requisition"></div>');
+                        $('#requisition').load("requisition.html");
+                
                        
                     });
-                    $(".editprofile").click(function(e){ 
+                    $(".editprofile1").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("editprofile.html");
-                        i++;
-                        
+                         $("#content_blocks").prepend('<div id="editprofile"></div>');
+                         $('#editprofile').load("editprofile.html");
+                       
                     });
                     $("#editorg").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("org_details.html");
-                        i++;
+                         $("#content_blocks").prepend('<div id="org_details"></div>');
+                         $('#org_details').load("org_details.html");
+                         
                         
                     });
-                    $("#addjob").click(function(e){ 
+                    $("#addjob1").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("addjob.html");
-                        i++;
+                         $("#content_blocks").prepend('<div id="addjob"></div>');
+                         $('#addjob').load("addjob.html");
+                         
                         
                     });
                     $(".companydetails").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                        $('#first'+i+'').load("admincompanydetails.html");
-                        i++;
+                         $("#content_blocks").prepend('<div id="admincompanydetails"></div>');
+                        $('#admincompanydetails').load("admincompanydetails.html");
+                         
                        
                     });
                     $(".employeedetail").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("employeedetails.html");
-                        i++;
+                         $("#content_blocks").prepend('<div id="employeedetails"></div>');
+                         $('#employeedetails').load("employeedetails.html");
+                         
                       
                     });
-                    $("#approved").click(function(e){ 
+                    $("#approved1").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("approved.html");
-                        i++;
+                         $("#content_blocks").prepend('<div id="approved"></div>');
+                         $('#approved').load("approved.html");
+                         
                         
                     }); 
                              $("#drft").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
+                         $("#content_blocks").prepend('<div id="drafts"></div>');
                          $('#first'+i+'').load("drafts.html");
-                        i++;
+                         
                         
                     }); 
                         $("#ongoing").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("ongoing.html");
-                        i++;
+                         $("#content_blocks").prepend('<div id="drafts"></div>');
+                         $('#drafts').load("ongoing.html");
+                         
                         
                         
                     });
                              $("#closed").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("closed.html");
-                        i++;
+                         $("#content_blocks").prepend('<div id="closed"></div>');
+                         $('#closed').load("closed.html");
+                         
                        
                     }); 
                              
                              $("#existing_users").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("users.html");
-                        i++;
+                         $("#content_blocks").prepend('<div id="users"></div>');
+                         $('#users').load("users.html");
+                         
                        
                     });
-                             $("#refer1, #refer2, #refer3, #refer4").click(function(e){ 
-                                    e.preventDefault();
-                                  $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                                    $('#first'+i+'').load("refer.html");
-                                    i++;
-                               
+                             
 		                         
-		});
+
                              $("#cdb").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("mydb.html");
-                        i++;
+                         $("#content_blocks").prepend('<div id="mydb"></div>');
+                         $('#mydb').load("mydb.html");
+                         
                        
                     });
                  
                         $(".all_vacancies").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("approved.html");
-                        i++;
+                         $("#content_blocks").prepend('<div id="approved"></div>');
+                         $('#approved').load("approved.html");
+                         
                             
-                             $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("ongoing.html");
-                        i++;
-                             $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("closed.html");
-                        i++;
+                             $("#content_blocks").prepend('<div id="ongoing"></div>');
+                         $('#ongoing').load("ongoing.html");
+                         
+                             $("#content_blocks").prepend('<div id="closed"></div>');
+                         $('#closed').load("closed.html");
+                         
                         
                     });
                                      $("#existingjobs").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("existingjobs.html");
-                        i++;
+                         $("#content_blocks").prepend('<div id="existingjobs"></div>');
+                         $('#existingjobs').load("existingjobs.html");
+                         
                        
                     });
                              
                      
-                         $("#existingusers").click(function(e){ 
+                         $("#existingusers1").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("existingusers.html");
-                        i++;
+                         $("#content_blocks").prepend('<div id="existingusers"></div>');
+                         $('#existingusers').load("existingusers.html");
+                         
                         
                     }); 
                         $(".interview").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("myinterviewer.html");
-                        i++;
+                         $("#content_blocks").prepend('<div id="myinterviewer"></div>');
+                         $('#myinterviewer').load("myinterviewer.html");
+                         
                         
                         
                     });   
                          $(".schedule").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("slc.html");
-                        i++;
+                         $("#content_blocks").prepend('<div id="slc"></div>');
+                         $('#slc').load("slc.html");
+                         
                         
                         
                     });   
                          $("#evaluation").click(function(e){ 
                         e.preventDefault();
-                         $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                         $('#first'+i+'').load("evaluationSheet.html");
-                        i++;
+                         $("#content_blocks").prepend('<div id="evaluationSheet"></div>');
+                         $('#evaluationSheet').load("evaluationSheet.html");
+                         
                      
                     });          
                              
                });
-	/*$(document).ready(function(){
-		$("#a_newuser").click(function(e){ 
-		e.preventDefault();
-		$("#cont_form").load("addnew.html");
-		});
-		$("#erf").click(function(e){
-			e.preventDefault();
-		$("#cont_form").load("requisition.html");
-		});
-        $("#editprofile").click(function(e){ 
-		e.preventDefault();
-		$("#cont_form").load("editprofile.html");
-		});
-        $("#editorg").click(function(e){ 
-		e.preventDefault();
-		$("#cont_form").load("org_details.html");
-		});
-        $("#addjob").click(function(e){ 
-		e.preventDefault();
-		$("#cont_form").load("addjob.html");
-		});
-		$(".companydetails").click(function(e){ 
-		e.preventDefault();
-		$("#cont_form").load("admincompanydetails.html");
-		});
-		$(".employeedetail").click(function(e){ 
-		e.preventDefault();
-		$("#cont_form").load("employeedetails.html");
-		});
-			$("#approved").click(function(e){ 
-		e.preventDefault();
-		$("#cont_form").load("approved.html");
-		});
-	});*/
-     
+	
 </script>
 		
 
@@ -263,7 +231,7 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat editprofile">Edit Profile</a>
+                                        <a href="#" class="btn btn-default btn-flat editprofile1">Edit Profile</a>
                                     </div>
                                     <div class="pull-right">
                                         <a href="../../../RMS/" class="btn btn-default btn-flat">Sign out</a>
@@ -304,7 +272,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="" class="editprofile">
+                            <a href="" class="editprofile1">
                                 <i class="fa fa-gear"></i> <span>Edit Profile</span>
                             </a>
                         </li>
@@ -336,9 +304,9 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="" class="all_vacancies"><i class="fa fa-angle-double-right"></i> All</a></li>
-                                <li><a href="" id="approved"><i class="fa fa-angle-double-right"></i> Approved</a></li>
-                                <li><a href="" id="ongoing"><i class="fa fa-angle-double-right"></i> Ongoing</a></li>
-                                <li><a href="" id="closed"><i class="fa fa-angle-double-right"></i> Closed</a></li>
+                                <li><a href="" id="approved1"><i class="fa fa-angle-double-right"></i> Approved</a></li>
+                                <li><a href="" id="ongoing1"><i class="fa fa-angle-double-right"></i> Ongoing</a></li>
+                                <li><a href="" id="closed1"><i class="fa fa-angle-double-right"></i> Closed</a></li>
                                
                             </ul>
                         </li>
@@ -495,7 +463,7 @@
                             </div>
                         </div><!-- ./col -->
                     </div><!-- /.row -->
-		<div class="row myblock"></div>
+		<div class="myblock"></div>
            <div class="row" id="content_blocks">
 				<!--	 <div id="cont_form"></div>
                       <div id="cont_form2"></div>-->

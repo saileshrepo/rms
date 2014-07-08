@@ -123,6 +123,7 @@ $(function() {
             group.find(".btn.active").removeClass("active");
             $(this).addClass("active");
             e.preventDefault();
+            
         });
 
     });
@@ -131,6 +132,17 @@ $(function() {
         //Find the box parent        
         var box = $(this).parents(".box").first();
         box.slideUp();
+        $(this).parents("section").parent().last().remove();
+    });
+
+      $("[data-widget='refresh']").click(function() {
+       
+    var contents= $(this).parents("section").parent().last().attr('id');
+         /* var me= contents.length;
+          contents= contents.slice(6,me);*/
+         $(this).parents("section").parent().last().load(contents +'.html');
+     
+       
     });
 
     /* Sidebar tree view */
@@ -174,7 +186,7 @@ $(function() {
      * iCheck plugin in.
      * You can find the documentation at http://fronteed.com/iCheck/
      */
-    $(" input[type='radio']").iCheck({
+    $(" .radio").iCheck({
         //checkboxClass: 'icheckbox_minimal',
         radioClass: 'iradio_minimal'
     });
@@ -600,6 +612,8 @@ function change_skin(cls) {
 //})(jQuery);
 $(".refresh-btn").click(function(e){
     console.log("HappyHappy");
+    
+    
     
 });
 /*

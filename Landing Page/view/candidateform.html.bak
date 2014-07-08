@@ -38,7 +38,7 @@
                                 </ul></div><br>
 								 <div class="tab-content no-padding">
                                   
-                                    <div class="tab-pane active" id="personal" >
+                                    <div class="tab-pane active" id="personal" style="position: relative;">
                                 
                                   
                                         <div class="form-group col-lg-4">
@@ -72,28 +72,24 @@
                                             <label for="gender">Gender</label>&nbsp;&nbsp;
                                             <input type="radio" id="gender" name="sex" value="Male" data-bind="value:sex" >Male</input>&nbsp;&nbsp;
                                             <input type="radio" id="gender" value="Female" name="sex"data-bind="value:sex" >Female</input>
-                                        </div><div class="form-group col-lg-6">
+                                        </div><div class="form-group col-lg-12">
                                             <label for="place">Present Location</label>
                                             <input type="text" class="form-control" data-bind="value:place" id="place" placeholder="">
-                                        </div><div class="form-group col-lg-6">
-                                            <label for="notice_period">Notice Period</label>
-                                            <input type="text" class="form-control" data-bind="value:notice_period" id="notice_period" placeholder="">
                                         </div><div class="form-group col-lg-6">
                                             <label for="salary">Current Salary</label>
                                             <input type="text" class="form-control" data-bind="value:salary" id="salary" placeholder="">
                                         </div><div class="form-group col-lg-6">
                                             <label for="ctc">Expected Salary(CTC)</label>
                                             <input type="text" class="form-control" data-bind="value:ctc" id="ctc" placeholder="">
+                                        </div><div class="form-group col-lg-6">
+                                            <label for="notice_period">Notice Period</label>
+                                            <input type="text" class="form-control" data-bind="value:notice_period" id="notice_period" placeholder="">
                                         </div>
                                         <div class="form-group col-lg-12">
                                             <label for="language">Language Known</label>
                                            <ul id="lang" data-bind="value:lang" class="form-control list-group"></ul>
                                            
                                         </div>
-                                        <div class="box-footer pull-right">
-                                                   <button type="button" class="tabnext1 btn btn-danger">Next</button>
-                                        </div>
-                                         
                                     
                                 </div>
                             
@@ -127,16 +123,11 @@
                                         <div class="form-group col-lg-12">
                                             <label for="cert">Certifications</label>
                                             <textarea rows="3" class="form-control" data-bind="value:certification" id="cart" placeholder="" ></textarea>
-                                        </div><hr>
+                                        </div>
                                         <div class="form-group col-lg-12">
                                             <label for="achiev">Achievements</label>
                                             <textarea rows="3" class="form-control" data-bind="value:achievements" id="achiev" placeholder=""></textarea>
                                         </div>
-                                        <div class="box-footer pull-right">
-                                                    <button type="button" class="btn btn-primary tabprev2">Previous</button>
-										          
-										            <button type="button" class="btn btn-danger tabnext2">Next</button>
-                                               </div>
                             </div>
 
 <!--/EDU-->
@@ -145,7 +136,7 @@
                                            <div id="">
                                             <table id="demotable" class="table table-hover table-responsive">
                                             <thead><tr>
-                                                <th>Skills Known</th>
+                                                <th>Skills Known<span data-bind="text:skills().length"></span></th>
                                                 <th>Rate Yourself(1-5)</th>
                                                 <th>Years of Experience</th>
                                             </tr>
@@ -153,19 +144,12 @@
                                             <tbody >
                                             <!--ko  foreach:skills-->
                                                 <tr >
-                                                <td><input type="text" class=" form-control" data-bind="value:name"></td>
-                                                <td class="starss" style="cursor:pointer;">
-                                                    <input type="text" class="starinput form-control" data-bind="value:rate" style="width:100%"/>
-                                                    <img alt="1" src="../img/star-off.png" class="rating"></img>
-                                                    <img alt="2" src="../img/star-off.png" class="rating"></img>
-                                                    <img alt="3" src="../img/star-off.png" class="rating"></img>
-                                                    <img alt="4" src="../img/star-off.png" class="rating"></img>
-                                                    <img alt="5" src="../img/star-off.png" class="rating"></img>
-                                                    
-                                                                                    
+                                                <td><input type="text" class="form-control" data-bind="value:name"></td>
+                                                <td>
+                                                    <div class="form-control rate-skill" data-bind="value:rate"></div>                                
                                                 </td>
                                                 <td><input type="text" class="form-control" data-bind="value:exp"></td>
-                                                <td><a href="#" data-bind="click:removeSkill"><button class="btn btn-info"><i class="fa fa-times"></i></button></a></td>
+                                                <td><a href="#" data-bind="click:$root.removeSkill"><button class="btn btn-info"><i class="fa fa-times"></i></button></a></td>
                                             </tr>
                                                 <!--/ko-->
                                             </tbody>
@@ -174,6 +158,7 @@
                                         <a href="#" data-bind=" click:addskill" ><i class="fa fa-plus fa-lg"></i>Add Skills</a>   
                                         </div>
                                            
+<!--
                                             <hr>
                                            <div id="ko-company">
                                         <table class="table table-hover col-lg-12 table-responsive ">
@@ -182,8 +167,7 @@
                                             <th>Companies</th>
                                             <th>Role Played</th>
                                             <th>Reason for Leaving</th>
-                                            <th>From Date</th>
-                                            <th>To Date</th>
+                                            <th>From Date to Date</th>
                                         </tr>
                                         </thead>
                                         <tbody data-bind="foreach:company">
@@ -191,10 +175,10 @@
                                             <td><input type="text" class="form-control" data-bind="value:name"></td>
                                             <td><input type="text" class="form-control" data-bind="value:role"></td>
                                             <td><input type="text" class="form-control" data-bind="value:reason"></td>
-                                            <td ><input type="date" class=" form-control" data-bind="value:fromdate"></td> 
-                                             <td><input type="date" class="form-control" data-bind="value:todate"></td>
-                                          
-                                            <td><a href="#" data-bind="click:removeCompanyDetail">
+                                            <td><input type="text" class="form-control" data-bind="value:fromdate">
+                                                <input type="date" class="form-control" data-bind="value:todate">
+                                            </td>
+                                            <td><a href="#" data-bind="click:$root.removeCompanyDetail">
                                                     <button class="btn btn-info"><i class="fa fa-times"></i></button>
                                                 </a>
                                             </td>
@@ -203,11 +187,7 @@
                                         </table>
                                            <a href="#" data-bind="click:addCompanyDetail" ><i class="fa fa-plus fa-lg"></i>Add Company</a>
                                            </div><hr>
-                                           <div class="box-footer pull-right">
-                                                    <button type="button" class="btn btn-primary tabprev3">Previous</button>
-										          
-										            <button type="button" class="btn btn-danger tabnext3">Next</button>
-                                               </div>
+-->
                                         </div>
 <!--company Details-->
 
@@ -216,9 +196,8 @@
                                            
                                         <div class="form-group col-lg-12">
                                             <label for="resume">Upload Resume</label><br>
-                                            <input type="file" accept="application/pdf" id="resumeupload" style="display:none">
-                                            <button type="button" class="btn btn-lg uploadresume fa fa-paperclip"></button>
-                                            <span class="help-block">Upload PDF File (Max Size: 3MB)</span>
+                                            <input type="file" id="resume">
+                                            <p class="help-block">Upload PDF File (Max Size: 3MB)</p>
                                         </div>
                                         
                                          <div class="form-group checkbox col-lg-12">
@@ -234,10 +213,9 @@
                                             </label>
                                         </div>
                                           <div class="box-footer">
-                                               <button type="button" class="btn btn-primary tabprev4">Previous</button>
-                                                    <button type="submit" data-bind="click:submit" class="btn btn-primary">Submit</button>
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
 										          
-										            <button type="button"  class="btn btn-danger">Cancel</button>
+										            <button type="button" data-bind="click:submit" class="btn btn-danger">Cancel</button>
                                                </div>	
                                     </div></div></div>
                                     
@@ -250,7 +228,7 @@
 <script src="../js/jquery-ui-1.10.3.min.js"></script>
 <script>
     console.log("Enter");
-    $("[type='submit']").click(function(e){
+$("[type='submit']").click(function(e){
     console.log("clicked");
     e.preventDefault();
     var that=$('.save');
@@ -275,54 +253,29 @@
 
 
          
-<script>
+            <script>
                 $(document).ready(function() {
-                    ko.applyBindings(viewModel3.data, $(".tab-content")[0]);      
-                }); 
+           
+                //    ko.applyBindings(viewModel1, $("#ko-skills")[0] );
+                    //ko.applyBindings(viewModel2, $("#ko-company")[0] );
+                    
+                    ko.applyBindings(viewModel3, $(".tab-content")[0]);      
+                    }); 
         
-</script>
+            </script>
 <script>
-                $(document).ready(function(e){
-                        $("button.uploadresume").click(function(){
-                            var that=$(this);
-                            $("#resumeupload").trigger('click');
-                            $('#resumeupload').change(function() {
-                                that.siblings('p').remove();
-                                var path=$('#resumeupload').val();
-                                var s= path.split(".");
-                                if(s[1]!='pdf'){that.after('<p>The file type of '+s[1]+' is not supported</p>');}
-                                else{that.after('<p>'+$('#resumeupload').val()+'</p>');}
+        $(document).ready(function(e){
+                $('div.rate-skill').css("cursor","pointer");
+                var i;
+                for(i=1;i<6;i++){
+                    $('div.rate-skill').append('<img alt='+i+' src="../img/star-off.png" class="rating"></img>');
+                }
+                $('div.rate-skill').append('<input type="hidden" value=""/>');     
 
-                            });
-                        });
-                    
-                       
-                        //$('div.rate-skill').append('<input type="hidden" value=""/>');     
-
-                });
-                $(document).ready(function(){
-//                  var b=$(".starinput").val();
-//                    $(".starinput").siblings("img[alt="+b+"]").trigger('click');
-//                   
-                    $(".starinput").on('change',function(){
-                        
-                        var that=$(this);
-                        var a=that.val();
-                        that.siblings("img[alt="+a+"]").trigger('click');
-                       
-                    
-                    });
-//                    $(".starss").on('change',function(){
-//                        
-//                       var c= $(this).find("input");
-//                        console.log(c);
-//                        c.val(c.value);
-//                    
-//                    });
-                  
+        });
+              $(document).ready(function(){
                     $('div img.rating').click(function(e){
-                       
-                        
+                        console.log("Hi");
                         var that=$(this);
                         var a=that.attr("alt");
                         that.attr("src","../img/star-on.png");
@@ -330,39 +283,7 @@
                         that.nextAll().attr("src","../img/star-off.png");
 
                         $(this).siblings("input").attr("value",a);
-                        var d=$(this).siblings("input").attr("value");
-                       // console.log(d);
-                        
-                        $(this).siblings("input").val(d);
-                        
-                    }); 
-                        
-                        //<!--next and previous buttons-->
-                        $(".tabnext1").click(function(){
-                                $("a[href='#edu']").trigger("click");
-                      
-                        });
-                        $(".tabnext2").click(function(){
-                            $("a[href='#company_details']").trigger("click");
-                      
-                        });
-                        $(".tabprev2").click(function(){
-                            $("a[href='#personal']").trigger("click");
-                      
-                        });
-                        $(".tabnext3").click(function(){
-                            $("a[href='#agreement']").trigger("click");
-                      
-                        });
-                        $(".tabprev3").click(function(){
-                                $("a[href='#edu']").trigger("click");
-                      
-                        });
-                        $(".tabprev4").click(function(){
-                            $("a[href='#company_details']").trigger("click");
-                      
-                        });  //next and prev
-               
+                });
 
     });
         </script>
