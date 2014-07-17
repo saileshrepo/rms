@@ -79,18 +79,21 @@
     <a id="menu-toggle"  style="position:fixed; top: 10px;" href="#" class="btn btn-primary toggle"><i class="fa fa-bars fa-2x"></i></a>
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-primary btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand"><a href="#">ProRecruit</a>
             </li>
-            <li active><a href="#top"><i class="fa fa-home fa-lg">&nbsp;&nbsp;Home</i></a>
+            <li active><a href="#top"><i class="fa fa-home">&nbsp;&nbsp;Home</i></a>
             </li>
-			<li><a href="#about"><i class="fa fa-info-circle fa-lg"></i>&nbsp;&nbsp;About</a>
+			  
+
+            <li><a href="#about"><i class="fa fa-info-circle fa-lg"></i>&nbsp;&nbsp;About</a>
             </li>
             <li><a href="#jobs"><i class="fa fa-briefcase fa-lg"></i>&nbsp;&nbsp;Jobs</a>
             </li>
-            <li><a href="#contacts"><i class="fa fa-phone-square fa-lg"></i>&nbsp;&nbsp;Contacts</a>
+            
+			<li><a href="#contacts"><i class="fa fa-phone-square fa-lg"></i>&nbsp;&nbsp;Contacts</a>
             </li>
-			<li><a href="#login"><i class="fa fa-user fa-lg"></i>&nbsp;&nbsp;Sign In</a>
+			<li><a href="#login"><i class="fa fa-user fa-lg"></i>&nbsp;&nbsp;Log In</a>
 			</li>
         </ul>
     </div>
@@ -116,7 +119,6 @@
                     <h2>About Us</h2><br>
 					<hr><br><br>
                     <p class="lead">ProcessMAP Recruitment management software is more than a recruitment database, it parses emails, manages and creates documents, enters data, synchronizes with Social Networking sites , emails applicants, and synchronizes with your calendar and job seeker websites like Monster and Naukri -all automatically. Recruitment Management System offers the most powerful start-to-finish tools that not only just focusing on candidates, but also it gives your recruiters the tools to effectively carry out the recruiting procedure.</p><br><br>
-               
                 </div>
             </div>
         </div>
@@ -173,8 +175,6 @@
         </div>
     </div>
     <!-- /Callout -->
-    
-    
 	<!--Login -->
 	<div id="login" class="login">
 		<div class="container" style="width:25%; padding:25px;" >
@@ -182,90 +182,28 @@
 		<div class="col-lg-12">
       <form role="form" class="form-signin">
         <h2 class="form-signin-heading">Sign In</h2><br>
-        <input type="text" autofocus="" value="rmsadmin" required="" placeholder="User Id" class="form-control userid"><br>
-        <input type="password" required="" value="rmspass" placeholder="Password" class="form-control pass">
+        <input type="text" autofocus="" required="" placeholder="User Id" class="form-control"><br>
+        <input type="password" required="" placeholder="Password" class="form-control">
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Remember me
         </label>
- 
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
       </form>
-            <a class="loginn" > <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button></a>
-	  <br><b>Forgot your Password ? <a href="">Click Here</a></b></div>
+	  <br><b>Forgot your Password!! <a href="">Click Here</a></b></div>
 	  
 	</div>
     </div>
 	</div>
-    <!--/Login -->
-    
-    
-    
-    <!--Refer -->
-    <div id="refer" class="refer">
-		<div class="container" style="width:25%; padding:25px;" >
-		<div class="row">
-		<div class="col-lg-12">
-      <form role="form" class="form-signin">
-          
-        <h2 class="form-signin-heading">Refer a Candidate</h2><br>
-        <input type="text" placeholder="Job" class="form-control" disabled/><br>
-        <input type="text" autofocus="" required="" placeholder="Employee Id" class="form-control"><br>
-        <input type="text" required="" placeholder="Candidate Email" class="form-control"><br>
-        <div>
-            <a href="#"> <button  class="btn btn-lg btn-primary">Refer</button></a>
-            <a href="#"> <button  class="btn btn-lg btn-primary">Cancel</button></a>
-        </div>
-      </form>
-	  </div>
-	  
-	</div>
-    </div>
-	</div>
-	<!--/Refer -->
-    
-    
-    
-    <!--Apply -->
-	<div id="apply" class="apply">
-		<div class="container" style="width:25%; padding:25px;" >
-		<div class="row">
-		<div class="col-lg-12">
-      <form role="form" class="form-signin">
-          
-        <h2 class="form-signin-heading">Apply for it !</h2><br>
-        <input type="text" placeholder="Job" class="form-control" disabled/><br>
-        <input type="text" autofocus="" required="" placeholder="Name" class="form-control"><br>
-        <input type="text" required="" placeholder="Email" class="form-control"><br>
-        <div>
-            <a href="#"> <button  class="btn btn-lg btn-primary">Apply</button></a>
-            <a href="#"> <button  class="btn btn-lg btn-primary">Cancel</button></a>
-        </div>
-      </form>
-	  </div>
-	  
-	</div>
-    </div>
-	</div>
-	<!--/Apply -->
-    
+	<!--/Login -->
 	<!-- Jobs -->
 	<div id="jobs" class="call-to-action">
 	<div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
                     <h2>Job Details</h2><br>
-					<hr><br>
-                     <div><h4>2 Postions for System Analyst</h4>
-                         <div><a href="#refer" class="refer_a">Refer a candidate</a><p><a href="#apply" class="apply_a">Apply for it</a></p></div>
-                     </div><br>
-                     <div><h4>3 Positions for Technical Writer</h4>
-                         <div><a href="#refer" class="refer_a">Refer a candidate</a><p><a href="#apply" class="apply_a">Apply for it</a></p></div>
-                    </div><br>
-                     <div><h4>1 Positions for QA Engineer</h4>
-                        <div><a href="#refer" class="refer_a">Refer a candidate</a><p><a href="#apply" class="apply_a">Apply for it</a></p></div>
-                    </div><br>
-                    <div><h4>1 Positions for Network Engineer</h4>
-                         <div><a href="#refer" class="refer_a">Refer a candidate</a><p><a href="#apply" class="apply_a">Apply for it</a></p></div>
-                    </div><br>
+					<hr><br><div class="row">
+                     1 Vacancies for Software Engineer from AE Departmemt <br><a> Refer a Candidate</a><br><br>5 Vacancies for Technical Writer from PD Departmemt<br><a>Refer a Candidate</a>
+					 <br><br>2 Vacancies for DOTNET Developer from QA Departmemt<br><a>Refer a Candidate</a></div>
                 </div>
             </div>
         </div>
@@ -282,27 +220,27 @@
             <div class="row">
                 <div class="col-md-2 col-md-offset-3 text-center">
                     <div class="portfolio-item">
-                        <a href="#">
-                            <img class="img-portfolio img-responsive img-circle" src="img/portfolio-1.jpg" title="Prapti Sahu">
+                        <a href="http://about.me/praptisahu">
+                            <img class="img-portfolio img-responsive img-circle" src="img/portfolio-1.jpg">
                         </a>
-                        <h4><a href="#">Prapti</a></h4>
+                        <h4><a>Prapti</a></h4>
                     </div>
                 </div>
                 <div class="col-md-2 text-center">
                     <div class="portfolio-item">
                         <a href="#">
-                            <img class="img-portfolio img-responsive img-circle" src="img/portfolio-2.jpg" title="Riddhima">
+                            <img class="img-portfolio img-responsive img-circle" src="img/portfolio-2.jpg">
                         </a>
-                        <h4><a href="#">Riddhima</a></h4>
+                        <h4><a>Riddhima</a></h4>
                     </div>
                 </div>
             
                 <div class="col-md-2 text-center">
                     <div class="portfolio-item">
                         <a href="http://www.facebook.com/sailesh.arya">
-                            <img class="img-portfolio img-responsive img-circle" max-height="100px" src="img/portfolio-3.jpg" title="Sailesh Arya">
+                            <img class="img-portfolio img-responsive img-circle" max-height="100px" src="img/portfolio-3.jpg">
                         </a>
-                        <h4><a href="#">Sailesh</a></h4>
+                        <h4><a>Sailesh</a></h4>
                     </div>
                 </div>
                 
@@ -319,7 +257,7 @@
     <footer class="call-to-action">
         <div class="container ">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center"><br>
+                <div class="col-md-6 col-md-offset-3 text-center">
                     <ul class="list-inline">
                         <li><i class="fa fa-facebook fa-3x"></i>
                         </li>
@@ -330,10 +268,10 @@
                     </ul>
                     <div class="top-scroll">
                         <a href="#top"><i class="fa fa-chevron-up scroll fa-4x"></i></a>
-                    </div><br><br>
-                    <hr><br>
+                    </div>
+                    <hr>
                     <p>Copyright &copy; ProcessMAP Private Infotech 2014</p>
-                </div><br>
+                </div>
             </div>
         </div>
     </footer>
@@ -345,9 +283,6 @@
 
     <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
     <script>
-        <!--refer-->
-       
-        
     $("#menu-close").click(function(e) {
         e.preventDefault();
         $("#sidebar-wrapper").toggleClass("active");
@@ -374,39 +309,10 @@
 	
     </script>
     <script>
-        $(document).ready(function(){
-            $("a.loginn").click(function(e){
-                
-                if(($("input.userid")[0].value != "rmsadmin" ) || ($("input.pass")[0].value != "rmspass")){
-                    $(this).attr("href","#");
-                    
-                }
-                else{
-                $(this).attr("href","../ProRecruit/Project/view/");
-                }
-            });
-             $(".refer").hide();
-        $(".refer_a").click(function(e){
-       
-             $(".refer").show();
-        });
-        
-        <!--apply-->
-        $(".apply").hide();
-        $(".apply_a").click(function(e){
-       
-             $(".apply").show();
-        });
-        });
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#sidebar-wrapper").toggleClass("active");
     });
-    </script>
-    <script>
-     function getURLParameter(name) {// Function to get queryString Params. 
-         var match = RegExp('[?&]' + name + '=([^&]*)').exec(location.search);
-         return match && decodeURIComponent(match[1].replace(/\+/g, ' ')); }
     </script>
     <script>
     $(function() {
