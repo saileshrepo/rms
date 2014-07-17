@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ProRecruit - The Best Out THERE!!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ProcessMAP ProRecruit">
+    <meta name="author" content="Sailesh Arya">
+
+    <link href="styles/bootstrap.css" rel="stylesheet">
+    <link href="styles/font-awesome.css" rel="stylesheet">
+	<link href="styles/font-awesome-4.1.0/css/font-awesome.css" rel="stylesheet">
+    <link href="styles/jquery.tocify.css" rel="stylesheet">
+    <link href="styles/tomorrow-night.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+	<style>
+		h4{
+		size:12px;
+		}
+	</style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span3">
+                <div id="toc"></div>
+            </div>
+
+            <div class="span9">
+                <div class="hero-unit">
+                    <h1>ProRecruit</h1><br><p>The Best Out THERE!!!</p><br><br>
+                    <h2><i class="icon-book"></i>&nbsp;DESIGN GUIDELINES</h2>
+					<!-- <font style="position:relative; left:95%;" color="red" size=52px> <a href="../fsd_final.pdf" download="fsd-prorecruit.pdf"><i class="icon-download"></i></a></font>  -->
+					<span class="pull-right" title="Download PDF"> <a href="../fsd_final.pdf" download="fsd-prorecruit.pdf"><i class="fa fa-file-pdf-o fa-2x" style="color:#B40404;"></i></a> </span>  
+					<span class="pull-right" title="Download Word Document"> <a href="../fsd_final.pdf" download="fsd-prorecruit.pdf"><i class="fa fa-file-word-o fa-2x" style="color:#0431B4;"></i></a> </span> 
+                    <br />
+                    
+                </div>
+
+                <h2><i class="icon-repeat"></i>&nbsp;REVISION HISTORY</h2>
+                <br />
+                <table class="table table-striped table-bordered table-condensed">
+                    <tr>
+                        <th class="optionName" title="Author" data-content="Serves as the author of this document." data-placement="right">Author</th>
+                        <th class="optionName" title="Date" data-content="Provide the date that the document creation or updates were completed." data-placement="bottom">Date</th>
+                        <th class="optionName" title="Reason for Change" data-content="Provide a reason for the change." data-placement="bottom">Reason for Change</th>
+                        <th class="optionName" title="Version" data-content="Specify the version number of the document." data-placement="left">Version</th>
+                    </tr>
+                    <tr>
+                        <td>Prapti Sahu<br>Riddhima<br>Sailesh Arya</td>
+                        <td>June 16, 2014</td>
+                        <td>Initial Release</td>
+                        <td>1.0</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+                <br />
+
+                <h2><i class="icon-pencil"></i>&nbsp;INTRODUCTION</h2>
+                <p class="well">
+                ProcessMAP Recruitment management software is more than a recruitment database, it parses emails, manages and creates documents, enters data, synchronizes with Social Networking sites , emails applicants, and synchronizes with your calendar and job seeker websites like Monster and Naukri -all automatically. Recruitment Management System offers the most powerful start-to-finish tools for managing your placement ratio. Rather than just focusing on candidates, it gives your recruiters the tools to effectively carry out the recruiting procedure.
+                </p>
+
+                <br />
+
+                <h2><i class="icon-search"></i>&nbsp;SCOPE</h2>
+                <div class="well">
+				<ul>
+				<li> Online system to track recruitment process at one place: This software offers the most powerful start-to-finish tool that not only focuses on candidates,but also gives recruiters the power to effectively carry out the recruiting procedure. Various users can log-in into the software and will have the rights predefined by admin according to the user roles.</li><br>
+				<li> Feature to submit online application with resume: This software also provide feature to submit online application. As soon as the candidate will click on the external link provided at various portals and sites, he will be asked for his name and email-address on clicking the submit button, a link will be sent to his email id through which he can proceed further and apply with the auto-generated user-id.</li><br>
+				<li> Filtering and shortlisting candidates: Filtering and Short-listing of candidates will be done at HR screening, HR will get the list of candidates applying for a job from which he can short-list the candidates.</li><br>
+				<li> Supports scheduling and customizable recruitment process: This software supports customizable recruitment Process, that is depending on the requirement or resources HR can customize the rounds and interviews. He will be able to schedule interviews and assign interviewer independently.</li><br>
+				<li> Collect information show statistics: The software will keep track of all the job vacancies opening and closing along with the employee distribution among various departments and branches of the company. Graphs will be used to depict the company demographics and employee tally.</li><br>
+				<li> Feature to assign responsibility to team: It will have a feature where responsibilities will be assigned to various users, like HOD will post job vacancies from his department, the management must approve it, after approval from management its HR' s job to post it onto the vacancies' list.</li><br>
+				<li> Customizable notification: Notification feature will help the users to be updated with the on-going procedures. For example: if HOD posted a new vacancy it will send a notification to the management for review. Similarly when HR will assign interview, the interviewer will receive a notification about the interview which he can confirm or decline.</li><br>
+				<li> Social network & job portals linking: The Software will give an option to HR to post the job advertisements on various platforms like Career page of the company, Job Portals and Social Networking sites. He will also get option to post on different groups he belongs to. The post will contain a link through which candidates can apply for the job.</li><br>
+				<li> Referral management: This feature will help all the employees to refer a candidate, they just have to mention their employee -Id, Candidates name, Phone number and Email-address. The candidate will receive a mail which will contain a link to Candidate Form through which he can apply for the job.</li><br>
+				<li> Analytical Dashboard: The Contents as well as the menu options will be customized based on the user roles. Each user will can view some common contents like Company demographics and Employee Tally.</li>
+				</ul>
+				</div>
+
+                <br /><hr><br><br>
+				<h2><i class="icon-retweet"></i>&nbsp;FLOW DIAGRAM</h2>
+                <div class="well">
+                <IMG SRC="img/dfd_final.jpg" WIDTH="1290" HEIGHT="1806" BORDER="0" ALT=""><br />
+                </div><br><hr><br><br>
+
+<!-- Login Page-->
+                <h2><i class="icon-user"></i>&nbsp;LOGIN PAGE</h2>
+                <div class="well">
+               <IMG SRC="img/homepage.png" />
+                </div>
+           <br />
+         
+                <h3 >Sign-In</h3><br><strong>User-id</strong>: the user will enter his user-id here.<br><br>
+		<strong>Password</strong>: the user will enter his password<br><br>
+				  <div class="well">
+				  <img src="img/login.png" /></div><br>
+				  
+                <br />
+         
+                <h3>Jobs</h3><br> <ul><li> This field will show a list of various job vacancies opening in the organization.</li><br>
+<li> Refer a Candidate: this button will be for individual job to give employees an option to refer a candidates. On clicking a refer form will open.</li></ul><br><br>
+                <div class="well"><img src="img/jobs.png" /></div>
+                   
+
+                    <br /><br />
+                  <h3>Other Details</h3> <br>
+              <h4>About Us</h4>This field will be displaying information about the Recruitment Management Software.<br><br> <div class="well"><img src="img/about_us.png" /></div><br>
+			  <h4>Services</h4>This field will display the services provided by the software.<br><br><div class="well"><img src="img/service.png" /></div><br>
+			  
+			  <h4>Menu items</h4>.<br><br><div class="well"><img src="img/menu.png" /></div><br>
+			   
+			  <br>
+<hr><br><br>
+<!-- Landing Page-->
+<h2><i class="icon-home"></i>&nbsp;LANDING PAGE</h2>
+<div class="well"><img src="img/admin_front.png"/></div><br>
+
+<h3>Edit Profile</h3><br>
+<img src="img/editprofile.png"/><br>
+<strong>Change Profile picture:</strong> The user can change/remove his/her profile picture.<br><br>
+	<strong>Change Password:</strong> The user can change his/her password.<br><br>
+	<div class="well"><img src="img/Edit Profile.png"/></div><br><br>
+
+<h3>Demographics</h3><br><strong>Company Demographics:</strong>  Detailed description and Graphical representation of the current of the current statistics of the company.<br><br>
+	<strong>Employee Tally:</strong> Representation of the opening vacancies, ongoing recruitment 	process, filled positions and current employee strength in a graphical form, this chart 	will be customizable on the basis of department month and location.<br><br>
+	<div class="well"><img src="img/demo.png"/></div><br><br>
+
+<h3>Main Navigation Bar</h3><br>
+<div class="well"><img src="img/nav.jpg"/></div><br><br>
+
+<ul><li>Company Demographics</li>
+<li>Employee Tally</li>
+<li>Vacancies</li>
+<li>Scheduler</li>
+<li>Additional Access</li></ul><br><br>
+	
+	<h4> Vacancies</h4> <br><br>
+	<p><strong>Pending Requisitions:</strong> 
+Details about the requisitions which have been posted by the HOD(s) but have not yet been approved by the management. 
+The requesting HOD can resend the same form for approval to the management heads.<br><br>
+	
+	<strong>Approved Vacancies:</strong> 
+ HR : receive a mail notification for each approved requisition, Clicking on the Proceed option he will be able to promote the job on social networking sites and send an email to all the employees notifying them about the vacancy opened and link to Employee Referral form.
+HOD: Receive an email notification for the approved requisition.<br><br>
+	
+	<strong>Opened Vacancies:</strong>
+Clicking on the View Details option, it will show details of that particular round, which candidates qualified it and where they are currently with their status and CES. 
+Link to Employee Referral Form.
+Additional access to HR: Screen Candidates for each job, schedule number of rounds, name of each round. Schedule/Reschedule interviews  for each candidate in every round. After final selection of candidate, get approval by the management, check reference for the candidate, after final joining of candidate, close the vacancy.<br><br>
+
+	<strong>Closed Vacancies:</strong>
+Details about the filled positions. View Details will show the list of selected candidates, date of closing.<br><br><div class="well"><img src="img/vacncies.png" /></div><br><br>
+
+<h4> Scheduler</h4> <br><br>
+<strong>For HR</strong><br><br>
+<ul><li>The HR has the access to schedule interviews for each round of every requisition. Clicking on the Scheduler option for any round of an interview the HR will be directed to the Scheduler Page.</li><br>
+<li>Scheduler will contain a brief detail about the requisition( job designation, requisition bye, Date of request and date of approval).</li><br>
+<li>Shortlisted candidate list, HR will assign the location, interview date, time and panel of interviewers for each candidate.</li><br>
+<li>If interviewers have already been assigned for a specific date and time, while scheduling interview for the next candidate at the same date and time their names will be removed from the Interviewer pool.</li></ul>
+<br><br><div class="well"><img src="img/Scheduler.png" /></div>
+<br><br>
+<strong>For Interviewer</strong><br><br>
+<ul><li>Interviewer views the candidates to be interviewed.</li><br><br>
+<li>In case of inability in being present at the scheduled time, he enters the reason for inability to take the interview, clicks on the Send to HR button which will send a notifying email to the HR and he will reschedule the process.</li><br><br>
+<li>Clicking on Candidates' Name, candidate details are shown along with their CV and link to the Candidate Evaluation Sheet to be filled after the interview of each candidate. Candidate Evaluation Report of previous rounds(if any).</li></ul><br><br>
+<div class="well"><img src="img/inter.jpg" /></div><br><br>
+
+
+
+<h3>Hamburger Menu</h3><br><br>
+
+<h4><u>For Admin</u></h4> <br><br>
+<div class="well"><img src="img/admin_menu1.png" /></div><br><br>
+
+<ul><strong><li>Job Details</li></strong><br>
+<div class="well"><img src="img/job_desc.png" /></div><br>
+<img width=1000px height=700px src="img/tables/job.jpg" /><br><br><br>
+
+<strong><li>Users</li></strong><br>
+<p>On clicking the Save button, a mail will be sent to the specified user's email id with a
+link to update his/her profile in a few steps.</p><br>
+<div class="well"><img src="img/new_user.png" /></div><br>
+<img width=1000px height=700px src="img/tables/new_user.jpg" /><br><br><br>
+
+<strong><li>Organization Details</li></strong><br>
+<div class="well"><img src="img/company.png" /></div><br>
+<img width=1000px height=700px src="img/tables/org.jpg" /><br><br><br>
+
+<strong><li>Employee Referral Form</li></strong><br>
+<div class="well"><img src="img/referral.png" /></div>
+<img width=1000px height=700px src="img/tables/refer.jpg" /></ul><br><br>
+
+
+<h4><u> For HR</u></h4> <br><br>
+<div class="well"><img src="img/hr.png" /></div><br><br>
+
+<ul><strong><li>Vacancies</li></strong><br>
+<p>The Vacancies option for the HR will be having an additional option for Promoting the job to various Networking site(s) and job portals.</p><br>
+<div class="well"><img src="img/hr_vacancy.png" /></div><br><br>
+
+<strong><li>Promoting Jobs</li></strong><br>
+<p><ul><li>HR can promote the Job to different Social Networking Sites like Facebook, Twitter and Linked In.</li><br>
+<li>APIs will be used to access the groups and user details of the HR so that he can post the Job Vacancies to selected groups only.</li><br>
+<li>If the Social Network(s) is not linked then user can link it to the ProRecruit Site by providing his login credentials.</li><br>
+<li>HR can also upload some important documents or other files with the links that will be reflected with the status.</li><br>
+<li>After confirming a mail intimation is sent to all the employees of the company with a link to the Employee Referral Form informing them about the opening vacancies.</li></ul><br></p>
+<div class="well"><img src="img/promotion.png" /></div><br><br>
+
+<strong><li>Candidate Database</li></strong><br>
+<p><ul><li>Search candidates: The HR will be able to short-list candidates from the candidate database by clicking on Search Candidates Option.</li><br>
+<li>Import CV: The HR will be able to add more Candidates to the candidate database clicking on this button.</li><br>
+<li>Talent Pool: The HR will be able to archive the candidates.</li></ul><br></p>
+<p>Once the candidate fill the candidate form, it will be automatically stored into database.
+<br>It will have the following details about the candidate:<br><br>
+
+<u>Candidate name:</u> This field will contain the name in the hyperlink form. Upon clicking on that we'll get his CV.<br><br>
+
+<u>Referred by:</u> This field will contain employees name that referred the candidate and if no employee referred the candidate this place would be empty.<br><br>
+
+<u>Location:</u> This field will show the location of the Candidate.<br><br>
+
+<u>Experience:</u> This field will show the experience of candidates in years.<br><br>
+
+<u>Status:</u> This column will tell what is the current status of the candidate, on which round he is currently.<br><br>
+
+<u>Achievements:</u> This field will contain the achievements of the candidate if any.<br><br>
+
+<u>Other Details:</u> Any other detail will be specified here.</p><br><br>
+<div class="well"><img src="img/cand_db.png" /></div></li></ul><br><br>
+
+<h4><u> For HOD</u></h4> <br><br>
+<div class="well"><img src="img/hod.jpg" /></div><br><br>
+
+<ul><strong><li style="size:18px;">Employee Requisition Form</li></strong><br>
+<div class="well"><img src="img/erf.jpg" /></div><br>
+<img width=1000px height=700px src="img/tables/requisition.jpg" /><br><br>
+
+<strong><li>Candidate Details Form</li></strong><br>
+<div class="well"><img src="img/cdform.png" /></div><br>
+<img width=1000px height=700px src="img/tables/candidateform.jpg" /><br><br><br>
+</ul><br>
+
+<h4><u> For Interviewer</u></h4> <br><br>
+<div class="well"><img src="img/interviewer.png" /></div><br><br>
+
+<ul><strong><li>Candidate Evaluation Sheet</li></strong><br>
+<div class="well"><img src="img/ces.png" /></div><br>
+<img width=1000px height=700px src="img/tables/ces.jpg" /><br><br>
+<hr></ul><br><br>
+
+
+
+
+
+<!-- Email Section-->
+            <h2><i class="icon-envelope"></i>&nbsp;EMAIL TEMPLATES</h2>
+            <h3>New User Email</h3>
+            <div class="well" style="color :#0088cc;">Subject: Welcome to Pro Recruit<br><br>
+Hi ABC,<br>
+Welcome to Pro Recruit, your account has been created.<br>
+Your credentials are:<br>
+User Id: abc12<br>
+User Role: HR<br>
+Kindly use the following link to update your new user profile.<br>
+<u>Edit your profile</u><br><br>
+Thank You,<br>ProcessMAP ProRecruit Team</div>
+                
+            <h3>Reset password email</h3>
+                <div class="well" style="color :#0088cc;">Subject: Reset your password<br><br>
+Hi ABC,<br>
+You have requested to reset your password.<br>
+Kindly use the following link to update your new user profile.<br>
+<u>Reset your password</u><br><br>
+Thank You,<br>ProcessMAP ProRecruit Team</div>
+
+ 
+ 
+ <h3>Approval Email</h3>
+                <div class="well" style="color :#0088cc;">Subject: Your approval requested<br><br>
+Hi CEO/CTO,<br>
+A new Requisition is awaiting your approval.<br>
+Requisition Details<br>
+Requested By: PQR<br>
+Job Designation:<br>
+Location:<br>
+Module:<br>
+CTC:<br>
+<u>Approve</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Reject</u><br><br>
+Thank You,<br>ProcessMAP ProRecruit Team</div>
+ <h3>Confirmation Email</h3>
+                <div class="well" style="color :#0088cc;">Subject: Your approval requested<br><br>
+Subject: Requisition Approved/Rejected<br><br>
+Hi ABC,<br>
+Your requisition has been Approved/ Rejected.<br>
+Please use the following link to view more details about the recruitment process.<br>
+<u>View Details</u><br><br>
+Thank You,<br>ProcessMAP ProRecruit Team</div>
+
+<h3>Candidate Email</h3>
+                <div class="well" style="color :#0088cc;">Subject: Your approval requested<br><br>
+Subject: Pro-Recruit- Candidate Application Form<br><br>
+Hi MNO,<br>
+Thank you for showing your interest in joining ProcessMAP Infotech Pvt. Ltd.<br>
+/* You have been referred by ABC, XYZ Department. If you want to apply as a referred candidate please enter this one time referral code abc$45%# */<br>
+Please fill up the Candidate Detail Form to proceed further.<br><br>
+Thank You,<br>ProcessMAP ProRecruit Team</div>
+
+<h3>Interviewer email</h3>
+                <div class="well" style="color :#0088cc;">Subject: Interview scheduled for (job-id,round)<br><br>
+Hi LMN,<br>
+Your next interview has been assigned as per the following details:<br>
+Applied for the post:<br>
+Candidate's Name:<br>
+Location:<br>
+Date & Time:<br>
+For more details log in to your Pro-Recruit Account.<br><br>
+Thank You,<br>ProcessMAP ProRecruit Team</div>
+
+<h3>Mail to short-listed candidates</h3>
+                <div class="well" style="color :#0088cc;">Subject: Shortlisted for (round)<br><br>
+Hi MNO,<br>
+Congratulations, you have been short-listed for the round in the interview process for the job you applied for. Please find your interview details below:<br>
+Location:<br>
+Date & Time:<br>
+For further information contact Mr.AAA, 1234567890<br><br>
+Thank You,<br>ProcessMAP ProRecruit Team</div>
+
+
+<h3>Mail to rejected candidates</h3>
+                <div class="well" style="color :#0088cc;">Subject: Not Shortlisted for (Job-Id, Round)<br><br>
+Hi RST,
+Your skill set as of now does not match with our requirements.<br>
+Your CV has been added to out Talent Pool, we shall be intimating you in
+case any vacancies open for you.<br>
+For further information contact Mr.AAA, 1234567890<br><br>
+Thank You,<br>ProcessMAP ProRecruit Team</div>
+
+            <br><hr><br>
+
+            <h2><i class="icon-book"></i>&nbsp;REFERENCES</h2><br>
+            <div class="well"><ul>
+                <li><a href="http://www.orangehrm.com">Orange HRM</a></li>
+                <li><a href="https://www.simplehrm.com">Simple HRM</a></li>
+                <li><a href="http://www.zohorecruit.com">Zoho Recruit</a></li>
+				<li><a href="http://developers.facebook.com">Facebbok API</a></li>
+				<li><a href="http://www.designworks.co.uk">Design works</a></li>
+				<li><a href="http://www.themeforest.net">Theme Forest</a></li>
+            </ul>
+			</div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="javascripts/jquery-2.0.3.min.js"></script>
+    <script src="javascripts/jquery-ui-1.9.1.custom.min.js"></script>
+    <script src="javascripts/bootstrap.js"></script>
+    <script src="javascripts/jquery.tocify.js"></script>
+    <script src="javascripts/highlight.pack.js"></script>
+    <script src="javascripts/main.js"></script>
+	<script> $("#dvStatistics").load("statistics.html");  </script>
+  </body>
+</html>
