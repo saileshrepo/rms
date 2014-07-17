@@ -69,16 +69,16 @@ body > .header {
     margin-top: 0px;
   }
   /* Left side collapse */
-  .left-side.collapse-left {
+ /* .left-side.collapse-left {
     left: -220px;
-  }
+  }*/
 }
 /*Give content full width on xs screens*/
-@media screen and (max-width: 992px) {
+/*@media screen and (max-width: 992px) {
   .right-side {
     margin-left: 0;
   }
-}
+}*/
 /*
     By default the layout is not fixed but if you add the class .fixed to the body element
     the sidebar and the navbar will automatically become poisitioned fixed
@@ -580,7 +580,7 @@ body > .header .logo .icon {
  * --------------------------------------------------
  *  Gives us the push menu effect
  */
-@media screen and (max-width: 992px) {
+/*@media screen and (max-width: 992px) {
   .relative {
     position: relative;
   }
@@ -610,7 +610,7 @@ body > .header .logo .icon {
   body.fixed .row-offcanvas-left.active .sidebar-offcanvas {
     left: 0px;
   }
-}
+}*/
 /* 
     Dropdown menus
 ----------------------------

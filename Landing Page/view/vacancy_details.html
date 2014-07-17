@@ -2,13 +2,31 @@
     <html>
     <head>
     <script src="../js/jquery.min.js"></script>
-        <script>                       
-            $(document).ready(function(e){
-                $(".candidate").click(function(e){ e.preventDefault();
-                                                            $("#first0").append("<div id='xyz'></div>");
-                                                                $("#xyz").load("cpage.html");
-                                                               });
-                
+   <script>                       
+               $(document).ready(function(e){ 
+                    $(".menuOpt").click(function(e){ 
+                            e.preventDefault();
+                            var cls=$(this).attr("class");
+                            cls=cls.slice(8,cls.length);
+                        
+                            var att= $("#content_blocks").find("#"+cls).html();
+
+                        if(!att)
+                            {
+                             $("#content_blocks").find("#vacancy_details").first().append('<div id=' + cls + '></div>');
+                                $('#'+cls).load(cls+".html");
+                             }
+                         else
+                            {
+                            var pos=$("#"+cls+" section").offset();
+                             window.scrollTo(pos.left, pos.top);
+                            
+                               
+                            }
+
+                    
+                       });
+                         
             });
                 
         </script> </head>
@@ -32,7 +50,12 @@
                                 </div><!-- /.box-header -->
                                 <div class="box-body no-padding">
 									<div>
-                                        <span><h4>System Analyst</h4></span>
+                                        <span><h4>&nbsp;&nbsp;&nbsp;System Analyst</h4></span>
+									</div>
+                                    <div class="form-group">
+										<label>&nbsp;&nbsp;&nbsp;&nbsp;Requisition By: A. Behera</label>
+										<div><label>&nbsp;&nbsp;&nbsp;&nbsp;Date of Request: 16-06-14</label></div>
+										<div><label>&nbsp;&nbsp;&nbsp;&nbsp;Date of Approval: 17-06-14</label></div>
 									</div><hr />
                                     <div>
                                        &nbsp;&nbsp;<i class="fa fa-circle text-info"></i> Short-Listed&nbsp;&nbsp;
@@ -44,26 +67,26 @@
                                     <div>
                                         <ul class="todo-list">
                                             <li><div>
-                                                    <strong><a href="" class="candidate">S. Mohanty</a></strong>
-                                                    <a href=""><i class="fa fa-file-text fa-2x pull-right text-success" style="padding-top:5px; padding-right:4px;" title="CES"></i></a>
+                                                    <strong><a href="" class="menuOpt cpage">S. Mohanty</a></strong>
+                                                    <a href="" class="menuOpt evaluationSheet"><i class="fa fa-file-text fa-2x pull-right text-success" style="padding-top:5px; padding-right:4px;" title="CES"></i></a>
                                                 </div>
                                                 <div><i class="fa fa-circle text-success"></i>&nbsp;&nbsp;<small>HR Round>>Online Round>>Tech Round 1>>Tech Round 2</small></div>
                                             </li>
                                             <li><div>
-                                                    <strong><a href="" class="candidate">A. Mishra</a></strong>
-                                                    <a href=""><i class="fa fa-file-text fa-2x pull-right text-success" style="padding-top:5px; padding-right:4px;" title="CES"></i></a>
+                                                    <strong><a href="" class="menuOpt cpage">A. Mishra</a></strong>
+                                                    <a href="" class="menuOpt evaluationSheet"><i class="fa fa-file-text fa-2x pull-right text-success" style="padding-top:5px; padding-right:4px;" title="CES"></i></a>
                                                 </div>
                                                 <div><i class="fa fa-circle text-info"></i>&nbsp;&nbsp;<small>HR Round</small></div>
                                             </li>
                                             <li><div>
-                                                    <strong><a href="" class="candidate">B. Chatterjee</a></strong>
-                                                    <a href=""><i class="fa fa-file-text fa-2x pull-right text-success" style="padding-top:5px; padding-right:4px;" title="CES"></i></a>
+                                                    <strong><a href="" class="menuOpt cpage">B. Chatterjee</a></strong>
+                                                    <a href="" class="menuOpt evaluationSheet"><i class="fa fa-file-text fa-2x pull-right text-success" style="padding-top:5px; padding-right:4px;" title="CES"></i></a>
                                                 </div>
                                                 <div><i class="fa fa-circle text-danger"></i>&nbsp;&nbsp;<small>HR Round>>Online Round>>Tech Round 1</small></div>
                                             </li>
                                             <li><div>
-                                                    <strong><a href="" class="candidate">N. Das</a></strong>
-                                                    <a href=""><i class="fa fa-file-text fa-2x pull-right text-success" style="padding-top:5px; padding-right:4px;" title="CES"></i></a>
+                                                    <strong><a href="" class="menuOpt cpage">N. Das</a></strong>
+                                                    <a href="" class="menuOpt evaluationSheet"><i class="fa fa-file-text fa-2x pull-right text-success" style="padding-top:5px; padding-right:4px;" title="CES"></i></a>
                                                 </div>
                                                 <div><i class="fa fa-circle text-warning"></i>&nbsp;&nbsp;<small>HR Round>>Online Round>>Tech Round 1</small></div>
                                             </li>

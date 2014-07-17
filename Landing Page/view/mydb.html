@@ -2,25 +2,110 @@
 	<!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../css/jquery-ui.css">
-        <script src="../js/jquery.min.js"></script>
+        <title>ProRecruit | The Best out THERE!!!</title>
         
-      
-        <script src="../js/jquery-1.10.2.js"></script> 
-        <script src="../js/jquery-1.10.4.js"></script> 
-        <!-- DATA TABLES -->
-        <link href="../css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="../css/jquery-ui.css">
+   
+         
+    <script src="../js/jquery-2.0.3.min.js"></script>
+	
+    <script src="../js/knockout.js"></script>
+    
+    <script src="../viewmodel/vm_mydb.js"></script>
+    
+        
+        
+   <script>
+            $(".indexcandidateform").click(function(e) {
+                e.preventDefault();
+                var cls = $(this).attr("class");
+
+                cls = cls.split(" ");
+                var divName = cls[3];
+
+                var att = $("#content_blocks").find("#" + divName).html();
+                if (!att) {
+                    $("#content_blocks").append('<div id=' + divName + '></div>');
+                    $('#' + divName).load(divName + ".html");
+                    var pos1 = $("#" + divName + " section").offset();
+                    alert(pos1.left);
+                    window.scrollTo(pos1.left, pos1.top);
+                } else {
+                    var pos = $("#" + divName + " section").offset();
+                    window.scrollTo(pos.left, pos.top);
+
+
+                }
+            });
+        </script>
+    
+        <script>
+        $(document).ready(function() {
+        $("div.main_search").css({"width":"20%"});
+        $("div.main_search").focusin(function(){
+            $(this).animate({"width":"35%"},800);
+        }).focusout(function(){
+        
+            $(this).animate({"width":"20%"},800);
+        
+        });
+        });
+        
+        </script>
+        <style>
+            td{
+            width:150px;
+            }
+           tbody tr:nth-child(odd) {
+                text-align:center;
+                background-color: #DFEFFF;
+            }
+            tbody tr:nth-child(even) {
+                text-align:center;
+                background-color: #f7f7f7	;
+            }
+            thead tr th{
+                text-align: center;
+                background-color: #f7f7f7;
+            }
+            
+            
+            
+        input[type="search"]{
+
+    
+  /* Now your own custom styles */
+  height:auto;
+ 
+
+
+              -moz-box-shadow: inset 0 3px 8px rgba(0,0,0,.4);
+   -webkit-box-shadow: inset 0 3px 8px rgba(0,0,0,.4);
+   box-shadow: inset 0 3px 8px rgba(0,0,0,.24);
+            border-radius: 10px;
+             -webkit-border-radius: 10px;
+            
+           
+  /* Will place small red box on the right of input (positioning carries over) */
+
+}
+        </style>
+        
+        
+        
+    </head>
     <body> 
 	  
 	  <!-- CANDIDATE DATABASE -->                
-                         
-                    <section  class="col-lg-12 "> 
+
+        
+        <section  class="col-lg-12 "> 
                         
                              <div class="box box-primary" style="padding-top:5px">
                                 <div class="box-header">
                                     <!-- tools box -->
                                     <div class="pull-right ">
-
+                                         <a class="btn btn-danger btn-sm indexcandidateform" href=""  data-toggle="tooltip" title="Add New Candidate"><i class="fa fa-user"></i></a>
                                          <button class="btn btn-danger btn-sm refresh-btn" data-widget="refresh" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
                                         <button class="btn btn-danger btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                                         <button class="btn btn-danger btn-sm" data-widget='expand' data-toggle="tooltip" title="Expand" style="display:none"><i class="fa fa-plus"></i></button>
@@ -32,510 +117,147 @@
                                     <h3 class="box-title">Candidates</h3>                                    
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
-                                    <table id="example1" class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th style="width: 100px">Name</th>
-                                                <th style="100px">Applied for</th>
-                                                <th style="width: 150px">Referred By</th>
-                                                <th style="width: 150px">Location</th>
-                                                    <!--Status: success-selected warning-onhold danger-rejected primary-shortlisted--->
-                                                <th style="width: 200px">Status</th>
-                                                <th style="width: 50px">Experience</th>
-                                                <th style="width: 200px">Achievements</th>
-                                                <th style="width: 200px">Skills</th>
-                                                <th style="width: 200px">Other Details</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>A. Verma</td>
-                                                <td>Dot Net Developer</td>
-                                                <td>D. Mehra [PMBBSR203]</td>
-                                                <td>Kolkatta</td>
-                                                <td><i class="fa fa-circle text-danger"> Rejected</i> for round-3</td>
-                                                <td>3</td>
-                                                <td>MSP</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>A. Bhargava</td>
-                                                <td>System Analyst</td>
-                                                <td>S. Mishra[PMHYD134]</td>
-                                                <td>Bhubaneshwar</td>
-                                                <td><i class="fa fa-circle text-success"> Selected</i></td>
-                                                <td>1</td>
-                                                <td>MSP</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>A. Mishra</td>
-                                                <td>---</td>
-                                                <td>Bhubaneshwar</td>
-                                                <td><i class="fa fa-circle text-primary"> Shortlisted</i> for round-2</td>
-                                                <td>4</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>S. Singh</td>
-                                                <td>R. Mishra[PMHYD234]</td>
-                                                <td>Hyderabad</td>
-                                                <td>1</td>
-                                                <td>Selected</td>
-                                                <td>---</td>
-                                                <td>---</td>
-                                                <td>---</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>G. Shrivastava</td>
-                                                <td>Firefox 1.5</td>
-                                                <td>Raipur</td>
-                                                <td><i class="fa fa-circle text-success"> Selected</i></td>
-                                                <td>A</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>S. Das</td>
-                                                <td>Firefox 2.0</td>
-                                                <td>Win 98+ / OSX.2+</td>
-                                                <td>1.8</td>
-                                                <td>A</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>B. Subramanium</td>
-                                                <td>D. Soni [PMBBSR123]</td>
-                                                <td>Ranchi</td>
-                                                <td><i class="fa fa-circle text-danger"> Rejected</i> for round-2</td>
-                                                <td>3</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>C. Sharma</td>
-                                                <td>---</td>
-                                                <td>Ranchi</td>
-                                                <td><i class="fa fa-circle text-warning"> On-hold</i> for round-4</td>
-                                                <td>5</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>R. Gupta</td>
-                                                <td>Camino 1.5</td>
-                                                <td>OSX.3+</td>
-                                                <td>1.8</td>
-                                                <td>A</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>B. Verma</td>
-                                                <td>D. Mehra [PMBBSR203]</td>
-                                                <td>Kolkatta</td>
-                                                <td><i class="fa fa-circle text-primary"> Shortlisted</i> for round-3</td>
-                                                <td>3</td>
-                                                <td>MSP</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>C. Bhargava</td>
-                                                <td>S. Mishra[PMHYD134]</td>
-                                                <td>Bhubaneshwar</td>
-                                                <td><i class="fa fa-circle text-success"> Selected</i></td>
-                                                <td>1</td>
-                                                <td>MSP</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>D. Mishra</td>
-                                                <td>---</td>
-                                                <td>Bhubaneshwar</td>
-                                                <td><i class="fa fa-circle text-primary"> Shortlisted</i> for round-2</td>
-                                                <td>4</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>E. Singh</td>
-                                                <td>R. Mishra[PMHYD234]</td>
-                                                <td>Hyderabad</td>
-                                                <td>1</td>
-                                                <td>Selected</td>
-                                                <td>---</td>
-                                                <td>---</td>
-                                                <td>---</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>F. Shrivastava</td>
-                                                <td>Firefox 1.5</td>
-                                                <td>Raipur</td>
-                                                <td><i class="fa fa-circle text-success"> Selected</i></td>
-                                                <td>A</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>G. Das</td>
-                                                <td>Firefox 2.0</td>
-                                                <td>Win 98+ / OSX.2+</td>
-                                                <td>1.8</td>
-                                                <td>A</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>H. Subramanium</td>
-                                                <td>D. Soni [PMBBSR123]</td>
-                                                <td>Ranchi</td>
-                                                <td><i class="fa fa-circle text-danger"> Rejected</i> for round-2</td>
-                                                <td>3</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>I. Sharma</td>
-                                                <td>---</td>
-                                                <td>Ranchi</td>
-                                                <td><i class="fa fa-circle text-warning"> On-hold</i> for round-4</td>
-                                                <td>5</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>J. Gupta</td>
-                                                <td>Camino 1.5</td>
-                                                <td>OSX.3+</td>
-                                                <td>1.8</td>
-                                                <td>A</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>K. Verma</td>
-                                                <td>D. Mehra [PMBBSR203]</td>
-                                                <td>Kolkatta</td>
-                                                <td><i class="fa fa-circle text-primary"> Shortlisted</i> for round-3</td>
-                                                <td>3</td>
-                                                <td>MSP</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>L. Bhargava</td>
-                                                <td>S. Mishra[PMHYD134]</td>
-                                                <td>Bhubaneshwar</td>
-                                                <td><i class="fa fa-circle text-success"> Selected</i></td>
-                                                <td>1</td>
-                                                <td>MSP</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>M. Mishra</td>
-                                                <td>---</td>
-                                                <td>Bhubaneshwar</td>
-                                                <td><i class="fa fa-circle text-primary"> Shortlisted</i> for round-2</td>
-                                                <td>4</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>N. Singh</td>
-                                                <td>R. Mishra[PMHYD234]</td>
-                                                <td>Hyderabad</td>
-                                                <td>1</td>
-                                                <td>Selected</td>
-                                                <td>---</td>
-                                                <td>---</td>
-                                                <td>---</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>O. Shrivastava</td>
-                                                <td>Firefox 1.5</td>
-                                                <td>Raipur</td>
-                                                <td><i class="fa fa-circle text-success"> Selected</i></td>
-                                                <td>A</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>P. Das</td>
-                                                <td>Firefox 2.0</td>
-                                                <td>Win 98+ / OSX.2+</td>
-                                                <td>1.8</td>
-                                                <td>A</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>R. Subramanium</td>
-                                                <td>D. Soni [PMBBSR123]</td>
-                                                <td>Ranchi</td>
-                                                <td><i class="fa fa-circle text-danger"> Rejected</i> for round-2</td>
-                                                <td>3</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>S. Sharma</td>
-                                                <td>---</td>
-                                                <td>Ranchi</td>
-                                                <td><i class="fa fa-circle text-warning"> On-hold</i> for round-4</td>
-                                                <td>5</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>T. Gupta</td>
-                                                <td>Camino 1.5</td>
-                                                <td>OSX.3+</td>
-                                                <td>1.8</td>
-                                                <td>A</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>U. Verma</td>
-                                                <td>D. Mehra [PMBBSR203]</td>
-                                                <td>Kolkatta</td>
-                                                <td><i class="fa fa-circle text-primary"> Shortlisted</i> for round-3</td>
-                                                <td>3</td>
-                                                <td>MSP</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>V. Bhargava</td>
-                                                <td>S. Mishra[PMHYD134]</td>
-                                                <td>Bhubaneshwar</td>
-                                                <td><i class="fa fa-circle text-success"> Selected</i></td>
-                                                <td>1</td>
-                                                <td>MSP</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Y. Mishra</td>
-                                                <td>---</td>
-                                                <td>Bhubaneshwar</td>
-                                                <td><i class="fa fa-circle text-primary"> Shortlisted</i> for round-2</td>
-                                                <td>4</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>A. Singh</td>
-                                                <td>R. Mishra[PMHYD234]</td>
-                                                <td>Hyderabad</td>
-                                                <td><i class="fa fa-circle text-primary"> Shortlisted</i> for round-2</td>
-                                                <td>4</td>
-                                                <td>---</td>
-                                                <td>---</td>
-                                                <td>---</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>B. Shrivastava</td>
-                                                <td>Firefox 1.5</td>
-                                                <td>Raipur</td>
-                                                <td><i class="fa fa-circle text-success"> Selected</i></td>
-                                                <td>A</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>C. Das</td>
-                                                <td>Firefox 2.0</td>
-                                                <td>Win 98+ / OSX.2+</td>
-                                                <td><i class="fa fa-circle text-primary"> Shortlisted</i> for round-2</td>
-                                                <td>4</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>E. Subramanium</td>
-                                                <td>D. Soni [PMBBSR123]</td>
-                                                <td>Ranchi</td>
-                                                <td><i class="fa fa-circle text-danger"> Rejected</i> for round-2</td>
-                                                <td>3</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>G. Sharma</td>
-                                                <td>---</td>
-                                                <td>Ranchi</td>
-                                                <td><i class="fa fa-circle text-warning"> On-hold</i> for round-4</td>
-                                                <td>5</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>I. Verma</td>
-                                                <td>D. Mehra [PMBBSR203]</td>
-                                                <td>Kolkatta</td>
-                                                <td><i class="fa fa-circle text-primary"> Shortlisted</i> for round-3</td>
-                                                <td>3</td>
-                                                <td>MSP</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>J. Bhargava</td>
-                                                <td>S. Mishra[PMHYD134]</td>
-                                                <td>Bhubaneshwar</td>
-                                                <td><i class="fa fa-circle text-success"> Selected</i></td>
-                                                <td>1</td>
-                                                <td>MSP</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>K. Mishra</td>
-                                                <td>---</td>
-                                                <td>Bhubaneshwar</td>
-                                                <td><i class="fa fa-circle text-primary"> Shortlisted</i> for round-2</td>
-                                                <td>4</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>L. Singh</td>
-                                                <td>R. Mishra[PMHYD234]</td>
-                                                <td>Hyderabad</td>
-                                                <td>1</td>
-                                                <td>Selected</td>
-                                                <td>---</td>
-                                                <td>---</td>
-                                                <td>---</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>M. Shrivastava</td>
-                                                <td>Firefox 1.5</td>
-                                                <td>Raipur</td>
-                                                <td><i class="fa fa-circle text-success"> Selected</i></td>
-                                                <td>A</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            </tr>
-                                            <tr>
-                                                <td>N. Das</td>
-                                                <td>Firefox 2.0</td>
-                                                <td>Win 98+ / OSX.2+</td>
-                                                <td>1.8</td>
-                                                <td>A</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>O. Subramanium</td>
-                                                <td>D. Soni [PMBBSR123]</td>
-                                                <td>Ranchi</td>
-                                                <td><i class="fa fa-circle text-danger"> Rejected</i> for round-2</td>
-                                                <td>3</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>P. Sharma</td>
-                                                <td>---</td>
-                                                <td>Ranchi</td>
-                                                <td><i class="fa fa-circle text-warning"> On-hold</i> for round-4</td>
-                                                <td>5</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>za
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                            <tr>
-                                                <td>R. Gupta</td>
-                                                <td>Camino 1.5</td>
-                                                <td>OSX.3+</td>
-                                                <td>1.8</td>
-                                                <td>A</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td>X</td>
-                                            
-                                            </tr>
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th style="width: 100px">Name</th>
-                                                <th style="100px">Applied for</th>
-                                                <th style="width: 150px">Referred By</th>
-                                                <th style="width: 150px">Location</th>
-                                                    <!--Status: success-selected warning-onhold danger-rejected primary-shortlisted--->
-                                                <th style="width: 200px">Status</th>
-                                                <th style="width: 50px">Experience</th>
-                                                <th style="width: 200px">Achievements</th>
-                                                <th style="width: 200px">Skills</th>
-                                                <th style="width: 200px">Other Details</th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                                </div><!-- /.box-body -->
+<!--                                   <strong> Search:-->
+                                       <div class="input-group main_search">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i>&nbsp;</button>
+      </span><input type="search" placeholder="Search..." class="form-control" data-bind="value : filter , valueUpdate : 'input'">
+      
+    </div><br>
+<!--                                       <input class="form-control" id="input1" type="search" data-bind="value : filter , valueUpdate : 'input'"/></strong>&nbsp;&nbsp;&nbsp;-->
+                                    <button class="button2 btn btn-success" id="a1"><i class="glyphicon glyphicon-plus-sign"></i> More Filter</button>
+                                    <button class="button2  btn btn-success" id="a2"><i class="glyphicon glyphicon-minus-sign"></i> Less Filter</button><br><br>
+                       
+                                    
+                                  <table class="table table-responsive table-hover table-condensed">
+
+                                    <!--   TABLE HEAD  -->
+
+                                      <thead>
+                                          <tr>
+                                            <th>
+                                              <a class="button1" id="b1" data-bind='click: sortByNameAsc'>
+                                                Name &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-up"></i>
+                                                </a>
+                                                <a  class="button1" id="b2" data-bind='click: sortByNameDesc'>
+                                                Name &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-down"></i>
+                                                </a>
+                                              </th>
+                                            <th>
+                                              <a class="button1" id="c1" data-bind='click: sortByAppliedForAsc'>
+                                                Applied for &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-up"></i>
+                                                </a>
+                                                <a class="button1" id="c2" data-bind='click: sortByAppliedForDesc'>
+                                                Applied for &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-down"></i>
+                                                </a>
+                                              </th>
+                                            <th>
+                                              <a class="button1" id="d1" data-bind='click: sortBySourceAsc'>
+                                                Source &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-up"></i>
+                                                </a>
+                                                <a class="button1" id="d2" data-bind='click: sortBySourceDesc'>
+                                                Source &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-down"></i>
+                                                </a>
+                                              </th>
+                                              <th>
+                                              <a class="button1" id="e1" data-bind='click: sortByLocationAsc'>
+                                                Location &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-up"></i>
+                                                </a>
+                                                <a class="button1" id="e2" data-bind='click: sortByLocationDesc'>
+                                                Location &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-down"></i>
+                                                </a>
+                                              </th>
+                                              <th>
+                                              <a class="button1" id="f1" data-bind='click: sortByStatusAsc'>
+                                                Status &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-up"></i>
+                                                </a>
+                                                <a class="button1" id="f2" data-bind='click: sortByStatusDesc'>
+                                                Status &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-down"></i>
+                                                </a>
+                                              </th>
+                                              <th>
+                                              <a class="button1" id="g1" data-bind='click: sortByExperienceAsc'>
+                                                Experience &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-up"></i>
+                                                </a>
+                                                <a class="button1" id="g2" data-bind='click: sortByExperienceDesc'>
+                                                Experience &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-down"></i>
+                                                </a>
+                                                </th>
+                                              <th>
+                                              <a class="button1" id="h1" data-bind='click: sortByAchievementsAsc'>
+                                                Achievements &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-up"></i>
+                                                </a>
+                                                <a class="button1" id="h2" data-bind='click: sortByAchievementsDesc'>
+                                                    
+                                                Achievements &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-down"></i>
+                                                </a>
+                                                </th>
+                                              <th>
+                                              <a class="button1" id="i1" data-bind='click: sortBySkillsAsc'>
+                                                  Skills &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-up"></i>
+                                                </a>
+                                                <a class="button1" id="i2" data-bind='click: sortBySkillsDesc'>
+                                                    
+                                                Skills &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-down"></i>
+                                                </a>
+                                                  
+                                              </th>
+                                              <th>
+                                              <a class="button1" id="j1" data-bind='click: sortByOtherAsc'>
+                                                  Other Details &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-up"></i>
+                                                </a>
+                                                <a class="button1" id="j2" data-bind='click: sortByOtherDesc'>
+                                                    
+                                                Other Details &nbsp;&nbsp;<i class="glyphicon glyphicon-chevron-down"></i>
+                                                </a>
+                                                 
+                                              </th>
+                                              <th><a href=""  class="button1" ><strong>Action</strong></a>
+                                               
+                                              </th>
+                                          </tr>
+                                      
+
+
+                                      <!--   TABLE BODY  -->
+
+                                      
+                                        <tr>
+                                            <td> <input class="input_filter form-control" type="search" data-bind="value : filterName , valueUpdate : 'input'"/></td>
+                                             <td> <input class="input_filter form-control" type="search" data-bind="value : filterAppliedFor , valueUpdate : 'input'"/></td>
+                                             <td> <input class="input_filter" type="search" data-bind="value : filterSource , valueUpdate : 'input'"/></td>
+                                             <td> <input class="input_filter" type="search" data-bind="value : filterLocation , valueUpdate : 'input'"/></td>
+                                             <td> <input class="input_filter" type="search" data-bind="value : filterStatus , valueUpdate : 'input'"/></td>
+                                             <td> <input class="input_filter" type="search" data-bind="value : filterExperience , valueUpdate : 'input'"/></td>
+                                             <td> <input class="input_filter" type="search" data-bind="value : filterAchievements , valueUpdate : 'input'"/></td>
+                                             <td> <input class="input_filter" type="search" data-bind="value : filterSkills , valueUpdate : 'input'"/></td>
+                                             <td> <input class="input_filter" type="search" data-bind="value : filterOther , valueUpdate : 'input'"/></td>
+                                            <td></td>
+                                        </tr></thead>
+                                      <tbody data-bind="foreach: filteredItems">
+                                        <tr>
+                                          <td  data-bind="text: $data.name"></td>
+                                          <td  data-bind="text: $data.appliedfor"></td>
+                                          <td  data-bind="text: $data.source"></td>
+                                          <td  data-bind="text: $data.location"></td>
+                                          <td  data-bind="text: $data.status"></td>
+                                          <td  data-bind="text: $data.experience"></td>
+                                          <td  data-bind="text: $data.achievements"></td>
+                                          <td  data-bind="text: $data.skills"></td>
+                                          <td  data-bind="text: $data.other"></td>
+                                          <td>
+                                              <div class="tools">
+                                                    <button class="btn btn-default text-success" style="align:left" title="Edit"></a><i class="fa fa-edit fa-xs"></i></button>
+                                                    <button class="btn btn-default text-success" style="align:left" title="Move to Talent Pool"></a><i class="fa fa-times fa-xs"></i></button>
+                                              </div>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                  </table>    
+
+                                </div><!-- /.box-body -->                               
+                                  
+                               
                             </div><!-- /.box -->
                    
 
@@ -548,38 +270,47 @@
 
 
 
+                                <script>
 
-        
-        <!-- DATA TABES SCRIPT -->
-        <script src="../js/jquery.dataTables.js" type="text/javascript"></script>
-        <script src="../js/dataTables.bootstrap.js" type="text/javascript"></script>
-        <!-- APP JS -->
-        <script src="../js/app.js" type="text/javascript"></script>
+                                    ko.applyBindings(new items());
 
-        <!-- page script -->
-        <script type="text/javascript">
-            $(function() {
-                $("#example1").dataTable();
-                $('#example2').dataTable({
-                    "bPaginate": true,
-                    "bLengthChange": false,
-                    "bFilter": false,
-                    "bSort": true,
-                    "bInfo": true,
-                    "bAutoWidth": false
-                });
-            });
-        </script>
-                   <!-- jQuery 2.0.2 -->
-          <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-            <!-- jQuery UI 1.10.3 -->
-            <script src="../js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
+
+                                        
+                                    $("input.input_filter").hide().addClass("form-control");
+                                    $("button.button1").css({"width":"100%"});
+                                        $("#a2").hide();
+                                        $("#a1").click(function(){
+                                            $(this).hide();
+                                            $(this).siblings("button").show();
+                                            $("input.input_filter").show();
+                                        });
+                                        $("#a2").click(function(){
+                                            $(this).hide();
+                                            $(this).siblings("button").show();
+                                             $("input.input_filter").hide();
+                                        });
+                                        $("a[class^='button']").css({"cursor":"pointer"});
+                                        $("#b2,#c2,#d2,#e2,#f2,#g2,#h2,#i2,#j2").hide();
+                                        $("#b1,#c1,#d1,#e1,#f1,#g1,#h1,#i1,#j1").click(function(e){
+                                            $(this).css({"cursor":"pointer"});
+                                            e.preventDefault();
+                                            $(this).hide();
+                                            $(this).siblings(".button1").show();
+                                        });
+                                        $("#b2,#c2,#d2,#e2,#f2,#g2,#h2,#i2,#j2").click(function(e){
+                                            e.preventDefault();
+                                             $(this).css({"cursor":"pointer"});
+                                            $(this).hide();
+                                            $(this).siblings(".button1").show();
+                                        });
+                                    </script>
             <!-- Bootstrap -->
             <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-            <!--  App -->
+            <!-- AdminLTE App -->
             <script src="../js/prorecruit/app.js" type="text/javascript"></script>
-            <!-- -->
-            <script src="../js/prorecruit/dashboard.js" type="text/javascript"></script>     
+            <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+            <script src="../js/prorecruit/dashboard.js" type="text/javascript"></script>
+              
           </body>
     </html>      
 

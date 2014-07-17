@@ -138,8 +138,6 @@ $(function() {
       $("[data-widget='refresh']").click(function() {
        
     var contents= $(this).parents("section").parent().last().attr('id');
-         /* var me= contents.length;
-          contents= contents.slice(6,me);*/
          $(this).parents("section").parent().last().load(contents +'.html');
      
        

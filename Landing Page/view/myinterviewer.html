@@ -13,12 +13,28 @@
                 $(this).hide();
                      
             });
-            $(".ces").click(function(e){ 
-                e.preventDefault();
-                $("#content_blocks").prepend('<div id="first'+i+'"></div>');
-                        var p =$('#first'+i+'').load("evaluationSheet.html");
-                        i++;
-            });
+       /*  $(".evaluationSheet").click(function(e){ 
+                            e.preventDefault();
+                            var cls=$(this).attr("class");
+       
+                    cls=cls.split(" ");
+                    var divName =cls[1];
+                            var att= $("#content_blocks").find("#"+divName).html();
+                            if(!att)
+                            {
+                            $("#content_blocks").find("#myinterviewer").first().append('<div id='+divName+'></div>');
+                                $('#'+divName).load(divName+".html");
+                            var pos1=$("#"+divName+" section").offset();
+                             window.scrollTo(pos1.left, pos1.top);
+                             }
+                         else
+                            {
+                            var pos=$("#"+divName+" section").offset();
+                             window.scrollTo(pos.left, pos.top);
+                            
+                               
+                            }
+                        });*/
           });
         </script>
         

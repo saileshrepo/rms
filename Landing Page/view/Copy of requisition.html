@@ -6,18 +6,16 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
      
         <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!--    <link href="../css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />-->
+        <link href="../css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
         <link href="../css/prorecruit.css" rel="stylesheet" type="text/css" />
         <script src="../js/jquery.min.js"></script>
 	    <script src="../js/jquery-ui-1.10.3.min.js"></script>
-          
+            <script src="../js/tagit/tagit.js"></script>
+            <link href="../css/tag/tagit-blue.css" rel="stylesheet"/>
            <script src= "../js/knockout.js"></script> 
            <!--[if lt IE 9]>
          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
        <![endif]-->
-    	<script src="../js/selectize.js"></script>
-        <link rel="stylesheet" href="../css/selectize.bootstrap2.css">
-            <script src="../js/knockout.js"></script>
             <script src="../viewModel/requisitionViewModel.js"></script>
 </head>
 <body>
@@ -129,10 +127,10 @@
                                                     <label>Long Term Projects</label>
                                                     <textarea class="form-control" rows="3" data-bind="value:longProjects" placeholder="Enter ..."></textarea>
                                                 </div>
-										      <div class="control-group">
-					<label for="input-tags">Skills</label>
-					<input type="text"  id="input-tags6" class="input-tags demo-default" value="asp.net,html5">
-				</div>
+										        <div class="form-group">
+                                                    <label>Skills Required</label>
+                                                        <ul id="skills_select" class="list-group"></ul>
+                                                </div>
 										        <div class="form-group">
                                                     <label>Justify why internal reorganization is not possible</label>
                                                     <textarea class="form-control" rows="3" data-bind="value:justification" placeholder="Enter ..."></textarea>
@@ -152,13 +150,11 @@
         
     <script>
                 $(document).ready(function(e){
-           	$('#input-tags6').selectize({
-					plugins: ['restore_on_backspace','remove_button'],
-					persist: false,
-					create: true
-
-				
-				});
+            $("#skills_select").tagit({
+                triggerKeys:['enter', 'comma', 'tab'],
+                editable:true,
+                sortable:true
+            });
                     $(".submitit").click(function(e) { e.preventDefault();
                                                       $(".req").html("<div class='alert alert-warning alert-dismissable'><button type='button' class='close closeit' data-dismiss='alert' aria-hidden='true'>×</button><b>Your draft has been sent for approval</b></div><script>$('.closeit').click(function(e){ e.preventDefault();var box = $(this).parents('.box').first();box.slideUp();$(this).parents('section').parent().last().remove();});");
                 });
@@ -172,7 +168,7 @@
             </script>
     <script>
     $(document).ready(function() {
-                ko.applyBindings(new requisitionViewModel);
+                ko.applyBindings(requisitionViewModel);
     });
     
     

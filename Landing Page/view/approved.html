@@ -1,17 +1,43 @@
 <!DOCTYPE html>
     <html>
-    <head>
-    <script src="../js/jquery.min.js"></script>
+       <title>ProRecruit | The Best out THERE!!!</title>
+       
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+     
+        <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!--    <link href="../css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />-->
+        <link href="../css/prorecruit.css" rel="stylesheet" type="text/css" />
+        <script src="../js/jquery.min.js"></script>
+	    <script src="../js/jquery-ui-1.10.3.min.js"></script>
+          
+           <script src= "../js/knockout.js"></script> 
+           <!--[if lt IE 9]>
+         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+       <![endif]-->
   <script>
-      $("#proceed1, #proceed2, #proceed3, #proceed4").click(function(e){ e.preventDefault();
-                                                            $("#first0").append("<div id='xyz'></div>");
-                                                                $("#xyz").load("slc.html");
-                                                               });
-      $("#promote1, #promote2, #promote3, #promote4").click(function(e){ e.preventDefault();
-                                                            $("#first0").append("<div id='abc'></div>");
-                                                                $("#abc").load("promote.html");
-                                                               });
-      
+    
+     $(".btn-warning, .btn-primary").click(function(e){ 
+                            e.preventDefault();
+                            var cls=$(this).attr("class");
+        
+                            cls=cls.slice(23,cls.length);
+                            var att= $("#content_blocks").find("#"+cls).html();
+                           
+                        if(!att)
+                            {
+                            $("#content_blocks").prepend('<div id='+cls+'></div>');
+                                $('#'+cls).load(cls+".html");
+                             }
+                         else
+                            {
+                            var pos=$("#"+cls+" section").offset();
+                             window.scrollTo(pos.left, pos.top);
+                            
+                               
+                            }
+
+                    
+                       });
            
         </script>
     </head>
@@ -39,23 +65,23 @@
                                     <table class="table table-hover">
                                     <tr>
                                     <td><i class="fa fa-circle-o"></i> Vacancy for the post of Web Developer from PD Department</td>
-                                        <td><button class="btn btn-warning btn-sm" id="promote1">Promote</button></td>
-                                    <td><button class="btn btn-primary btn-sm" id="proceed1">Proceed</button></td>
+                                        <td><button class="btn btn-warning btn-sm promote">Promote</button></td>
+                                    <td><button class="btn btn-primary btn-sm slc">Proceed</button></td>
                                     </tr>
                                     <tr>
                                     <td><i class="fa fa-circle-o"></i> Vacancy for the post of Analyst from QA Department</td>
-                                        <td><button class="btn btn-warning btn-sm" id="promote2">Promote</button></td>
-                                    <td><button class="btn btn-primary btn-sm" id="proceed2">Proceed</button></td>
+                                        <td><button class="btn btn-warning btn-sm promote">Promote</button></td>
+                                    <td><button class="btn btn-primary btn-sm slc">Proceed</button></td>
                                     </tr>
                                     <tr>
                                     <td><i class="fa fa-circle-o"></i> Vacancy for the post of Senior HR from HR Department</td>
-                                        <td><button class="btn btn-warning btn-sm" id="promote3">Promote</button></td>
-                                    <td><button class="btn btn-primary btn-sm" id="proceed3">Proceed</button></td>
+                                        <td><button class="btn btn-warning btn-sm promote">Promote</button></td>
+                                    <td><button class="btn btn-primary btn-sm slc">Proceed</button></td>
                                     </tr>
                                     <tr>
                                     <td><i class="fa fa-circle-o"></i> Vacancy for the post of Project Manager from PD Department</td>
-                                    <td><button class="btn btn-warning btn-sm" id="promote4">Promote</button></td>
-                                    <td><button class="btn btn-primary btn-sm" id="proceed4">Proceed</button></td>
+                                    <td><button class="btn btn-warning btn-sm slc">Promote</button></td>
+                                    <td><button class="btn btn-primary btn-sm slc">Proceed</button></td>
                                     </tr>
                                     </table>
                                         

@@ -6,14 +6,16 @@
             
             <script src="../js/knockout.js"></script>
     
-            <script src="../viewModel/test3.js"></script>
+            <script src="../viewModel/vm_slc.js"></script>
             
+             
             <script>
             $(document).ready(function(){
                               
-                          ko.applyBindings(new TaskListViewModel(),$(".ko-round")[0]);
+                          ko.applyBindings(new RoundsViewModel(),$(".ko-round")[0]);
                               });
             </script>
+
         
         </head>
         
@@ -111,27 +113,29 @@
                         
                          <h4><strong>Rounds</strong></h4><br>
                             
-                        <form data-bind="submit: addTask">
-                            Add Round: <input data-bind="value: newTaskText" placeholder="Enter Round Name.." />&nbsp;
+                        <form data-bind="submit: addRound">
+                            Add Round: <input data-bind="value: newRoundText" placeholder="Enter Round Name.." />&nbsp;
                             <button class="btn btn-success" type="submit">Add</button>
                         </form><br>
                         
-                        <ol data-bind="foreach: tasks, visible: tasks().length > 0">
+                        <ol data-bind="foreach: rounds, visible: rounds().length > 0">
                             <li>
                                 <input data-bind="value: title, disable: isDone" />
-                                <a href="#" data-bind="click: $parent.removeTask">Delete</a>
+                                <a href="#" data-bind="click: $parent.removeRound">Delete</a>
                             </li><br> 
                         </ol>
                         
 
-                        Total round(s): &nbsp;<b data-bind="text: incompleteTasks().length"></b><br>
-                        <span data-bind="visible: incompleteTasks().length == 0">There are currently no rounds !</span>
+                        Total round(s): &nbsp;<b data-bind="text: incompleteRounds().length"></b><br>
+                        <span data-bind="visible: incompleteRounds().length == 0">There are currently no rounds !</span>
+    
+    
                     </div><hr />
                     <!-- /.row -->
                     <!-- this row will not appear when printing -->
                     <div class="row no-print">
                         <div class="col-xs-12">
-                            <button class="btn btn-default" onclick="window.print();"><i class="fa fa-print"></i> Print</button> 
+                          <!--  <button class="btn btn-default" onclick="window.print();"><i class="fa fa-print"></i> Print</button> -->
                            <button class="btn btn-success pull-right" style="margin-right: 5px;"><i class="fa fa-arrow-circle-o-right"></i> Proceed</button>
                         </div>
                     </div>

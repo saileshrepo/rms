@@ -3,11 +3,12 @@
         <head>
 		<link href="../css/prorecruit.css" rel="stylesheet" type="text/css" />
     <script src="../js/jquery.min.js"></script>
-            <script src="../js/jquery-ui-1.10.3.min.js"></script>
-            <script src="../js/tagit/tagit.js"></script>
-            <link href="../css/tag/tagit-blue.css" rel="stylesheet"/>
-            
-     
+            <!--<script src="../js/jquery-ui-1.10.3.min.js"></script>-->
+      
+            	<script src="../js/selectize.js"></script>
+        <link rel="stylesheet" href="../css/selectize.bootstrap2.css">
+            <script src="../js/knockout.js"></script>
+   <script src="../viewModel/addjobmodel.js"></script>
            </head>
         <body>
 					<!-- Add Job form -->
@@ -31,39 +32,55 @@
                                     <h3 class="box-title">Add Job</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body no-padding">
+                                     
 									<div>
 									<form role="form">
                                     <div class="box-body">
 										<div class="form-group">
                                             <label for="jobId">Job Id :</label>
-                                            <input type="text" class="form-control" placeholder="Enter Job-id">
+                                            <input type="text" class="form-control" placeholder="Enter Job-id" data-bind="value:job.jobId">
                                         </div>
 										<div class="form-group">
                                             <label for="exampleInputJob">Job Designation :</label>
-                                            <input type="text" class="form-control" placeholder="Enter Job Designation">
+                                            <input type="text" class="form-control" placeholder="Enter Job Designation" data-bind="value:job.jobDesignation">
                                         </div>
-										<div class="form-group">
-                                            <label>Skills Required</label>
-                                           <ul id="skills_select" class="list-group"></ul></div>
+                                        
+										
+				
+              <!-- <div id="skillSet">-->
+                <div id="skillset">
+				<div class="control-group">
+					<label for="input-tags">Skills required:</label>
+					<input type="text"  id="input-tags6" class="input-tags" data-bind="value:job.skill1" >
+				</div><br><div class="control-group pull-right">
+      <span id="skillview">Current Values:</span><input  type="text" disabled data-bind="value:job.skillSets "/> </div>
+				<script>
+				$('#input-tags6').selectize({
+					plugins: ['restore_on_backspace','remove_button'],
+					persist: false,
+					create: true
 
+				
+				});
+                    
+                    
+				</script><br></div>
+        <!--  </div>
+-->
                                         
 										<!-- textarea -->
                                         <div class="form-group">
                                             <label>Job Description</label>
-                                            <textarea class="form-control" rows="3" placeholder="Enter Job Description .."></textarea>
+                                            <textarea class="form-control" rows="3" placeholder="Enter Job Description .." data-bind="value:job.jobDescription"></textarea>
                                         </div>
-										<div>
-											<label for="Confirm">Confirm</label><br>
-                                            <input type="checkbox"/>&nbsp;Agree
-												
-										</div>
-								</div><!-- /.box-body -->
+									
+								<!-- /.box-body -->
                                 <div class="box-footer">
-                                        <button type="submit" class="btn btn-primary">Add</button>
+                                        <button type="submit" class="btn btn-primary" data-bind="click:submitJob">Add</button>
                                         <button type="reset" class="btn btn-info">Cancel</button>
                                 </div>
                                 </form>
-								</div></div></div>
+								</div></div></div></div>
 							</section>
 				<!-- Add Job ends-->
  <!-- jQuery 2.0.2 -->
@@ -72,19 +89,40 @@
             <script src="../js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
             <!-- Bootstrap -->
             <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-            <!-- AdminLTE App -->
-            <script src="../js/prorecruit/app.js" type="text/javascript"></script>
-			 <script src="../js/prorecruit/demo.js" type="text/javascript"></script>
-                   <script>
-                $(document).ready(function(e){
-            $("#skills_select").tagit({
-                triggerKeys:['enter', 'comma', 'tab'],
-                editable:true,
-                sortable:true
-            });
+          <script>
+            $(function() {
+
+        $("#skillview").click(function(){
+            console.log("ck");
+            $(this).next().removeAttr("disabled");
+        
+        });
+        $('select.selectized,input.selectized', '#skillset').each(function() {
+
+		var $value = $('<span>');
+        var $input = $(this);
+		var update = function(e) { $value.text(JSON.stringify($input.val()));
+                                    localStorage.setItem("data1", JSON.stringify($input.val()));
+                                }
+
+		$(this).on('change', function(){
+         update();
+        });
+
+	});
+    
+});
+            
+           
+            </script>
+            <script>
+                $(document).ready(function() {
+                    ko.applyBindings(AddJobViewModel);
                 });
             </script>
-            <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+            <script src="../js/prorecruit/app.js" type="text/javascript"></script>
+			 <script src="../js/prorecruit/demo.js" type="text/javascript"></script>
+       
             <script src="../js/prorecruit/dashboard.js" type="text/javascript"></script>     
           </body>
     </html>      

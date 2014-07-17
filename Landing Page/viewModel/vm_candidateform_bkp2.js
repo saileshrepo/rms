@@ -1,38 +1,3 @@
-////
-//var SkillModel = function(skills) {
-//    var self = this;
-//    self.skills = ko.observableArray(skills);
-// 
-//    self.addSkill = function() {
-//        self.skills.push({
-//            name: "",
-//            rate: "",
-//            exp:""
-//        });
-//    };
-// 
-//    self.removeSkill = function(skill) {
-//        self.skills.remove(skill);
-//    };
-//};
-//var CompanyDetailModel=function(company){
-//    var self=this;
-//    self.company=ko.observableArray(company);
-//    self.addCompanyDetail = function(){
-//        self.company.push({
-//            name:"",
-//            role:"",
-//            reason:"",
-//            fromdate:"",
-//            todate:""
-//        });
-//    };
-//    
-//    self.removeCompanyDetail = function(c) {
-//        self.company.remove(c);
-//    };
-//};
-
 var viewModel3 =function(){
 	var self=this;
     self.data={
@@ -61,7 +26,7 @@ var viewModel3 =function(){
         achievements:ko.observable("demo"),
         skills:ko.observableArray([
             
-            {name:"demo",rate:ko.observable("0"),exp:"3"}
+            {name:"demo",rate:ko.observable(0),exp:"3"}
         ]),
         company:ko.observableArray([
             {name:"ABC",role:"Senior ASP.NET Developer",reason:"No",fromdate:"2011-03-01",todate:"2013-03-05"}]),
@@ -73,17 +38,17 @@ var viewModel3 =function(){
 
     self.addskill= function() {
             //console.log(data.skills());
-            data.skills.push({name:"",rate:"1",exp:""});
+            data.skills.push({name:"",rate:ko.observable(0),exp:""});
     };
     self.removeSkill = function(skill) {
         data.skills.remove(skill);
     };
-    self.starratingvm= function(a,b){
-       
-        that=b.target;
-        
-        var c=that.alt;
-        data.skills.rate=5;
+//    self.starratingvm= function(a,b){
+//       
+//        that=b.target;
+//        
+//        var c=that.alt;
+//       // data.skills.rate=5;
 //                        that.attr("src","../img/star-on.png");
 //                        that.prevAll().attr("src","../img/star-on.png");
 //                        that.nextAll().attr("src","../img/star-off.png");
@@ -104,41 +69,41 @@ var viewModel3 =function(){
           
             data.company.push({name:"",role:"",reason:"",fromdate:"",todate:""});
     };
-
-    //-- star rating
-	ko.bindingHandlers.starRating = {
-    init: function(element, valueAccessor) {
+   
+    self.maxRating = ko.observable(5);
+    ko.bindingHandlers.starRating = {
+    init: function(element, valueAccessor,allBindings, viewModel, bindingContext) { 
+        var maxStars= self.maxRating(),starhtml;
+        for (var i = 0; i < maxStars; i++)
+        {
+           starhtml= "<img id='imgstr"+i+"' src='../img/star-off.png' class='rating'/>"
+           $(starhtml).appendTo(element);
+        }
        
-         data.skills.rate(0);
-		 if ( parseInt($(element).attr("alt")) <=data.skills.rate)
-		 {
-			  $(element).attr("src","../img/star-on.png");
-		 }
-		 
         // Handle mouse events on the stars
         $("img", element).each(function(index) {
             $(this).hover(
-                function() { $(this).prevAll().add(this).attr("src","../img/star-on.png") }, 
-                function() { $(this).prevAll().add(this).attr("src","../img/star-off.png") }                
+                function() { $(this).prevAll().attr("src","../img/star-on.png")}, 
+                
+//                function() { $(this).attr("src","../img/star-on.png")},                 
+                function() { $(this).nextAll().attr("src","../img/star-off.png")} 
             ).click(function() { 
-				 data.skills.rate(parseInt($(element).attr("alt"));
-                var observable = valueAccessor();  // Get the associated observable
+                var observable = valueAccessor() ;  // Get the associated observable
                 observable(index+1);               // Write the new rating to it
             });
         });            
     },
-    update: function(element, valueAccessor) {
-        // Give the first x stars the "chosen" class, where x <= rating
+    update: function(element, valueAccessor,allBindings, viewModel, bindingContext) {
+        // change the image wrt new rating
         var observable = valueAccessor();
-        $(element).parent.each(function(index) {
-			if(index < observable())
-			{
-				$(this).prevAll().add(this).attr("src","../img/star-on.png");
-				} 
+        $("img", element).each(function(index) {
+            $(this).attr("src",function(i,val){ 
+                return index < observable()?"../img/star-on.png":"../img/star-off.png";
+            }); 
         });
     }    
 };
-
+ko.virtualElements.allowedBindings.starRating = true;
     return self;
 }();
 

@@ -2,7 +2,7 @@
     <html>
         <head>
     <script src="../js/jquery.min.js"></script>
-           </head>
+        </head>
         <body>
 <!-- Organization Details -->
 							<section class="col-lg-6 ">
@@ -24,7 +24,7 @@
                                     <h3 class="box-title">Organization Details</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
-									<div>
+								
 									<form role="form">
                              
 										<div class="form-group">
@@ -35,37 +35,32 @@
                                             <label for="exampleInputWebsite">Website</label>
                                             <input type="text" class="form-control" placeholder="Enter Website ..">
                                         </div>
-										<div class="form-group">
-                                            <label for="exampleInputLocation">Location</label>
-											<div class="row">
-												<div class="col-xs-6">
-													<input type="text" class="form-control" placeholder="Enter City..">
-												</div>
-												<div class="col-xs-6">
-													<input type="text" class="form-control" placeholder="Enter Country..">
-												</div>
-											</div><br>
-											<div class="row">
-												<div class="col-xs-6">
-													<input type="text" class="form-control" placeholder="Enter City..">
-												</div>
-												<div class="col-xs-6">
-													<input type="text" class="form-control" placeholder="Enter Country..">
-												</div>
-											</div><br>
-											<button class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add Location</button>
-											</div>
-										<br>
+										
+                                                
 
+                                               <div class="form-group">
+                                                    Add Location: <input data-bind="value: newCityText, valueUpdate: 'afterkeydown'" placeholder="Enter City Name.."/>&nbsp;
+                                                  
+                                        <button class="btn btn-success" data-bind="click: addLocation,enable:newCityText().length >1">Add</button>
+                                                <br><br>
 
-										<div class="form-group">
+                                               </div>
+                                                <div class="form-group" >
                                             <label>Select Location</label>
-                                            <select class="form-control">
-                                                <option>Bhubaneshwar</option>
-                                                <option>Hyderabad</option>
-                                                <option>Florida</option>
-                                            </select>
+                                            <select class="form-control" height="5" data-bind="options:newCity, selectedOptions:selectedCity">
+                                            </select><br>
+                                        <button class="btn btn-success" data-bind="click: removeCity">Remove</button>       
                                         </div>
+                                                
+
+                                   
+
+											
+                                          
+											
+
+
+									
 
 										<!-- textarea -->
                                         <div class="form-group">
@@ -88,12 +83,20 @@
  <!-- jQuery 2.0.2 -->
           <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
             <!-- jQuery UI 1.10.3 -->
+            <script src="../js/knockout.js"></script>
+            <script src="../viewModel/vm_organizationDetails.js"></script>
+       <script>
+            $(document).ready(function(){
+                              
+                          ko.applyBindings(new newCityModel());
+                              });
+            </script>
+            
             <script src="../js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
             <!-- Bootstrap -->
             <script src="../js/bootstrap.min.js" type="text/javascript"></script>
             <!-- App -->
             <script src="../js/prorecruit/app.js" type="text/javascript"></script>
-            <!-- dashboard demo (This is only for demo purposes) -->
-            <script src="js/prorecruit/dashboard.js" type="text/javascript"></script>     
+                
           </body>
     </html>      

@@ -3,8 +3,93 @@
     <html>
         <head>
     <script src="../js/jquery.min.js"></script>
-           </head>
-        <body>
+            
+               
+    <script src="../js/selectize.min.js"></script>
+    
+    <link href="../css/selectize.default.css" rel="stylesheet" />
+    
+            
+            
+             
+    <style type="text/css">
+		.selectize-control.contacts .selectize-input > div {
+			padding: 1px 10px;
+			font-size: 13px;
+			font-weight: normal;
+			-webkit-font-smoothing: auto;
+			color: #f7fbff;
+			text-shadow: 0 1px 0 rgba(8,32,65,0.2);
+			background: #2183f5;
+			background: -moz-linear-gradient(top, #2183f5 0%, #1d77f3 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2183f5), color-stop(100%,#1d77f3));
+			background: -webkit-linear-gradient(top,  #2183f5 0%,#1d77f3 100%);
+			background: -o-linear-gradient(top,  #2183f5 0%,#1d77f3 100%);
+			background: -ms-linear-gradient(top,  #2183f5 0%,#1d77f3 100%);
+			background: linear-gradient(to bottom,  #2183f5 0%,#1d77f3 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2183f5', endColorstr='#1d77f3',GradientType=0 );
+			border: 1px solid #0f65d2;
+			-webkit-border-radius: 999px;
+			-moz-border-radius: 999px;
+			border-radius: 999px;
+			-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+			-moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+			box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+		}
+		.selectize-control.contacts .selectize-input > div.active {
+			background: #0059c7;
+			background: -moz-linear-gradient(top, #0059c7 0%, #0051c1 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0059c7), color-stop(100%,#0051c1));
+			background: -webkit-linear-gradient(top,  #0059c7 0%,#0051c1 100%);
+			background: -o-linear-gradient(top,  #0059c7 0%,#0051c1 100%);
+			background: -ms-linear-gradient(top,  #0059c7 0%,#0051c1 100%);
+			background: linear-gradient(to bottom,  #0059c7 0%,#0051c1 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0059c7', endColorstr='#0051c1',GradientType=0 );
+			border-color: #0051c1;
+		}
+		.selectize-control.contacts .selectize-input > div .email {
+			opacity: 0.8;
+		}
+		.selectize-control.contacts .selectize-input > div .name + .email {
+			margin-left: 5px;
+		}
+		.selectize-control.contacts .selectize-input > div .email:before {
+			content: '<';
+		}
+		.selectize-control.contacts .selectize-input > div .email:after {
+			content: '>';
+		}
+		.selectize-control.contacts .selectize-dropdown .caption {
+			font-size: 12px;
+			display: block;
+			color: #a0a0a0;
+		}
+        
+        .selectize-control.contacts .selectize-dropdown .label {
+			font-size: 12px;
+			display: block;
+			color: #ffffff;
+            background-color:#54b6f1;
+            width: 100px;
+		}
+        
+		</style>
+            
+        <script>
+            $(document).ready(function(e){
+                $("#alert_sent").hide();
+                $("#send").click(function(e){
+                e.preventDefault();
+                    $("#alert_sent").show();
+                    });
+            });
+        </script>
+            
+            
+            
+            
+</head>
+<body>
 
 
 				<section>
@@ -24,24 +109,22 @@
                                     </div><!-- /. tools -->
                                    
 									
-									<div class="form-group"><h3><label>&nbsp;&nbsp;ROUND-2 Details</label></h3>
-									</div>
-									<div class="form-group">
+									<h3><label>&nbsp;&nbsp;ROUND-2 Details</label></h3>
+								</div><!-- /.box-header -->
+                                <div class="box-body">
+                                    <div class="form-group">
 										<label>&nbsp;&nbsp;&nbsp;&nbsp;Requisition By: A. Behera</label>
 										<div><label>&nbsp;&nbsp;&nbsp;&nbsp;Date of Request: 16-06-14</label></div>
 										<div><label>&nbsp;&nbsp;&nbsp;&nbsp;Date of Approval: 17-06-14</label></div>
 									</div>
-									
-								</div><!-- /.box-header -->
-                                <div class="box-body">
                                     <table class="table table-bordered">
                                         <tr>
-                                            <th>Candidate Name</th>
-                                            <th>Location</th>
-                                            <th>Schedule Interview Date</th>
-                                            <th>Schedule Interview Time</th>
-											<th>Select Interviewer</th>
-                                            <th>Select</th>
+                                            <th style="width: 200px">Candidate Name</th>
+                                            <th style="width: 150px">Location</th>
+                                            <th style="width: 250px">Schedule Interview Date</th>
+                                            <th style="width: 150px">Schedule Interview Time</th>
+											<th style="width: 700px">Select Interviewer</th>
+                                            <th style="width: 100px">Select</th>
                                         </tr>
                                         <tr>
                                             <td><a>A. Das</a></td>
@@ -52,27 +135,14 @@
                                                 </div>
                                             </td>
                                             <td>
-												<div>
-                                                    <div class="col-lg-6">
-                                                    <input type="time" id="timepicker">
-                                                    </div>
-													<div class="col-lg-6">
-														<select class="form-control">
-														<option>AM</option>
-														<option>PM</option>
-														</select>
-													</div>
-												</div>
+                                                <div class="col-lg-6">
+                                                <input type="time" id="timepicker">
+                                                </div>
 											</td>
 											<td>
-												<div>
-													<select multiple class="form-control">
-														<option>Deepak Mahapatra</option>
-														<option>Shiba Sundar Behera</option>
-														<option>Yamini Gupta</option>
-														<option>Arun Chauhan</option>
-													</select>
-												</div>
+												<div class="control-group">
+                                                    <select class="contacts select-to" placeholder="Pick Interviewer"></select>
+                                                </div>
 											</td>
                                             <td><input type="checkbox"/></td>
                                         </tr>
@@ -85,27 +155,14 @@
                                                 </div>
                                             </td>
                                             <td>
-												<div>
-                                                    <div class="col-lg-6">
-                                                    <input type="time" id="timepicker">
-                                                    </div>
-													<div class="col-lg-6">
-														<select class="form-control">
-														<option>AM</option>
-														<option>PM</option>
-														</select>
-													</div>
-												</div>
+                                                <div class="col-lg-6">
+                                                <input type="time" id="timepicker">
+                                                </div>
 											</td>
 											<td>
-												<div>
-													<select multiple class="form-control">
-														<option>Deepak Mahapatra</option>
-														<option>Shiba Sundar Behera</option>
-														<option>Yamini Gupta</option>
-														<option>Arun Chauhan</option>
-													</select>
-												</div>
+												<div class="control-group">
+                                                    <select class="contacts select-to" placeholder="Pick Interviewer"></select>
+                                                </div>
 											</td>                                            
                                             <td><input type="checkbox"/></td>
                                         </tr>
@@ -118,27 +175,14 @@
 												</div>
                                             </td>
                                             <td>
-												<div>
-                                                    <div class="col-lg-6">
-                                                    <input type="time" id="timepicker">
-                                                    </div>
-													<div class="col-lg-6">
-														<select class="form-control">
-														<option>AM</option>
-														<option>PM</option>
-														</select>
-													</div>
-												</div>
+                                                <div class="col-lg-6">
+                                                <input type="time" id="timepicker">
+                                                </div>
 											</td>
 											<td>
-												<div>
-													<select multiple class="form-control">
-														<option>Deepak Mahapatra</option>
-														<option>Shiba Sundar Behera</option>
-														<option>Yamini Gupta</option>
-														<option>Arun Chauhan</option>
-													</select>
-												</div>
+												<div class="control-group">
+                                                    <select class="contacts select-to" placeholder="Pick Interviewer"></select>
+                                                </div>
 											</td>
                                             <td><input type="checkbox"/></td>
                                         </tr>
@@ -151,27 +195,14 @@
                                                 </div>
                                             </td>
                                             <td>
-												<div>
-                                                    <div class="col-lg-6">
-                                                    <input type="time" id="timepicker">
-                                                    </div>
-													<div class="col-lg-6">
-														<select class="form-control">
-														<option>AM</option>
-														<option>PM</option>
-														</select>
-													</div>
-												</div>
+                                                <div class="col-lg-6">
+                                                <input type="time" id="timepicker">
+                                                </div>
 											</td>
 											<td>
-												<div>
-													<select multiple class="form-control">
-														<option>Deepak Mahapatra</option>
-														<option>Shiba Sundar Behera</option>
-														<option>Yamini Gupta</option>
-														<option>Arun Chauhan</option>
-													</select>
-												</div>
+												<div class="control-group">
+                                                    <select class="contacts select-to" placeholder="Pick Interviewer"></select>
+                                                </div>
 											</td>                                            
                                             <td><input type="checkbox"/></td>
                                 
@@ -181,14 +212,106 @@
                                 <div class="box-footer clearfix">
                                     
                                     <div class="box-footer">
-                                        <button type="reset" class="btn btn-default pull-right">Cancel</button>
-                                       <button type="submit" class="btn btn-success pull-right">Send Mail</button>
+                                        <div id="alert_sent" class="alert alert-success alert-dismissable">
+                                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                                    <b>Notification Mail Sent to all !</b>
+                                        </div>
+                                        <button type="reset" id="cancel" class="btn btn-default pull-right">Cancel</button>
+                                        <button type="submit" id="send" class="btn btn-success pull-right">Send Mail</button><br>
                                     </div>
                                 </div>
                             </div><!-- /.box -->
 						</section>
 
+            
+                        
+       
+                        
+                        
+                        
+                        
+                        
+                        
+            <!-- SELECTIZE-JS -->
+                    
+                        
+            <script type="text/javascript">
+            
+                // 1
+                
+				var REGEX_EMAIL = '([a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*@' +
+                  '(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)';
 
+                $('.select-to').selectize({
+                    persist: false,
+                    maxItems: null,
+                    valueField: 'email',
+                    labelField: 'name',
+                    searchField: ['name', 'email'],
+                    options: [
+                        {email: 'brian@thi.com', name: 'Brian Reavis'},
+                        {email: 'ps@ps.com', name: 'Prapti'},
+                        {email: 'rm@rm.com', name: 'Riddhima'},
+                        {email: 'sa@sa.com', name: 'Sailesh'},
+                        {email: 'nikola@tesla.com', name: 'Nikola Tesla'},
+                        {email: 'one@gmail.com', name: 'One'}
+                    ],
+                    render: {
+                        item: function(item, escape) {
+                            return '<div>' +
+                                (item.name ? '<span class="name">' + escape(item.name) + '</span>' : '') +
+                                (item.email ? '<span class="email">' + escape(item.email) + '</span>' : '') +
+                            '</div>';
+                        },
+                        option: function(item, escape) {
+                            var label = item.name || item.email;
+                            var caption = item.name ? item.email : null;
+                            return '<div>' +
+                                '<span class="label">' + escape(label) + '</span>' +
+                                (caption ? '<span class="caption">' + escape(caption) + '</span>' : '') +
+                            '</div>';
+                        }
+                    },
+                    createFilter: function(input) {
+                        var match, regex;
+
+                        // email@address.com
+                        regex = new RegExp('^' + REGEX_EMAIL + '$', 'i');
+                        match = input.match(regex);
+                        if (match) return !this.options.hasOwnProperty(match[0]);
+
+                        // name <email@address.com>
+                        regex = new RegExp('^([^<]*)\<' + REGEX_EMAIL + '\>$', 'i');
+                        match = input.match(regex);
+                        if (match) return !this.options.hasOwnProperty(match[2]);
+
+                        return false;
+                    },
+                    create: function(input) {
+                        if ((new RegExp('^' + REGEX_EMAIL + '$', 'i')).test(input)) {
+                            return {email: input};
+                        }
+                        var match = input.match(new RegExp('^([^<]*)\<' + REGEX_EMAIL + '\>$', 'i'));
+                        if (match) {
+                            return {
+                                email : match[2],
+                                name  : $.trim(match[1])
+                            };
+                        }
+                        alert('Invalid email address.');
+                        return false;
+                    }
+                });
+               
+                
+				</script>
+                        
+                        
+                        
+               <!-- / SELECTIZE-JS -->          
+                        
+                        
+                        
 
 <!-- jQuery 2.0.2 -->
           <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
